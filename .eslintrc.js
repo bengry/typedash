@@ -2,15 +2,8 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
-    'airbnb',
-    'plugin:storybook/recommended',
-    'prettier',
-    'plugin:storybook/recommended',
-  ],
+  extends: ['airbnb', 'prettier'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -19,14 +12,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'typescript-sort-keys',
-    'unused-imports',
-    'prettier',
-    'prefer-arrow',
-  ],
+  plugins: ['@typescript-eslint', 'unused-imports', 'prettier', 'prefer-arrow'],
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
     'import/extensions': 'off',
@@ -38,13 +24,6 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
     'prettier/prettier': 'error',
-    'react/destructuring-assignment': 'off',
-    'react/function-component-definition': 'off',
-    'react/jsx-filename-extension': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    'react/require-default-props': 'off',
-    'typescript-sort-keys/interface': 'error',
-    'typescript-sort-keys/string-enum': 'error',
     'unused-imports/no-unused-imports': 'error',
     'prefer-arrow/prefer-arrow-functions': [
       'error',
