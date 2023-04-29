@@ -5,6 +5,9 @@
     "moduleResolution": "node",
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true
-  }
+    "noEmit": true,
+    "types": ["vitest/importMeta"],
+    "rootDirs": ["./src"]
+  },
+  "include": ["./src", ".eslintrc.js", "vitest.config.ts"]
 }

@@ -1,18 +1,37 @@
+/* eslint-disable unicorn/prefer-module -- not supported in eslint yet */
+
+/**
+ * @type { import("eslint").Linter.Config}
+ */
 module.exports = {
+  root: true,
   env: {
-    browser: true,
     es2021: true,
   },
-  extends: ['airbnb', 'prettier'],
+  extends: [
+    'airbnb',
+    'airbnb-typescript',
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:unicorn/recommended',
+    // prettier must be last
+    'prettier',
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: ['./tsconfig.json'],
   },
-  plugins: ['@typescript-eslint', 'unused-imports', 'prettier', 'prefer-arrow'],
+  plugins: ['@typescript-eslint', 'no-only-tests', 'prettier'],
+  overrides: [
+    {
+      files: ['**/*.spec.{ts,js}'],
+      rules: {
+        'unicorn/consistent-function-scoping': 'off',
+      },
+    },
+  ],
   rules: {
     '@typescript-eslint/no-unused-vars': 'error',
     'import/extensions': 'off',
@@ -23,15 +42,26 @@ module.exports = {
     'no-plusplus': 'off',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
-    'prettier/prettier': 'error',
-    'unused-imports/no-unused-imports': 'error',
-    'prefer-arrow/prefer-arrow-functions': [
+    'prettier/prettier': 'warn',
+    'unicorn/filename-case': [
       'error',
       {
-        disallowPrototype: true,
-        singleReturnOnly: true,
-        classPropertiesAllowed: false,
+        cases: {
+          pascalCase: true,
+          camelCase: true,
+        },
       },
     ],
+    'unicorn/prevent-abbreviations': [
+      'error',
+      {
+        allowList: {
+          args: true,
+        },
+      },
+    ],
+    'unicorn/no-null': 'off',
+    'unicorn/no-array-reduce': 'off',
+    '@typescript-eslint/no-use-before-define': 'off',
   },
 };
