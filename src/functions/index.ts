@@ -22,5 +22,6 @@ export * from './omit';
 export * from './omitBy';
 export * from './pick';
 export * from './pickBy';
+export * from './pipe';
 export * from './toObject';
 export * from './without';
