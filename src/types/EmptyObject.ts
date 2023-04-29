@@ -8,4 +8,4 @@ export type EmptyObject<T extends object | never = never> = IsEqual<
   ? UnkeyedEmptyObject
   : KeyedEmptyObject<T>;
 
-type KeyedEmptyObject<T extends object> = { [K in keyof T]?: never };
+export type KeyedEmptyObject<T extends object> = { [K in keyof T]?: never };

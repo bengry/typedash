@@ -13,8 +13,8 @@ it('should omit specified properties from an object', () => {
 });
 
 it('should return an empty object if input object is null or undefined', () => {
-  const result1 = omit(null, [undefined]);
-  const result2 = omit(undefined, [undefined]);
+  const result1 = omit(null, [] as never[]);
+  const result2 = omit(undefined, [] as never[]);
   const expected = {};
   expect(result1).toEqual(expected);
   expect(result2).toEqual(expected);
@@ -30,7 +30,7 @@ it('should handle union types for property keys', () => {
 
 it('should handle empty array of properties', () => {
   const object = { a: 1, b: '2', c: true };
-  const result = omit(object, [undefined]);
+  const result = omit(object, []);
   const expected = { a: 1, b: '2', c: true };
   expect(result).toEqual(expected);
 });
