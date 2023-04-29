@@ -1,4 +1,4 @@
-import { Get, UnionToIntersection } from 'type-fest';
+import type { Get, UnionToIntersection } from 'type-fest';
 
 import { KeysOfUnion } from './KeysOfUnion';
 

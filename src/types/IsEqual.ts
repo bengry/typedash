@@ -1,1 +1,1 @@
-export { IsEqual } from 'type-fest';
+export type { IsEqual } from 'type-fest';

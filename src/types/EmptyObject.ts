@@ -1,4 +1,4 @@
-import { EmptyObject as UnkeyedEmptyObject } from 'type-fest';
+import type { EmptyObject as UnkeyedEmptyObject } from 'type-fest';
 import { IsEqual } from './IsEqual';
 
 export type EmptyObject<T extends object | never = never> = IsEqual<
