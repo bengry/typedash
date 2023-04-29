@@ -22,15 +22,17 @@
   "scripts": {
     "build": "tsup --onSuccess \"yarn yalc publish\"",
     "commit": "cz",
-    "dev": "concurrently \"yarn build --watch\" \"yarn test:watch\" ",
-    "lint": "eslint --ignore-path .gitignore \"src/**/*.+(ts|js)\"",
+    "dev": "concurrently \"yarn build --watch\" \"yarn test:watch\"",
+    "lint": "concurrently \"yarn lint:eslint\" \"yarn lint:format\" \"yarn lint:type-check\"",
+    "lint:eslint": "eslint --cache --ignore-path .gitignore \"src/**/*.+(ts|js)\"",
     "lint:fix": "yarn lint --fix && prettier --write .",
+    "lint:format": "prettier --check .",
+    "lint:type-check": "tsc --noEmit",
     "prepare": "husky install",
     "release": "yarn build && yarn release-it",
     "test": "vitest run --passWithNoTests",
     "test:ci": "yarn test --ci",
-    "test:watch": "vitest",
-    "type-check": "tsc"
+    "test:watch": "vitest"
   },
   "config": {
     "commitizen": {

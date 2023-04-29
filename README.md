@@ -7,7 +7,7 @@ This is a simple and slightly opinionated starter kit for developing and publish
 ```console
 npx degit TimMikeladze/tsup-react-package-starter my-react-package
 
-cd my-react-package && git init 
+cd my-react-package && git init
 
 yarn && yarn dev
 ```
@@ -117,7 +117,6 @@ yarn publish
 [tsup](https://github.com/egoist/tsup) supports PostCSS out of the box. Simply run `yarn add postcss -D` add a `postcss.config.js` file to the root of your project, then add any plugins you need. Learn more how to configure PostCSS [here](https://tsup.egoist.dev/#css-support).
 
 Additionally consider using the [tsup](https://github.com/egoist/tsup) configuration option `injectStyle` to inject the CSS directly into your Javascript bundle instead of outputting a separate CSS file.
-
 
 ## Built something using this starter-kit?
 
