@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+
 import { join } from './join';
 
 it('should join an array of strings with a string separator', () => {

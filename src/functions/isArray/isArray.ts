@@ -1,4 +1,4 @@
-import { Many } from '../../types/Many';
+import { Many } from '../../types';
 
 /**
  * The same as `Array.isArray` but with a better type guard.

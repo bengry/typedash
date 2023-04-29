@@ -1,4 +1,5 @@
 import { Many, Maybe } from '../../types';
+
 import { castArrayIfDefined } from './castArrayIfDefined';
 
 export function castArray<T>(value: null): T[];

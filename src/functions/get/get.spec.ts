@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+
 import { get } from './get';
 
 it('returns the value at the specified path', () => {

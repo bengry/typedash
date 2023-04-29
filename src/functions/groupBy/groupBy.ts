@@ -1,4 +1,4 @@
-import { Maybe } from '../../types/Maybe';
+import { Maybe } from '../../types';
 
 /**
  * Takes an array and returns an object with the keys of the array

@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+
 import { pickBy } from './pickBy';
 
 it('pickBy returns an empty object if the input is null', () => {

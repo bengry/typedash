@@ -1,6 +1,7 @@
 /* eslint-disable unicorn/prevent-abbreviations */
 /* eslint-disable unicorn/no-useless-undefined */
-import { it, expect } from 'vitest';
+import { expect, it } from 'vitest';
+
 import { memoize } from './memoize';
 
 it('should return the same result for the same input', () => {

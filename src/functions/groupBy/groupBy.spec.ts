@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+
 import { groupBy } from './groupBy';
 
 it('should group an array with groups of single items', () => {

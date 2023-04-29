@@ -1,4 +1,4 @@
-import { NonFunction } from '../../types/internal/NonFunction';
+import { NonFunction } from '../../types/internal';
 
 /**
  * Same as `Array.prototype.join`, but allows specifying a non-`string` separator.

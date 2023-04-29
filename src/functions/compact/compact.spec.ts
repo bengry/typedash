@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+
 import { compact } from './compact';
 
 it('should remove all falsey values from the array', () => {

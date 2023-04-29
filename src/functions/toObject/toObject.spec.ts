@@ -1,4 +1,5 @@
-import { it, expect } from 'vitest';
+import { expect, it } from 'vitest';
+
 import { toObject } from './toObject';
 
 it('should return an empty object when given an empty array', () => {

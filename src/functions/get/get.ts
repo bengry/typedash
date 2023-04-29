@@ -1,7 +1,8 @@
 import type { Get } from 'type-fest';
+
+import { Many } from '../../types';
 import { hasKey } from '../hasKey';
 import { isArray } from '../isArray';
-import { Many } from '../../types';
 
 /**
  * Gets the value at path of object.

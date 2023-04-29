@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+
 import { omit } from './omit';
 
 it('should omit a single property from an object', () => {

@@ -1,4 +1,4 @@
-import { Maybe, KeysOfUnion, PropertyValueOfUnion } from '../../types';
+import { KeysOfUnion, Maybe, PropertyValueOfUnion } from '../../types';
 
 export function omitBy<T extends object>(
   object: Maybe<T>,

@@ -1,4 +1,5 @@
-import { it, expect } from 'vitest';
+import { expect, it } from 'vitest';
+
 import { ensureSuffix } from './ensureSuffix';
 
 it('should return the string with the suffix if it does not end with the suffix', () => {

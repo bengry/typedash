@@ -1,7 +1,5 @@
 export default defineConfig({
-  './{src,tests}/**/*.{ts,js,jsx,tsx}': [
-    'eslint --ignore-path .gitignore --fix',
-  ],
+  './src/**/*.{ts,js,jsx,tsx}': ['eslint --ignore-path .gitignore --fix'],
   '*': 'prettier --write',
 });
 

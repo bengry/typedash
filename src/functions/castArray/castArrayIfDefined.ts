@@ -1,6 +1,5 @@
-import { Many } from '../../types';
-import { Maybe } from '../../types/Maybe';
-import { isArray } from '../isArray/isArray';
+import { Many, Maybe } from '../../types';
+import { isArray } from '../isArray';
 
 /**
  * Converts the given value to an array if it's not already one, or returns an value as-is if it's not defined (i.e. `null` or `undefined`).

@@ -1,4 +1,5 @@
-import { it, expect } from 'vitest';
+import { expect, it } from 'vitest';
+
 import { constantCase } from './constantCase';
 
 it('should convert a camelCase string to constant case', () => {

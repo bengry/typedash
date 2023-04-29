@@ -23,7 +23,12 @@ module.exports = {
     sourceType: 'module',
     project: ['./tsconfig.json'],
   },
-  plugins: ['@typescript-eslint', 'no-only-tests', 'prettier'],
+  plugins: [
+    '@typescript-eslint',
+    'simple-import-sort',
+    'no-only-tests',
+    'prettier',
+  ],
   overrides: [
     {
       files: ['**/*.spec.{ts,js}'],
@@ -60,6 +65,26 @@ module.exports = {
         },
       },
     ],
+    // import sorting
+    'simple-import-sort/exports': 'warn',
+    'simple-import-sort/imports': [
+      'warn',
+      {
+        groups: [
+          // Side effect imports.
+          ['^\\u0000'],
+          // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
+          ['^@?\\w'],
+          // Parent imports. Put `..` last.
+          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          // Style imports.
+          ['^.+\\.s?css$'],
+        ],
+      },
+    ],
+    // rules are more annoying than helpful
     'unicorn/no-null': 'off',
     'unicorn/no-array-reduce': 'off',
     '@typescript-eslint/no-use-before-define': 'off',

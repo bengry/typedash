@@ -1,4 +1,4 @@
-import { Many, Maybe, KeysOfUnion } from '../../types';
+import { KeysOfUnion, Many, Maybe } from '../../types';
 import { castArray } from '../castArray';
 import { createKnownTypeGuard } from '../createKnownTypeGuard';
 import { objectEntries } from '../objectEntries';

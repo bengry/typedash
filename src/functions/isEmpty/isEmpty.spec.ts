@@ -1,4 +1,5 @@
 import { expect, it } from 'vitest';
+
 import { isEmpty } from './isEmpty';
 
 it('should return true for empty string', () => {
