@@ -30,7 +30,7 @@
     "lint:format": "prettier --check .",
     "lint:type-check": "tsc --noEmit",
     "prepare": "husky install",
-    "release": "yarn build && yarn release-it",
+    "release": "yarn build && node ./node_modules/.bin/release-it",
     "test": "vitest run --passWithNoTests",
     "test:ci": "yarn test --ci",
     "test:watch": "vitest"
