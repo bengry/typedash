@@ -1,50 +1,80 @@
-# React Package Starter
+<a href="https://www.npmjs.com/package/typeswiss"><img src="https://img.shields.io/npm/v/typeswiss?color=blue" alt="npm link" />
+</a>
+<a href="https://www.npmjs.com/package/typeswiss"><img src="https://img.shields.io/npm/dm/typeswiss" alt="downloads" /></a>
+<img src="https://img.shields.io/npm/l/typeswiss" />
+<a href="https://tsplay.dev/w22Azw"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
 
-This is a simple and slightly opinionated starter kit for developing and publishing React packages. It comes with a several pre-configured tools, so you could focus on coding instead of configuring a project for the nth time.
+# TypeSwiss
 
-## Getting started
+A modern swiss army knife library for utility functions, all written in TypeScript and type-safe.
+
+Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-shaking, and leveraging the platform whenever possible.
+
+### Features
+
+- 📦 Modern and tree-shakeable
+- 🔥 Written in TypeScript
+- 🔍 Provides type-safe utility functions
+- 🤖 Designed to work seamlessly with TypeScript
+- 🌱 Growing collection of utility functions
+- 🛠️ Includes functions for common programming tasks
+- 🧰 Helps simplify your code
+- 🤝 Includes TypeScript type definitions
+- 🐞 Bug reports and feature requests welcome
+- 📝 MIT licensed
+
+## Installation
+
+You can install TypeSwiss using `npm` or `yarn`:
 
 ```console
-npx degit TimMikeladze/tsup-react-package-starter my-react-package
-
-cd my-react-package && git init
-
-yarn && yarn dev
+npm install typeswiss
+# or
+yarn add typeswiss
 ```
-
-❗Important note: This project uses [yarn](https://yarnpkg.com/) for managing dependencies. If you want to use another package manager, remove the `yarn.lock` and control-f for usages of `yarn` in the project and replace them with your package manager of choice.
-
-## What's included?
-
-- ⚡️[tsup](https://github.com/egoist/tsup) - The simplest and fastest way to bundle your TypeScript libraries. Used to bundle package as ESM and CJS modules. Supports TypeScript, Code Splitting, PostCSS, and more out of the box.
-- 🔗 [Yalc](https://github.com/wclr/yalc) - Better workflow than npm | yarn link for package authors.
-- 📖 [Storybook](https://storybook.js.org/) - Build UI components and pages in isolation. It streamlines UI development, testing, and documentation.
-- 🧪 [Jest](https://jestjs.io/) - A testing framework for JavaScript. Preconfigured to work with TypeScript and JSX.
-- 🔼 [Release-it](https://github.com/release-it/release-it/) - release-it is a command line tool to automatically generate a new GitHub Release and populates it with the changes (commits) made since the last release.
-- 🐙 [Test & Publish via Github Actions](https://docs.github.com/en/actions) - CI/CD workflows for your package. Run tests on every commit plus integrate with Github Releases to automate publishing package to NPM and Storybook to Github Pages.
-- 📄 [Commitizen](https://github.com/commitizen/cz-cli) — When you commit with Commitizen, you'll be prompted to fill out any required commit fields at commit time.
-- 🚓 [Commitlint](https://github.com/conventional-changelog/commitlint) — Checks that your commit messages meet the conventional commit format.
-- 🐶 [Husky](https://github.com/typicode/husky) — Running scripts before committing.
-- 🚫 [lint-staged](https://github.com/okonet/lint-staged) — Run linters on git staged files
-- 🖌 [Renovate](https://github.com/renovatebot/renovate) - Universal dependency update tool that fits into your workflows. Configured to periodically check your dependencies for updates and send automated pull requests.
-- ☑️ [ESLint](https://eslint.org/) - A linter for JavaScript. Includes a simple configuration for React projects based on the recommended ESLint and AirBnB configs.
-- 🎨 [Prettier](https://prettier.io/) - An opinionated code formatter.
 
 ## Usage
 
+TypeSwiss provides a set of utility functions that can be imported and used in your TypeScript projects. Here’s an example of how to import and use the `pick` function:
+
+```ts
+import { pick } from 'typeswiss';
+
+interface ExampleObj {
+  a: number;
+  b: number;
+  c: number;
+}
+const obj: ExampleObj = {
+  a: 1,
+  b: 2,
+  c: 3,
+};
+const result = pick(obj, ['a', 'b']); // { a: 1, b: 2 }
+//     ^? Pick<ExampleObj, "a" | "b">
+```
+
+## Contributing
+
+If you find a bug or have a feature request, please open an issue on the GitHub repository. Pull requests are also welcome!
+
 ### Developing
 
-Watch and rebuild code with `tsup` and runs Storybook to preview your UI during development.
+Watch and rebuild code with `tsup`:
 
 ```console
 yarn dev
 ```
 
-Run tests with `jest` when changes are detected.
+Run tests with `vitest` when changes are detected.
 
 ```console
 yarn test:watch
 ```
+
+## License
+
+TypeSwiss is MIT licensed.
 
 ### Building
 
@@ -111,15 +141,3 @@ yarn publish
 #### Auto publish after Github Release
 
 ❗Important note: in order to publish package to NPM you must add your token as a Github Action secret. Learn more on how to configure your repository and publish packages through Github Actions [here](https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages).
-
-## PostCSS
-
-[tsup](https://github.com/egoist/tsup) supports PostCSS out of the box. Simply run `yarn add postcss -D` add a `postcss.config.js` file to the root of your project, then add any plugins you need. Learn more how to configure PostCSS [here](https://tsup.egoist.dev/#css-support).
-
-Additionally consider using the [tsup](https://github.com/egoist/tsup) configuration option `injectStyle` to inject the CSS directly into your Javascript bundle instead of outputting a separate CSS file.
-
-## Built something using this starter-kit?
-
-That's awesome! Feel free to add it to the list.
-
-- [next-auth-mui](https://github.com/TimMikeladze/next-auth-mui) - Sign-in dialog for NextAuth built with MUI and React. Detects configured OAuth and Email providers and renders buttons or input fields for each respectively. Fully themeable, extensible and customizable to support custom credential flows.
