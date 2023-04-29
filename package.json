@@ -32,7 +32,7 @@
     "prepare": "husky install",
     "release": "yarn build && node ./node_modules/.bin/release-it",
     "test": "vitest run --passWithNoTests",
-    "test:ci": "yarn test --ci",
+    "test:ci": "yarn test",
     "test:watch": "vitest"
   },
   "config": {

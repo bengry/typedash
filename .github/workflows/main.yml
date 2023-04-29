@@ -20,23 +20,17 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: lts/*
+          node-version: 18
           cache: 'yarn'
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        uses: ./.github/actions/yarn-nm-install
 
-      - name: Check types
-        run: yarn type-check
-
-      - name: Check linting
+      - name: Check types & linting
         run: yarn lint
 
       - name: Run tests
         run: yarn test:ci
-
-      - name: Build storybook
-        run: yarn build-storybook
 
       - name: Build package
         run: yarn build
