@@ -5,7 +5,7 @@
 <a href="https://www.npmjs.com/package/typeswiss"><img src="https://img.shields.io/npm/dm/typeswiss" alt="downloads" /></a>
 [![typeswiss's badge](https://deno.bundlejs.com/?q=typeswiss&config={%22analysis%22:undefined}&badge=)](https://bundlejs.com/?q=typeswiss)
 <img src="https://img.shields.io/npm/l/typeswiss" />
-<a href="https://tsplay.dev/w22Azw"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
+<a href="https://tsplay.dev/NB8v4W"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
 
 A modern swiss army knife library for utility functions, all written in TypeScript and type-safe.
 
