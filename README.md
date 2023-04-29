@@ -1,15 +1,19 @@
 # TypeSwiss
 
-<a href="https://www.npmjs.com/package/typeswiss"><img src="https://img.shields.io/npm/v/typeswiss?color=blue" alt="npm link" />
+<a href="https://www.npmjs.com/package/typeswiss"><img src="https://img.shields.io/npm/v/typeswiss?color=blue" alt="npm link" target="_blank" />
 </a>
-<a href="https://www.npmjs.com/package/typeswiss"><img src="https://img.shields.io/npm/dm/typeswiss" alt="downloads" /></a>
+<a href="https://www.npmjs.com/package/typeswiss" target="_blank"><img src="https://img.shields.io/npm/dm/typeswiss" alt="downloads" /></a>
 [![typeswiss's badge](https://deno.bundlejs.com/?q=typeswiss&config={%22analysis%22:undefined}&badge=)](https://bundlejs.com/?q=typeswiss)
 <img src="https://img.shields.io/npm/l/typeswiss" />
-<a href="https://tsplay.dev/NB8v4W"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
+<a href="https://tsplay.dev/NB8v4W" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
 
 A modern swiss army knife library for utility functions, all written in TypeScript and type-safe.
 
 Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-shaking, and leveraging the platform whenever possible.
+
+<a href="https://tsplay.dev/WG8x9w" target="_blank">
+<img src="https://media.cleanshot.cloud/media/50300/qyUgKKcJGkmQiJXvSd96ubqTBJbh2eOtPappe1nB.jpeg?Expires=1682813477&Signature=NWwMfbN7M9sOl5QR8ymCQ9kwS~tLYzWuxYCGPc93TKGMvQpseAPfRtc7KdRww08PA1Epl33-yvsUQgrzodMAVGKWVGEhQ-PkC0IVA9crte5OTvgNRvOK~MfXAabi1B2oJx90ugYn4Dc9N-Xybz1L3pBhBLQfimKT4-voNvQZu4uDlVpYJaXbKytiSrE2nvSimewB5k7a11IiHDKt74Z3BIrhhsEqXH3FKhU96V1rhSzraM4boUMaQJn2CWDyYRfan4l71wRZiBzu5w3VvSkkSNMpr1Y6WEmjQe2-mblkvf21KzKEDHfW7T4WoS0DFK1-rLXgJyHjMLHDwOCo16LgIA__&Key-Pair-Id=K269JMAT9ZF4GZ" />
+</a>
 
 ### Features
 
