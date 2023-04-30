@@ -12,7 +12,7 @@ A modern swiss army knife library for utility functions, all written in TypeScri
 Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-shaking, and leveraging the platform whenever possible.
 
 <a href="https://tsplay.dev/WG8x9w" target="_blank">
-<img src="https://media.cleanshot.cloud/media/50300/qyUgKKcJGkmQiJXvSd96ubqTBJbh2eOtPappe1nB.jpeg?Expires=1682813477&Signature=NWwMfbN7M9sOl5QR8ymCQ9kwS~tLYzWuxYCGPc93TKGMvQpseAPfRtc7KdRww08PA1Epl33-yvsUQgrzodMAVGKWVGEhQ-PkC0IVA9crte5OTvgNRvOK~MfXAabi1B2oJx90ugYn4Dc9N-Xybz1L3pBhBLQfimKT4-voNvQZu4uDlVpYJaXbKytiSrE2nvSimewB5k7a11IiHDKt74Z3BIrhhsEqXH3FKhU96V1rhSzraM4boUMaQJn2CWDyYRfan4l71wRZiBzu5w3VvSkkSNMpr1Y6WEmjQe2-mblkvf21KzKEDHfW7T4WoS0DFK1-rLXgJyHjMLHDwOCo16LgIA__&Key-Pair-Id=K269JMAT9ZF4GZ" />
+<img src="https://raw.githubusercontent.com/bengry/typeswiss/main/docs/assets/readme-example.png" />
 </a>
 
 ### Features
