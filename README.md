@@ -3,7 +3,7 @@
 <a href="https://www.npmjs.com/package/typeswiss"><img src="https://img.shields.io/npm/v/typeswiss?color=blue" alt="npm link" target="_blank" />
 </a>
 <a href="https://www.npmjs.com/package/typeswiss" target="_blank"><img src="https://img.shields.io/npm/dm/typeswiss" alt="downloads" /></a>
-[![typeswiss's badge](https://deno.bundlejs.com/?q=typeswiss&config={%22analysis%22:undefined}&badge=)](https://bundlejs.com/?q=typeswiss)
+<a href="https://bundlejs.com/?q=typeswiss" target="_blank"><img src="https://deno.bundlejs.com/?q=typeswiss&config={%22analysis%22:undefined}&badge=" /></a>
 <img src="https://img.shields.io/npm/l/typeswiss" />
 <a href="https://tsplay.dev/NB8v4W" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
 
