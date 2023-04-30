@@ -26,6 +26,12 @@ it('should handle arrays with null or undefined values', () => {
   expect(compact([1, null, 2, undefined, 3])).toEqual([1, 2, 3]);
 });
 
+it('should handle input being `null` or `undefined`', () => {
+  expect(compact(null)).toEqual([]);
+  // eslint-disable-next-line unicorn/no-useless-undefined
+  expect(compact(undefined)).toEqual([]);
+});
+
 const allFalsyValues = [
   false,
   null,
