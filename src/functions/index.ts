@@ -2,6 +2,7 @@ export * from './castArray';
 export * from './compact';
 export * from './constantCase';
 export * from './createKnownTypeGuard';
+export * from './ensurePrefix';
 export * from './ensureSuffix';
 export * from './get';
 export * from './groupBy';
