@@ -28,5 +28,6 @@ export * from './range';
 export * from './sumBy';
 export * from './take';
 export * from './toObject';
+export * from './unique';
 export * from './without';
 export * from './zip';
