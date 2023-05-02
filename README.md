@@ -19,6 +19,7 @@ Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-s
 
 - 📦 Modern and tree-shakeable
 - 🔥 Written in TypeScript
+- 🚫 No runtime dependencies
 - 🔍 Provides type-safe utility functions
 - 🤖 Designed to work seamlessly with TypeScript
 - 🌱 Growing collection of utility functions
