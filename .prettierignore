@@ -8,5 +8,6 @@ yarn.lock
 .gitignore
 .editorconfig
 .nvmrc
+.yarn/
 
 docs/assets
