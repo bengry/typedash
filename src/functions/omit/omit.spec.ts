@@ -16,9 +16,14 @@ it('should omit specified properties from an object', () => {
 it('should return an empty object if input object is null or undefined', () => {
   const result1 = omit(null, [] as never[]);
   const result2 = omit(undefined, [] as never[]);
+  const result3 = omit(null, (value, key) => key === 'a' || value === 2);
+  const result4 = omit(undefined, (value, key) => key === 'a' || value === 2);
   const expected = {};
+
   expect(result1).toEqual(expected);
   expect(result2).toEqual(expected);
+  expect(result3).toEqual(expected);
+  expect(result4).toEqual(expected);
 });
 
 it('should handle union types for property keys', () => {
@@ -45,4 +50,19 @@ it('should handle unknown properties', () => {
   );
   const expected = { a: 1, b: '2', c: true };
   expect(result).toEqual(expected);
+});
+
+it('omits properties based on a predicate function', () => {
+  const object = { a: 1, b: 2, c: 3 };
+  const result1 = omit(object, (value, key) => key === 'a' || value === 2);
+  expect(result1).toEqual({ c: 3 });
+
+  const result2 = omit(
+    object,
+    (value, key, object_) => key === 'a' && object_.b === 2
+  );
+  expect(result2).toEqual({ b: 2, c: 3 });
+
+  const result3 = omit(object, () => true);
+  expect(result3).toEqual({});
 });
