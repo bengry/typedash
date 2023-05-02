@@ -23,7 +23,7 @@ export * from './omit';
 export * from './pick';
 export * from './pipe';
 export * from './range';
-export * from './sumBy';
+export * from './sum';
 export * from './take';
 export * from './toObject';
 export * from './unique';
