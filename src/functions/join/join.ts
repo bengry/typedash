@@ -8,6 +8,8 @@ export function join<T extends NonFunction<any>, U extends NonFunction<any>>(
   elements: ReadonlyArray<NonNullable<T>>,
   separator: U | ((index: number) => U)
 ) {
+  const emptySeparator = Symbol('emptySeparator');
+
   const separatorFunction =
     typeof separator === 'function'
       ? (separator as (index: number) => NonNullable<U>)
@@ -20,5 +22,3 @@ export function join<T extends NonFunction<any>, U extends NonFunction<any>>(
     ])
     .filter((item) => item !== emptySeparator);
 }
-
-const emptySeparator = Symbol('emptySeparator');
