@@ -13,6 +13,5 @@ it('returns true for non-null and non-undefined values', () => {
 
 it('returns false for null and undefined values', () => {
   expect(isNonNullable(null)).toBe(false);
-  // eslint-disable-next-line unicorn/no-useless-undefined
   expect(isNonNullable(undefined)).toBe(false);
 });

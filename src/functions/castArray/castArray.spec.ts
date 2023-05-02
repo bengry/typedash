@@ -7,7 +7,6 @@ it('should cast null to an empty array', () => {
 });
 
 it('should cast undefined to an empty array', () => {
-  // eslint-disable-next-line unicorn/no-useless-undefined
   expect(castArray(undefined)).toEqual([]);
 });
 
@@ -34,7 +33,7 @@ it('should cast a non-null value to a single-element array', () => {
 it('should handle empty input', () => {
   expect(castArray([])).toEqual([]);
   expect(castArray(null)).toEqual([]);
-  // eslint-disable-next-line unicorn/no-useless-undefined
+
   expect(castArray(undefined)).toEqual([]);
 });
 

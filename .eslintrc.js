@@ -1,4 +1,9 @@
+/* eslint-disable @typescript-eslint/no-var-requires -- we're using commonjs here */
 /* eslint-disable unicorn/prefer-module -- not supported in eslint yet */
+
+const {
+  rules: airbnbStyleRules,
+} = require('eslint-config-airbnb-base/rules/style');
 
 /**
  * @type { import("eslint").Linter.Config}
@@ -34,6 +39,7 @@ module.exports = {
       files: ['**/*.spec.{ts,js}'],
       rules: {
         'unicorn/consistent-function-scoping': 'off',
+        'unicorn/no-useless-undefined': 'off', // usually we want to test `undefined` cases
       },
     },
   ],
@@ -88,5 +94,8 @@ module.exports = {
     'unicorn/no-null': 'off',
     'unicorn/no-array-reduce': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
+    'no-restricted-syntax': airbnbStyleRules['no-restricted-syntax'].filter(
+      (item) => typeof item === 'string' || item.selector !== 'ForOfStatement'
+    ),
   },
 };

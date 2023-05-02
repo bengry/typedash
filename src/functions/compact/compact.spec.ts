@@ -28,7 +28,6 @@ it('should handle arrays with null or undefined values', () => {
 
 it('should handle input being `null` or `undefined`', () => {
   expect(compact(null)).toEqual([]);
-  // eslint-disable-next-line unicorn/no-useless-undefined
   expect(compact(undefined)).toEqual([]);
 });
 

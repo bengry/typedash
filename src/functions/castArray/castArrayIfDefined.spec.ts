@@ -22,12 +22,8 @@ it('should cast a non-null value to a single-element array', () => {
   expect(castArrayIfDefined(true)).toEqual([true]);
 });
 
-it('should return null for null input', () => {
+it('should return null for empty input', () => {
   expect(castArrayIfDefined(null)).toBeNull();
-});
-
-it('should return undefined for undefined input', () => {
-  // eslint-disable-next-line unicorn/no-useless-undefined
   expect(castArrayIfDefined(undefined)).toBeUndefined();
 });
 

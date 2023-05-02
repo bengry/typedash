@@ -58,7 +58,6 @@ it('should return false for non-empty Set', () => {
 
 it('should return true for null or undefined', () => {
   expect(isEmpty(null)).toBe(true);
-  // eslint-disable-next-line unicorn/no-useless-undefined
   expect(isEmpty(undefined)).toBe(true);
 });
 
