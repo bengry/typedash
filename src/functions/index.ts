@@ -7,6 +7,7 @@ export * from './ensureSuffix';
 export * from './get';
 export * from './groupBy';
 export * from './hasKey';
+export * from './identity';
 export * from './intersection';
 export * from './invert';
 export * from './isArray';

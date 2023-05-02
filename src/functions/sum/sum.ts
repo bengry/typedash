@@ -29,7 +29,3 @@ type ArrayIterator<T> = (
   index: number,
   array: readonly T[]
 ) => number;
-
-export function identity<T>(value: T): T {
-  return value;
-}
