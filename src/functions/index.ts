@@ -21,6 +21,7 @@ export * from './objectEntries';
 export * from './objectFromEntries';
 export * from './objectKeys';
 export * from './omit';
+export * from './partition';
 export * from './pick';
 export * from './pipe';
 export * from './range';
