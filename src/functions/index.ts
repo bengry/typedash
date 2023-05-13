@@ -33,5 +33,6 @@ export * from './sum';
 export * from './take';
 export * from './toObject';
 export * from './unique';
+export * from './uniqueId';
 export * from './without';
 export * from './zip';
