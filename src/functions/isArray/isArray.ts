@@ -8,4 +8,5 @@ export const isArray: IsArray = Array.isArray;
 
 interface IsArray {
   <T>(value: Many<T>): value is readonly T[];
+  <T>(value: unknown): value is readonly T[];
 }
