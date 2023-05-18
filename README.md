@@ -18,16 +18,10 @@ Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-s
 ### Features
 
 - 📦 Modern and tree-shakeable
-- 🔥 Written in TypeScript
+- 🔥 Written in and designed to work with TypeScript (plain JavaScript also supported)
 - 🚫 No runtime dependencies
 - 🔍 Provides type-safe utility functions
-- 🤖 Designed to work seamlessly with TypeScript
-- 🌱 Growing collection of utility functions
-- 🛠️ Includes functions for common programming tasks
-- 🧰 Helps simplify your code
-- 🤝 Includes TypeScript type definitions
-- 🐞 Bug reports and feature requests welcome
-- 📝 MIT licensed
+- 🌱 Growing collection of 40+ utility functions
 
 ## Installation
 
@@ -44,7 +38,8 @@ yarn add typeswiss
 TypeSwiss provides a set of utility functions that can be imported and used in your TypeScript projects. Here’s an example of how to import and use the `pick` function:
 
 ```ts
-import { pick } from 'typeswiss';
+import { objectKeys } from 'typeswiss';
+import { pick } from 'typeswiss/pick'; // either syntax works
 
 interface ExampleObj {
   a: number;
@@ -56,7 +51,10 @@ const obj: ExampleObj = {
   b: 2,
   c: 3,
 };
-const result = pick(obj, ['a', 'b']); // { a: 1, b: 2 }
+const result = objectKeys(obj); // ["a", "b", "c"]
+//     ^? ("a" | "b" | "c")[]
+
+const result2 = pick(obj, ['a', 'b']); // { a: 1, b: 2 }
 //     ^? Pick<ExampleObj, "a" | "b">
 ```
 
@@ -72,9 +70,11 @@ Watch and rebuild code with `tsup`:
 yarn dev
 ```
 
-Run tests with `vitest` when changes are detected.
+Run tests with `vitest`:
 
 ```console
+yarn test
+# or watch for changes
 yarn test:watch
 ```
 
@@ -106,20 +106,6 @@ yarn yalc add my-react-package
 
 Learn more about `yalc` [here](https://github.com/wclr/yalc).
 
-### Testing
-
-To run all tests once without watching for changes.
-
-```console
-yarn test
-```
-
-To watch for changes and run tests.
-
-```
-yarn test:watch
-```
-
 ### Committing
 
 When you are ready to commit simply run the following command to get a well formatted commit message. All staged files will automatically be linted and fixed as well.
@@ -130,20 +116,8 @@ yarn commit
 
 ### Releasing, tagging & publishing to NPM
 
-Create a semantic version tag and publish to Github Releases. When a new release is detected a Github Action will automatically build the package and publish it to NPM. Additionally, a Storybook will be published to Github pages.
-
-Learn more about how to use the `release-it` command [here](https://github.com/release-it/release-it).
+Create a semantic version tag and publish to Github Releases. When a new release is detected a Github Action will automatically build the package and publish it to NPM.
 
 ```console
 yarn release
 ```
-
-When you are ready to publish to NPM simply run the following command:
-
-```console
-yarn publish
-```
-
-#### Auto publish after Github Release
-
-❗Important note: in order to publish package to NPM you must add your token as a Github Action secret. Learn more on how to configure your repository and publish packages through Github Actions [here](https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages).
