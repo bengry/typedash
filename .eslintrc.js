@@ -68,6 +68,7 @@ module.exports = {
       {
         allowList: {
           args: true,
+          func: true,
         },
       },
     ],
@@ -98,5 +99,6 @@ module.exports = {
       (item) => typeof item === 'string' || item.selector !== 'ForOfStatement'
     ),
     'unicorn/prefer-string-replace-all': 'off', // we prefer to allow older browsers/Node.js versions for now
+    radix: 'off',
   },
 };

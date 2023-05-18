@@ -21,6 +21,7 @@ export * from './mapValues';
 export * from './max';
 export * from './memoize';
 export * from './min';
+export * from './negate';
 export * from './noop';
 export * from './objectEntries';
 export * from './objectFromEntries';
