@@ -29,7 +29,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "rimraf dist && tsup --onSuccess \"yarn yalc publish\"",
+    "build": "tsup",
     "commit": "cz",
     "dev": "concurrently \"yarn build --watch\" \"yarn test:watch\"",
     "lint": "concurrently \"yarn lint:eslint\" \"yarn lint:format\" \"yarn lint:type-check\"",
