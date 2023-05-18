@@ -1,3 +1,4 @@
+export * from './assert';
 export * from './capitalize';
 export * from './castArray';
 export * from './compact';
