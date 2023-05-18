@@ -55,20 +55,20 @@
     }
   },
   "dependencies": {
-    "type-fest": "^3.9.0"
+    "type-fest": "^3.10.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.6.1",
-    "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/cli": "^17.6.3",
+    "@commitlint/config-conventional": "^17.6.3",
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
     "@types/eslint": "^8.37.0",
-    "@types/node": "^18.16.3",
-    "@typescript-eslint/eslint-plugin": "^5.59.1",
-    "@typescript-eslint/parser": "^5.59.1",
-    "@vitest/coverage-c8": "^0.30.1",
+    "@types/node": "^18.16.13",
+    "@typescript-eslint/eslint-plugin": "^5.59.6",
+    "@typescript-eslint/parser": "^5.59.6",
+    "@vitest/coverage-c8": "^0.31.1",
     "concurrently": "^8.0.1",
-    "eslint": "^8.39.0",
+    "eslint": "^8.40.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.8.0",
@@ -78,20 +78,20 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-unicorn": "^46.0.0",
+    "eslint-plugin-unicorn": "^47.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
     "prettier-plugin-packagejson": "2.4.3",
-    "release-it": "^15.10.1",
-    "rimraf": "^5.0.0",
+    "release-it": "^15.10.3",
+    "rimraf": "^5.0.1",
     "tsup": "^6.7.0",
-    "type-fest": "^3.9.0",
+    "type-fest": "^3.10.0",
     "typescript": "^5.0.4",
-    "vitest": "^0.30.1",
+    "vitest": "^0.31.1",
     "yalc": "^1.0.0-pre.53"
   },
-  "packageManager": "yarn@3.5.0",
+  "packageManager": "yarn@3.5.1",
   "engines": {
     "node": ">=14.0.0"
   }

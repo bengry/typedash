@@ -97,5 +97,6 @@ module.exports = {
     'no-restricted-syntax': airbnbStyleRules['no-restricted-syntax'].filter(
       (item) => typeof item === 'string' || item.selector !== 'ForOfStatement'
     ),
+    'unicorn/prefer-string-replace-all': 'off', // we prefer to allow older browsers/Node.js versions for now
   },
 };
