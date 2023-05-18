@@ -3,7 +3,9 @@
   "compilerOptions": {
     "incremental": false,
     "noEmit": false,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "types": [],
+    "typeRoots": []
   },
   "include": ["./src"],
   "exclude": ["**/*.spec.ts"]

@@ -1,6 +1,7 @@
 export * from './assert';
 export * from './capitalize';
 export * from './castArray';
+export * from './chunk';
 export * from './compact';
 export * from './constantCase';
 export * from './createKnownTypeGuard';
