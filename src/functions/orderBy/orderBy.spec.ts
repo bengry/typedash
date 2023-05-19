@@ -64,13 +64,19 @@ it('should sort an array of objects by a keyof-based iteratee', () => {
     { name: 'Jane', age: 30 },
     { name: 'Bob', age: 20 },
   ];
-  const expected = [
+  const result = orderBy(input, ['name']);
+  expect(result).toEqual([
     { name: 'Bob', age: 20 },
     { name: 'Jane', age: 30 },
     { name: 'John', age: 25 },
-  ];
-  const result = orderBy(input, ['name']);
-  expect(result).toEqual(expected);
+  ]);
+
+  const result2 = orderBy(input, 'age');
+  expect(result2).toEqual([
+    { name: 'Bob', age: 20 },
+    { name: 'John', age: 25 },
+    { name: 'Jane', age: 30 },
+  ]);
 });
 
 it('should sort an array of objects by a mix of function-typed and keyof-based iteratees', () => {

@@ -1,14 +1,29 @@
+import { Primitive } from 'type-fest';
+
 import { KeysOfUnion, Many, Maybe } from '../../types';
 import { castArray } from '../castArray';
 
-export function orderBy<TValue, S>(
+/**
+ * Sorts an array of objects by one or more properties, in ascending or descending order.
+ *
+ * @param array The array of objects to sort.
+ * @param iterators The property or properties to sort by. Can be a key of `TValue` or a function that returns a comparable value.
+ * @param orders The order or orders to sort by. Can be "asc" or "desc". Defaults to "asc".
+ * @returns A new array of objects sorted by the specified properties and orders.
+ */
+export function orderBy<TValue>(
   array: Maybe<readonly TValue[]>,
-  iteratees: Iteratee<TValue, S>[], // TODO: fix type to accept Many<>
+  iterators: Many<OrderByIterator<TValue>>,
+  orders?: Many<Order>
+): TValue[];
+export function orderBy<TValue>(
+  array: Maybe<readonly TValue[]>,
+  iterators: Many<OrderByIterator<TValue>>,
   orders?: Many<Order>
 ): TValue[] {
   if (array == null) return [];
 
-  const normalizedIteratees = castArray(iteratees).map((iteratee) =>
+  const normalizedIteratees = castArray(iterators).map((iteratee) =>
     typeof iteratee === 'function'
       ? iteratee
       : (value: TValue) => value[iteratee]
@@ -24,8 +39,10 @@ export function orderBy<TValue, S>(
       const aValue = iteratee(a);
       const bValue = iteratee(b);
 
-      if (aValue < bValue) return -1 * order;
-      if (aValue > bValue) return 1 * order;
+      /* eslint-disable @typescript-eslint/no-non-null-assertion -- JS can compare null and undefined using `<` and */
+      if (aValue! < bValue!) return -1 * order;
+      if (aValue! > bValue!) return 1 * order;
+      /* eslint-enable @typescript-eslint/no-non-null-assertion */
     }
 
     return 0;
@@ -34,6 +51,13 @@ export function orderBy<TValue, S>(
 
 type Order = 'asc' | 'desc';
 
-type Iteratee<TValue, TCompareBy> =
-  | ((value: TValue) => TCompareBy)
+type OrderByIterator<TValue> =
+  | ((value: TValue) => ComparableValue)
   | KeysOfUnion<TValue>;
+
+type ComparableValue =
+  | Exclude<Primitive, symbol>
+  | { [Symbol.toPrimitive](): Primitive }
+  | { valueOf(): Primitive }
+  | { toString(): string }
+  | { [Symbol.toStringTag]: string };
