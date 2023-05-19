@@ -8,6 +8,7 @@
     "strict": true,
     "noEmit": true,
     "incremental": true,
+    "noUncheckedIndexedAccess": true,
     "types": ["vitest/importMeta"],
     "rootDirs": ["./src"]
   },
