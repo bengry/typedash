@@ -1,6 +1,6 @@
 {
   "name": "typedash",
-  "version": "3.0.0",
+  "version": "0.2.5",
   "description": "placeholder for things to come",
   "keywords": [
     "typescript",
@@ -46,7 +46,7 @@
     "lint:format": "prettier --check .",
     "lint:type-check": "tsc --noEmit",
     "prepare": "husky install",
-    "release": "yarn build && node ./node_modules/.bin/release-it",
+    "release": "yarn build && yarn release-it",
     "test": "vitest run --passWithNoTests",
     "test:ci": "yarn test",
     "test:coverage": "yarn test --coverage",
