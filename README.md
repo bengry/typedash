@@ -5,7 +5,7 @@
 <a href="https://www.npmjs.com/package/typedash" target="_blank"><img src="https://img.shields.io/npm/dm/typedash" alt="downloads" /></a>
 <a href="https://bundlejs.com/?q=typedash" target="_blank"><img src="https://deno.bundlejs.com/?q=typedash&config={%22analysis%22:undefined}&badge=" /></a>
 <img src="https://img.shields.io/npm/l/typedash" />
-<a href="https://tsplay.dev/NB8v4W" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
+<a href="https://tsplay.dev/Woxbjw" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
 
 A modern collection of utility functions for all occasions, all written in TypeScript and type-safe.
 
