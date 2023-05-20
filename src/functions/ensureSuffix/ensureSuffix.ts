@@ -1,6 +1,11 @@
 /**
  * Ensures that the string ends with the given suffix.
  *
+ * @param string The string to ensure the suffix of.
+ * @param suffix The suffix to ensure.
+ *
+ * @returns The string with the given suffix.
+ *
  * @example
  * ```ts
  * ensureSuffix('foo', 'bar'); // 'foobar'

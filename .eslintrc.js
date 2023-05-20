@@ -69,6 +69,7 @@ module.exports = {
         allowList: {
           args: true,
           func: true,
+          Func: true,
         },
       },
     ],

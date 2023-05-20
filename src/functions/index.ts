@@ -1,6 +1,7 @@
 export * from './assert';
 export * from './capitalize';
 export * from './castArray';
+export * from './castArrayIfDefined';
 export * from './chunk';
 export * from './compact';
 export * from './constantCase';

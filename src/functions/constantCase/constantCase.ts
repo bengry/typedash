@@ -1,6 +1,16 @@
 /**
  * Changes the casing of a string to constant case.
- * e.g. `"fooBar"` -> `"FOO_BAR"` or `"foo bar"` -> `"FOO_BAR"` or `"foo-bar"` -> `"FOO_BAR"`
+ * @param string The input string to change the casing of.
+ *
+ * @returns A new string with the casing changed to constant case.
+ *
+ * @example
+ * ```ts
+ * constantCase('fooBar') // 'FOO_BAR'
+ * constantCase('foo bar') // 'FOO_BAR'
+ * constantCase('foo-bar') // 'FOO_BAR'
+ * constantCase('fooBar42') // 'FOO_BAR42'
+ * ```
  */
 export function constantCase<S extends string>(string: S): ConstantCase<S> {
   if (!/[a-z]+/i.test(string)) {

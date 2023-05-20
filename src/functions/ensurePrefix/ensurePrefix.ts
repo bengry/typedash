@@ -1,6 +1,11 @@
 /**
  * Ensures that the string starts with the given prefix.
  *
+ * @param string The string to ensure the prefix of.
+ * @param prefix The prefix to ensure.
+ *
+ * @returns The string with the given prefix.
+ *
  * @example
  * ```ts
  * ensurePrefix('foo', 'bar'); // 'barfoo'

@@ -7,6 +7,10 @@ import { Maybe } from '../../types';
  * @param size The maximum size of each chunk.
  *
  * @returns An array of arrays where each sub-array has at most `size` elements.
+ * @example
+ * ```ts
+ * chunk([1, 2, 3, 4, 5], 2) // [[1, 2], [3, 4], [5]]
+ * ```
  */
 export function chunk<T>(array: Maybe<readonly T[]>, size: number): T[][] {
   if (array == null) {
