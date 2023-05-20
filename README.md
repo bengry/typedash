@@ -7,13 +7,9 @@
 <img src="https://img.shields.io/npm/l/typedash" />
 <a href="https://tsplay.dev/NB8v4W" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
 
-A modern swiss army knife library for utility functions, all written in TypeScript and type-safe.
+A modern collection of utility functions for all occasions, all written in TypeScript and type-safe.
 
-Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-shaking, and leveraging the platform whenever possible.
-
-<a href="https://tsplay.dev/WG8x9w" target="_blank">
-<img src="https://raw.githubusercontent.com/bengry/typedash/main/docs/assets/readme-example.png" />
-</a>
+Similar to [lodash](https://lodash.com/) but with a focus on simplicity and type-safety (no excessive checks are made, [trust the compiler](https://slack.engineering/typescript-at-slack/)), tree-shaking, and leveraging the platform whenever possible.
 
 ### Features
 
@@ -24,11 +20,9 @@ Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-s
 
 ## Installation
 
-You can install typedash using `npm` or `yarn`:
-
 ```console
 npm install typedash
-# or
+# or using yarn
 yarn add typedash
 ```
 
@@ -40,21 +34,17 @@ typedash provides a set of utility functions that can be imported and used in yo
 import { objectKeys } from 'typedash';
 import { pick } from 'typedash/pick'; // either syntax works
 
-interface ExampleObj {
-  a: number;
-  b: number;
-  c: number;
-}
-const obj: ExampleObj = {
+const obj = {
   a: 1,
   b: 2,
   c: 3,
 };
+
 const result = objectKeys(obj); // ["a", "b", "c"]
 //     ^? ("a" | "b" | "c")[]
 
 const result2 = pick(obj, ['a', 'b']); // { a: 1, b: 2 }
-//     ^? Pick<ExampleObj, "a" | "b">
+//     ^? { a: number, b: number }
 ```
 
 ## License
