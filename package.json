@@ -1,7 +1,7 @@
 {
   "name": "typedash",
   "version": "3.0.0",
-  "description": "placeholder for things to come",
+  "description": "modern, type-safe collection of utility functions",
   "keywords": [
     "typescript",
     "lodash",
