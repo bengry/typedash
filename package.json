@@ -1,11 +1,19 @@
 {
-  "name": "typeswiss",
-  "version": "0.2.5",
+  "name": "typedash",
+  "version": "3.0.0",
   "description": "placeholder for things to come",
-  "keywords": [],
+  "keywords": [
+    "typescript",
+    "lodash",
+    "utility",
+    "utilities",
+    "type-safe",
+    "util",
+    "stdlib"
+  ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bengry/typeswiss"
+    "url": "https://github.com/bengry/typedash"
   },
   "license": "MIT",
   "author": "Ben Grynhaus <me@bengr.dev>",
@@ -88,8 +96,7 @@
     "tsup": "^6.7.0",
     "type-fest": "^3.10.0",
     "typescript": "^5.0.4",
-    "vitest": "^0.31.1",
-    "yalc": "^1.0.0-pre.53"
+    "vitest": "^0.31.1"
   },
   "packageManager": "yarn@3.5.1",
   "engines": {
