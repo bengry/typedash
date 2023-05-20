@@ -20,8 +20,7 @@ Similar to [lodash](https://lodash.com/) but with a focus on type-safety, tree-s
 - 📦 Modern and tree-shakeable
 - 🔥 Written in and designed to work with TypeScript (plain JavaScript also supported)
 - 🚫 No runtime dependencies
-- 🔍 Provides type-safe utility functions
-- 🌱 Growing collection of 40+ utility functions
+- 🌱 Growing collection of 40+ type-safe utility functions
 
 ## Installation
 
@@ -58,66 +57,6 @@ const result2 = pick(obj, ['a', 'b']); // { a: 1, b: 2 }
 //     ^? Pick<ExampleObj, "a" | "b">
 ```
 
-## Contributing
-
-If you find a bug or have a feature request, please open an issue on the GitHub repository. Pull requests are also welcome!
-
-### Developing
-
-Watch and rebuild code with `tsup`:
-
-```console
-yarn dev
-```
-
-Run tests with `vitest`:
-
-```console
-yarn test
-# or watch for changes
-yarn test:watch
-```
-
 ## License
 
 TypeSwiss is MIT licensed.
-
-### Building
-
-Build package with `tsup` for production.
-
-```console
-yarn build
-```
-
-### Linking
-
-Often times you want to `link` the package you're developing to another project locally to test it out to circumvent the need to publish it to NPM.
-
-For this we use [yalc](https://github.com/wclr/yalc) which is a tool for local package development and simulating the publishing and installation of packages.
-
-In a project where you want to consume your package simply run:
-
-```console
-npx yalc link my-react-package
-# or
-yarn yalc add my-react-package
-```
-
-Learn more about `yalc` [here](https://github.com/wclr/yalc).
-
-### Committing
-
-When you are ready to commit simply run the following command to get a well formatted commit message. All staged files will automatically be linted and fixed as well.
-
-```console
-yarn commit
-```
-
-### Releasing, tagging & publishing to NPM
-
-Create a semantic version tag and publish to Github Releases. When a new release is detected a Github Action will automatically build the package and publish it to NPM.
-
-```console
-yarn release
-```
