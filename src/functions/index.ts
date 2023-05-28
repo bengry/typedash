@@ -34,6 +34,7 @@ export * from './partition';
 export * from './pick';
 export * from './pipe';
 export * from './range';
+export * from './set';
 export * from './sum';
 export * from './take';
 export * from './toObject';
