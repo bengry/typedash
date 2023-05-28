@@ -1,6 +1,6 @@
 import type { Get } from 'type-fest';
 
-import { Many } from '../../types';
+import { Many, ObjectPath } from '../../types';
 import { hasKey } from '../hasKey';
 import { isArray } from '../isArray';
 
@@ -9,7 +9,15 @@ import { isArray } from '../isArray';
  *
  * Allows accessing properties in unions of objects and getting undefined if the property is not present.
  */
+export function get<T, Path extends ObjectPath<T>>(
+  object: T,
+  path: Path
+): Get<T, Path>;
 export function get<T, Path extends Many<string>>(
+  object: T,
+  path: Path
+): Get<T, Path>;
+export function get<T, Path extends ObjectPath<T> | Many<string>>(
   object: T,
   path: Path
 ): Get<T, Path> {
