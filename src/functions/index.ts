@@ -1,4 +1,5 @@
 export * from './assert';
+export * from './assertNever';
 export * from './capitalize';
 export * from './castArray';
 export * from './castArrayIfDefined';
@@ -12,6 +13,7 @@ export * from './get';
 export * from './groupBy';
 export * from './hasKey';
 export * from './identity';
+export * from './inRange';
 export * from './intersection';
 export * from './invert';
 export * from './isArray';
