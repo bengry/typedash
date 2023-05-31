@@ -4,6 +4,7 @@ export * from './capitalize';
 export * from './castArray';
 export * from './castArrayIfDefined';
 export * from './chunk';
+export * from './clamp';
 export * from './compact';
 export * from './constantCase';
 export * from './createKnownTypeGuard';

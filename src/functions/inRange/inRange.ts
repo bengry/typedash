@@ -42,7 +42,7 @@ export function inRange(
   const { inclusive = 'start' } = options ?? {};
 
   if (start > end) {
-    throw new Error(`Invalid range: [${start},${end}]`);
+    throw new RangeError(`Invalid range: [${start},${end}]`);
   }
 
   switch (inclusive) {
