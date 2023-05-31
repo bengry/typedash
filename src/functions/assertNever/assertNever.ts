@@ -4,6 +4,7 @@
  *
  * @param inclusive The value to check.
  * @param noThrow If `true`, returns `undefined` instead of throwing an error.
+ * @default false
  * @returns This function never returns a value, but throws an error if `inclusive` is of type `never`.
  *
  * @example
@@ -12,7 +13,7 @@
  * assertNever('foo' as never, true); // returns undefined
  * ```
  */
-export function assertNever(inclusive: never, noThrow?: boolean): never {
+export function assertNever(inclusive: never, noThrow = false): never {
   if (noThrow) {
     return undefined as never;
   }

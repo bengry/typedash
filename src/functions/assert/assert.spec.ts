@@ -9,9 +9,10 @@ it('should not throw an error when called with no arguments', () => {
 });
 
 it('should throw an error when called with a falsy condition', () => {
-  expect(() => assert(false, 'Condition was falsy')).toThrowError(
-    AssertionError
-  );
+  const run = () => assert(false, 'Condition was falsy');
+
+  expect(run).toThrowError(AssertionError);
+  expect(run).toThrowError(/Assertion not satisfied: "Condition was falsy"/);
 });
 
 it('should not throw an error when called with a truthy condition', () => {
