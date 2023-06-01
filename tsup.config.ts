@@ -10,6 +10,7 @@ export default defineConfig(async () => {
       .filter((dirent) => dirent.isDirectory())
       .map((dirent) => dirent.name)
   );
+
   return {
     entry: {
       index: './src/index.ts',
@@ -22,7 +23,6 @@ export default defineConfig(async () => {
     },
     treeshake: true,
     sourcemap: true,
-    splitting: false,
     platform: 'neutral',
     clean: true,
     dts: true,
