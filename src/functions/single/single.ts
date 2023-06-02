@@ -1,5 +1,5 @@
 import { Maybe } from '../../types';
-import { filter } from '../_internal';
+import { filter } from '../_internal/filterIterable';
 
 /**
  * Returns the single element of an iterable, or `undefined` if there are zero or multiple matches.
