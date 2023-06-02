@@ -51,6 +51,7 @@
     "test": "vitest run --passWithNoTests",
     "test:ci": "yarn test",
     "test:coverage": "yarn test --coverage",
+    "test:ui": "yarn test:watch --ui",
     "test:watch": "vitest"
   },
   "husky": {
@@ -76,6 +77,7 @@
     "@typescript-eslint/eslint-plugin": "^5.59.8",
     "@typescript-eslint/parser": "^5.59.8",
     "@vitest/coverage-c8": "^0.31.3",
+    "@vitest/ui": "^0.31.4",
     "concurrently": "^8.0.1",
     "eslint": "^8.41.0",
     "eslint-config-airbnb": "^19.0.4",
