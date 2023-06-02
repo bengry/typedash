@@ -7,6 +7,7 @@ export * from './chunk';
 export * from './clamp';
 export * from './compact';
 export * from './constantCase';
+export * from './count';
 export * from './createKnownTypeGuard';
 export * from './ensurePrefix';
 export * from './ensureSuffix';
