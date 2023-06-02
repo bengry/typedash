@@ -15,11 +15,6 @@ export function orderBy<TValue>(
   array: Maybe<readonly TValue[]>,
   iterators: Many<OrderByIterator<TValue>>,
   orders?: Many<Order>
-): TValue[];
-export function orderBy<TValue>(
-  array: Maybe<readonly TValue[]>,
-  iterators: Many<OrderByIterator<TValue>>,
-  orders?: Many<Order>
 ): TValue[] {
   if (array == null) return [];
 
