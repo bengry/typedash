@@ -1,4 +1,4 @@
-import { AnyFunction } from '../../types/internal';
+import { AnyFunction } from '../../types/_internal';
 
 export function memoize<TFunction extends AnyFunction>(
   // eslint-disable-next-line unicorn/prevent-abbreviations -- `function` is a reserved word

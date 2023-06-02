@@ -1,6 +1,6 @@
 import { StringKeyOf } from 'type-fest';
 
-import { AnyFunction } from '../../types/internal';
+import { AnyFunction } from '../../types/_internal';
 
 export const objectKeys: ObjectKeys = Object.keys;
 

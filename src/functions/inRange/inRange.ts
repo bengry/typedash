@@ -1,4 +1,4 @@
-import { assertNever } from '../assertNever/assertNever';
+import { CastToString } from '../../types/_internal';
 
 interface InRangeOptions {
   /**
@@ -45,21 +45,10 @@ export function inRange(
     throw new RangeError(`Invalid range: [${start},${end}]`);
   }
 
-  switch (inclusive) {
-    case true: {
-      return value >= start && value <= end;
-    }
-    case false: {
-      return value > start && value < end;
-    }
-    case 'start': {
-      return value >= start && value < end;
-    }
-    case 'end': {
-      return value > start && value <= end;
-    }
-    default: {
-      assertNever(inclusive);
-    }
-  }
+  return {
+    true: () => value >= start && value <= end,
+    false: () => value > start && value < end,
+    start: () => value >= start && value < end,
+    end: () => value > start && value <= end,
+  }[inclusive as CastToString<typeof inclusive>]();
 }

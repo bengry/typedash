@@ -1,7 +1,7 @@
 import { Get } from 'type-fest';
 
 import { ObjectPath } from '../../types';
-import { RequireKeysDeep } from '../../types/internal';
+import { RequireKeysDeep } from '../../types/_internal';
 import { assert } from '../assert';
 
 /**

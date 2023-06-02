@@ -1,4 +1,4 @@
-import { AnyFunction } from './internal/AnyFunction';
+import { AnyFunction } from './_internal/AnyFunction';
 
 type RecordFunctions<T> = keyof {
   [K in keyof T as NonNullable<T[K]> extends AnyFunction ? K : never]: K;
