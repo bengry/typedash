@@ -1,4 +1,4 @@
-import { assertNever } from '../assertNever';
+import { CastToString } from '../../types/_internal';
 
 interface ClampOptions {
   /**
@@ -35,27 +35,16 @@ export function clamp(
   options?: ClampOptions
 ): number {
   const [min, max] = range;
-  const { inclusive = true } = options ?? {};
-
   if (min > max) {
     throw new RangeError(`Invalid range: [${min},${max}]`);
   }
 
-  switch (inclusive) {
-    case true: {
-      return Math.max(min, Math.min(max, value));
-    }
-    case false: {
-      return Math.max(min + 1, Math.min(max - 1, value));
-    }
-    case 'min': {
-      return Math.max(min, Math.min(max - 1, value));
-    }
-    case 'max': {
-      return Math.max(min + 1, Math.min(max, value));
-    }
-    default: {
-      assertNever(inclusive);
-    }
-  }
+  const { inclusive = true } = options ?? {};
+
+  return {
+    true: () => Math.max(min, Math.min(max, value)),
+    false: () => Math.max(min + 1, Math.min(max - 1, value)),
+    min: () => Math.max(min, Math.min(max - 1, value)),
+    max: () => Math.max(min + 1, Math.min(max, value)),
+  }[inclusive as CastToString<typeof inclusive>]();
 }
