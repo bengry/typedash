@@ -8,6 +8,7 @@ export default defineConfig(async () => {
   }).then((dirents) =>
     dirents
       .filter((dirent) => dirent.isDirectory())
+      .filter((dirent) => !dirent.name.startsWith('_')) // internal functions
       .map((dirent) => dirent.name)
   );
 

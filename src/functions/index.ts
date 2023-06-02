@@ -38,6 +38,7 @@ export * from './pick';
 export * from './pipe';
 export * from './range';
 export * from './set';
+export * from './single';
 export * from './sum';
 export * from './take';
 export * from './toObject';
