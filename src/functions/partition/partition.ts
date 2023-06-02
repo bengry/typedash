@@ -39,7 +39,7 @@ export function partition<T, S extends T>(
 
   for (const item of array) {
     if (predicate(item)) {
-      equals.push(item);
+      equals.push(item as S);
     } else {
       notEquals.push(item as Exclude<T, S>);
     }
