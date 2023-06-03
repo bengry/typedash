@@ -10,20 +10,16 @@ interface InRangeOptions {
 
 /**
  * Checks if a number is within a specified range.
- *
- * @param value - The number to check.
- * @param range - The range to check against, as a tuple of start and end values.
- * @param options - Optional parameters.
- * @param options.inclusive - Whether the range is inclusive of the start and/or end value.
+ * @param value The number to check.
+ * @param range The range to check against, as a tuple of start and end values.
+ * @param options Optional parameters.
+ * @param options.inclusive Whether the range is inclusive of the start and/or end value.
  *  - If `true`, the range is inclusive of both start and end.
  *  - If `false`, the range is exclusive of both start and end.
  *  - If `'start'`, the range is inclusive of the start value but exclusive of the end value.
  *  - If `'end'`, the range is exclusive of the start value but inclusive of the end value.
- *
- * @default 'start'
- *
+ * @default
  * @returns `true` if the number is within the range, `false` otherwise.
- *
  * @example
  * ```typescript
  * inRange(3, [1, 5]); // true

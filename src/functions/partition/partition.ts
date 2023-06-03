@@ -2,10 +2,8 @@ import { Maybe } from '../../types';
 
 /**
  * Partitions an array into two arrays based on a predicate function.
- *
  * @param array The input array to partition.
  * @param predicate A function that takes an array item and returns a boolean indicating whether the item should be included in the "equals" array or the "notEquals" array.
- *
  * @returns A tuple containing two arrays: the "equals" array and the "notEquals" array.
  */
 export function partition<T, S extends T>(
@@ -14,7 +12,6 @@ export function partition<T, S extends T>(
 ): readonly [equals: S[], notEquals: Exclude<T, S>[]];
 /**
  * Partitions an array into two arrays based on a predicate function.
- *
  * @param array The input array to partition.
  * @param predicate A function that takes an array item and returns a boolean indicating whether the item should be included in the "equals" array or the "notEquals" array.
  * @returns A tuple containing two arrays: the "equals" array and the "notEquals" array.
@@ -24,7 +21,10 @@ export function partition<T>(
   predicate: (item: T) => boolean
 ): readonly [equals: T[], notEquals: T[]];
 /**
- * Implementation of the partition function.
+ * Implementation of all overloads.
+ * @param array The input array to partition.
+ * @param predicate A function that takes an array item and returns a boolean indicating whether the item should be included in the "equals" array or the "notEquals" array.
+ * @returns A tuple containing two arrays: the "equals" array and the "notEquals" array.
  */
 export function partition<T, S extends T>(
   array: Maybe<readonly T[]>,

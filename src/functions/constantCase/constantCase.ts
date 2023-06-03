@@ -1,9 +1,7 @@
 /**
  * Changes the casing of a string to constant case.
  * @param string The input string to change the casing of.
- *
  * @returns A new string with the casing changed to constant case.
- *
  * @example
  * ```ts
  * constantCase('fooBar') // 'FOO_BAR'

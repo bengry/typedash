@@ -3,12 +3,9 @@ import { Maybe } from '../../types';
 /**
  * Returns an array containing only the unique elements of the input iterable.
  * @note The order of the elements in the input matters, the first occurrence of an element (per the `comparator`) is the one that will be kept.
- *
  * @param iterable The input iterable to extract unique elements from.
  * @param comparator An optional function that takes two elements and returns a boolean indicating whether they are equal. Defaults to the `Object.is` function.
- *
  * @returns An array containing only the unique elements of the input iterable.
- *
  * @example
  * unique([1, 2, 3, 2, 1, 4, 5, 4, 3]); // [1, 2, 3, 4, 5]
  * unique(['a', 'b', 'c', 'b', 'a']); // ['a', 'b', 'c']

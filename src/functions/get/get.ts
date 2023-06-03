@@ -6,17 +6,53 @@ import { isArray } from '../isArray';
 
 /**
  * Gets the value at path of object.
- *
  * Allows accessing properties in unions of objects and getting undefined if the property is not present.
+ * @param object The object to query.
+ * @param path The path of the property to get.
+ * @returns The value at path of object.
+ * @example
+ * ```ts
+ * get({ a: 1, b: 2, c: 3 }, 'b') // 2
+ * get({
+ *   name: "John Doe",
+ *   address: {
+ *     street: "123 Main St",
+ *     city: "Anytown",
+ *   }
+ * }, 'address.city') // "Anytown"
+ * ```
  */
 export function get<T, Path extends ObjectPath<T>>(
   object: T,
   path: Path
 ): Get<T, Path>;
+/**
+ * Gets the value at path of object.
+ * Allows accessing properties in unions of objects and getting undefined if the property is not present.
+ * @param object The object to query.
+ * @param path The path of the property to get.
+ * @returns The value at path of object.
+ * @example
+ * ```ts
+ * get({
+ *   name: "John Doe",
+ *   address: {
+ *     street: "123 Main St",
+ *     city: "Anytown",
+ *   }
+ * }, ['address', 'city']) // "Anytown"
+ * ```
+ */
 export function get<T, Path extends Many<string>>(
   object: T,
   path: Path
 ): Get<T, Path>;
+/**
+ * Implementation of all overloads.
+ * @param object The object to query.
+ * @param path The path of the property to get.
+ * @returns The value at path of object.
+ */
 export function get<T, Path extends ObjectPath<T> | Many<string>>(
   object: T,
   path: Path

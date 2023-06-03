@@ -10,15 +10,15 @@ interface ClampOptions {
 
 /**
  * Clamps a number to a specified range.
- * @param value - The number to clamp.
- * @param range - The range to clamp to, as a tuple of min and max values.
- * @param options - Optional parameters.
- * @param options.inclusive - Whether the clamping should be inclusive of the min and/or max value.
+ * @param value The number to clamp.
+ * @param range The range to clamp to, as a tuple of min and max values.
+ * @param options Optional parameters.
+ * @param options.inclusive Whether the clamping should be inclusive of the min and/or max value.
  * - If `true`, the clamping is inclusive of both min and max.
  * - If `false`, the clamping is exclusive of both min and max.
  * - If `'min'`, the clamping is inclusive of the min value but exclusive of the max value.
  * - If `'max'`, the clamping is exclusive of the min value but inclusive of the max value.
- * @default true
+ * @default
  * @returns The clamped number.
  * @example
  * ```typescript

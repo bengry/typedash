@@ -3,9 +3,7 @@ import { AnyFunction } from '../../types/_internal';
 /**
  * Returns a new function that negates the result of the input function.
  * @param func The input function to negate.
- *
  * @returns A new function that negates the result of the input function.
- *
  * @example
  * ```ts
  * const isEven = (num: number) => num % 2 === 0;

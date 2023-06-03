@@ -6,14 +6,11 @@ import { assert } from '../assert';
 
 /**
  * Sets a value at the specified (possibly nested) path in an object.
- *
  * @template TObject The type of the object.
  * @template Path The type of the path.
- *
  * @param object The object to set the value in.
  * @param path The path to set the value at.
  * @param value The value to set.
- *
  * @example
  * ```ts
  * const object: {

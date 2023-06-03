@@ -1,10 +1,41 @@
 import { Maybe } from '../../types';
 
+/**
+ * Computes the sum of all values in array. If array is empty or nil, `0` is returned.
+ * @param array The array to iterate over.
+ * @returns The sum of all values in the array, or `0` if the array is empty or nil.
+ * @example
+ * ```ts
+ * sum([1, 2, 3]); // 6
+ * sum([]); // 0
+ * sum(null); // 0
+ * ```
+ */
 export function sum(array: Maybe<readonly number[]>): number;
+/**
+ * Computes the sum of all values in array. If array is empty or nil, `0` is returned.
+ * @param array The array to iterate over.
+ * @param mapper The function used to extract a numeric value from each element.
+ * @returns The sum of all values in the array, or `0` if the array is empty or nil.
+ * @example
+ * ```ts
+ * sum([
+ *   { value: 1 },
+ *   { value: 2 },
+ *   { value: 3 }
+ * ], (element) => element.value); // 6
+ * ```
+ */
 export function sum<T>(
   array: Maybe<readonly T[]>,
   mapper: ArrayIterator<T>
 ): number;
+/**
+ * Implementation for all overloads.
+ * @param array The array to iterate over.
+ * @param mapper The function used to extract a numeric value from each element.
+ * @returns The sum of all values in the array, or `0` if the array is empty or nil.
+ */
 export function sum<T>(
   array: Maybe<readonly T[]>,
   mapper?: ArrayIterator<T>

@@ -7,11 +7,10 @@ import { UnaryFunction } from './types/UnaryFunction';
  * Type-enforcing left-to-right function composition function.
  * The first parameter can be a function of any arity, but the remaining parameters must be unary functions.
  * The return type of one function must be compatible with the argument of next function in the argument list
- *
+ * @param f0 The first function in the composition
  * @note The types here are only inferred for the first 20 functions.
  * If you need more, you have to type the functions explicitly.
  * please open an issue, but this should be enough to cover most use cases.
- *
  * @returns A function with the arguments of the *first* function in the argument list and a return type of the *last* function in the argument list
  */
 export function pipe<TIn extends unknown[], TOut>(
@@ -512,6 +511,12 @@ export function pipe<TIn extends unknown[], TOut>(
   o1: Func<TIn, any>,
   ...operations: UnaryFunction<any, any>[]
 ): Func<TIn, TOut>;
+/**
+ * Implementation of pipe function.
+ * @param o1 first operation
+ * @param operations rest of operations
+ * @returns function that will execute all operations in order
+ */
 export function pipe<TIn extends unknown[], TOut>(
   o1: Func<TIn, any>,
   ...operations: UnaryFunction<any, any>[]

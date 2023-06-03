@@ -25,7 +25,6 @@ type Path<T, K extends keyof T> = K extends string
 
 /**
  * A string type that represents a valid path to a property in an object.
- *
  * @example
  * ```ts
  * type ObjectPathExample = ObjectPath<{

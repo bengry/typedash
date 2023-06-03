@@ -8,10 +8,8 @@ import { negate } from '../negate';
 
 /**
  * Returns a new object with all properties except the specified properties from the input object.
- *
  * @param object The input object to omit properties from.
  * @param properties An array of property names to omit from the input object.
- *
  * @returns A new object with all properties except the specified properties from the input object.
  */
 export function omit<
@@ -22,7 +20,6 @@ export function omit<
  * Returns a new object with all properties except the properties that satisfy the predicate function from the input object.
  * @param object The input object to omit properties from.
  * @param predicate A function that takes a property value and its key and returns a boolean indicating whether to omit the property or not.
- *
  * @returns A new object with all properties except the properties that satisfy the predicate function from the input object.
  */
 export function omit<T extends object>(
@@ -31,6 +28,9 @@ export function omit<T extends object>(
 ): Partial<T>;
 /**
  * Implementation of the omit function.
+ * @param object The input object to omit properties from.
+ * @param propertiesOrPredicate Either an array of property names to omit from the input object, or a function that takes a property value and its key and returns a boolean indicating whether to omit the property or not.
+ * @returns A new object with all properties except the specified properties from the input object.
  */
 export function omit<
   T extends object,

@@ -1,7 +1,6 @@
 /**
  * A no-operation function that returns `undefined` for any input.
  * @param args Any arguments.
- * @returns `undefined`.
  * @example
  * ```ts
  * noop() // undefined

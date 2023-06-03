@@ -2,13 +2,26 @@ import { Maybe } from '../../types';
 
 /**
  * Computes the maximum value of array. If array is empty or nil, `undefined` is returned.
+ * @param array The array to iterate over.
+ * @returns The maximum value in the array, or `undefined` if the array is empty or nil.
  */
-export function max(array: readonly number[]): number;
-export function max(array: Maybe<readonly number[]>): number | undefined;
+export function max<T>(array: Maybe<readonly T[]>): number;
+/**
+ * Computes the maximum value of array. If array is empty or nil, `undefined` is returned.
+ * @param array The array to iterate over.
+ * @param valueExtractor An optional function used to extract a numeric value from each element.
+ * @returns The maximum value in the array, or `undefined` if the array is empty or nil.
+ */
 export function max<T>(
   array: Maybe<readonly T[]>,
-  valueExtractor: (value: T) => number
+  valueExtractor?: (value: T) => number
 ): number;
+/**
+ * Implementation for all overloads.
+ * @param array The array to iterate over.
+ * @param valueExtractor The function used to extract a numeric value from each element.
+ * @returns The maximum value in the array, or `undefined` if the array is empty or nil.
+ */
 export function max<T>(
   array: Maybe<readonly T[]>,
   valueExtractor: (value: T) => number = (value) => value as unknown as number

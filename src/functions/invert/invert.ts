@@ -2,11 +2,10 @@ import { Writable } from 'type-fest';
 
 /**
  * Inverts the keys and values of an object.
- * @param object - The object to invert.
+ * @param object The object to invert.
  * @returns A new object with the keys and values inverted.
  *
  * If the object has duplicate values, the last key will be used.
- *
  * @example
  * ```typescript
  * invert({

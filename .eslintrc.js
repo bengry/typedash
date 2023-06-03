@@ -6,7 +6,6 @@ const {
 } = require('eslint-config-airbnb-base/rules/style');
 
 /**
- * @type { import("eslint").Linter.Config}
  */
 module.exports = {
   root: true,
@@ -19,6 +18,7 @@ module.exports = {
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:unicorn/recommended',
+    'plugin:jsdoc/recommended-typescript-error',
     // prettier must be last
     'prettier',
   ],
@@ -40,6 +40,13 @@ module.exports = {
       rules: {
         'unicorn/consistent-function-scoping': 'off',
         'unicorn/no-useless-undefined': 'off', // usually we want to test `undefined` cases
+        'jsdoc/require-jsdoc': 'off',
+      },
+    },
+    {
+      files: ['**/_internal/**/*.{ts,js}'],
+      rules: {
+        'jsdoc/require-jsdoc': 'off',
       },
     },
   ],
@@ -101,5 +108,18 @@ module.exports = {
     ),
     'unicorn/prefer-string-replace-all': 'off', // we prefer to allow older browsers/Node.js versions for now
     radix: 'off',
+    'jsdoc/require-jsdoc': [
+      'error',
+      {
+        enableFixer: false,
+        publicOnly: true,
+      },
+    ],
+    'jsdoc/check-tag-names': [
+      'error',
+      {
+        definedTags: ['note'],
+      },
+    ],
   },
 };

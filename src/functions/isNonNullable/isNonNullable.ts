@@ -1,6 +1,5 @@
 /**
  * Checks if a value is not null or undefined.
- *
  * @param value The value to inspect.
  * @returns Returns `true` if the value is NOT `null` or `undefined`, or `false` otherwise.
  */

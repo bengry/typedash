@@ -1,12 +1,10 @@
 /**
  * Throws an error if a value is of type `never`.
  * Used for exhaustive checks.
- *
  * @param inclusive The value to check.
  * @param noThrow If `true`, returns `undefined` instead of throwing an error.
- * @default false
+ * @default
  * @returns This function never returns a value, but throws an error if `inclusive` is of type `never`.
- *
  * @example
  * ```typescript
  * assertNever('foo' as never); // throws an error

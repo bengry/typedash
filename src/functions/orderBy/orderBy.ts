@@ -5,7 +5,6 @@ import { castArray } from '../castArray';
 
 /**
  * Sorts an array of objects by one or more properties, in ascending or descending order.
- *
  * @param array The array of objects to sort.
  * @param iterators The property or properties to sort by. Can be a key of `TValue` or a function that returns a comparable value.
  * @param orders The order or orders to sort by. Can be "asc" or "desc". Defaults to "asc".

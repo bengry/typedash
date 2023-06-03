@@ -1,3 +1,9 @@
+/**
+ * Zips two arrays together into an array of tuples.
+ * @param first The first array to zip.
+ * @param second The second array to zip.
+ * @returns An array of tuples containing the zipped values.
+ */
 export function zip<T, U>(first: readonly T[], second: readonly U[]): [T, U][] {
   const result: [T, U][] = [];
 

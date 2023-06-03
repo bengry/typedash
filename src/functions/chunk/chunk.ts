@@ -2,10 +2,8 @@ import { Maybe } from '../../types';
 
 /**
  * Splits an array into chunks of the given size.
- *
  * @param array The array to split.
  * @param size The maximum size of each chunk.
- *
  * @returns An array of arrays where each sub-array has at most `size` elements.
  * @example
  * ```ts

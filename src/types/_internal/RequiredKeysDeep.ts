@@ -34,7 +34,6 @@ type PathToStringArray<
  * expressed as lists of keys in the order you would access them on an object;
  * for instance, for an object called obj, obj.a.b.c would be represented as
  * ["a", "b", "c"]
- *
  * @see RequireKeysDeep for usage
  */
 type RequireKeysDeepArray<
@@ -53,7 +52,6 @@ type RequireKeysDeepArray<
 /**
  * For any object, enforces that the keys provided are all present; works with
  * deeply nested syntax, by using period (`.`) as a delimiter.
- *
  * @example
  * ```ts
  * type Foo = { a?: 2, b?: { c?: 3, d: 4 } }
