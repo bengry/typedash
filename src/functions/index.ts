@@ -38,6 +38,7 @@ export * from './partition';
 export * from './pick';
 export * from './pipe';
 export * from './range';
+export * from './sample';
 export * from './set';
 export * from './single';
 export * from './sum';
