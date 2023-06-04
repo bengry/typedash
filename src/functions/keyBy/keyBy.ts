@@ -1,5 +1,6 @@
 /**
- * Same as Lodash's `keyBy` by more type-safe.
+ * Creates an object composed of keys generated from the results of running each element of `array` through `keyGetter`.
+ * The corresponding value of each key is the last element responsible for generating the key.
  * @param array The array to iterate over.
  * @param keyGetter The function used to extract the key from each element.
  * @returns An object with the keys mapped to the elements.

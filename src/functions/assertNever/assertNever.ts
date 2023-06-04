@@ -3,7 +3,6 @@
  * Used for exhaustive checks.
  * @param inclusive The value to check.
  * @param noThrow If `true`, returns `undefined` instead of throwing an error.
- * @default
  * @returns This function never returns a value, but throws an error if `inclusive` is of type `never`.
  * @example
  * ```typescript

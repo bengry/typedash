@@ -18,7 +18,6 @@ interface InRangeOptions {
  *  - If `false`, the range is exclusive of both start and end.
  *  - If `'start'`, the range is inclusive of the start value but exclusive of the end value.
  *  - If `'end'`, the range is exclusive of the start value but inclusive of the end value.
- * @default
  * @returns `true` if the number is within the range, `false` otherwise.
  * @example
  * ```typescript

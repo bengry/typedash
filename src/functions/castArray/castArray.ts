@@ -8,30 +8,65 @@ import { castArrayIfDefined } from '../castArrayIfDefined';
  * Casts the input value to an array if it is not already an array.
  * @param value The input value to cast to an array.
  * @returns An array containing the input value, or the input value itself if it is already an array.
+ * @example
+ * ```ts
+ * castArray('foo'); // ['foo']
+ * castArray(['foo']); // ['foo']
+ * castArray(null); // []
+ * castArray(undefined); // []
+ * ```
  */
 export function castArray<T>(value: null): T[];
 /**
  * Casts the input value to an array if it is not already an array.
  * @param value The input value to cast to an array.
  * @returns An array containing the input value, or the input value itself if it is already an array.
+ * @example
+ * ```ts
+ * castArray('foo'); // ['foo']
+ * castArray(['foo']); // ['foo']
+ * castArray(null); // []
+ * castArray(undefined); // []
+ * ```
  */
 export function castArray<T>(value: undefined): T[];
 /**
  * Casts the input value to an array if it is not already an array.
  * @param value The input value to cast to an array.
  * @returns An array containing the input value, or the input value itself if it is already an array.
+ * @example
+ * ```ts
+ * castArray('foo'); // ['foo']
+ * castArray(['foo']); // ['foo']
+ * castArray(null); // []
+ * castArray(undefined); // []
+ * ```
  */
 export function castArray<T>(value: readonly T[]): readonly T[];
 /**
  * Casts the input value to an array if it is not already an array.
  * @param value The input value to cast to an array.
  * @returns An array containing the input value, or the input value itself if it is already an array.
+ * @example
+ * ```ts
+ * castArray('foo'); // ['foo']
+ * castArray(['foo']); // ['foo']
+ * castArray(null); // []
+ * castArray(undefined); // []
+ * ```
  */
 export function castArray<T>(value: T[]): T[];
 /**
  * Casts the input value to an array if it is not already an array.
  * @param value The input value to cast to an array.
  * @returns An array containing the input value, or the input value itself if it is already an array.
+ * @example
+ * ```ts
+ * castArray('foo'); // ['foo']
+ * castArray(['foo']); // ['foo']
+ * castArray(null); // []
+ * castArray(undefined); // []
+ * ```
  */
 export function castArray<T>(
   value: Maybe<
@@ -42,12 +77,26 @@ export function castArray<T>(
  * Casts the input value to an array if it is not already an array.
  * @param value The input value to cast to an array.
  * @returns An array containing the input value, or the input value itself if it is already an array.
+ * @example
+ * ```ts
+ * castArray('foo'); // ['foo']
+ * castArray(['foo']); // ['foo']
+ * castArray(null); // []
+ * castArray(undefined); // []
+ * ```
  */
 export function castArray<T>(value: NonNullable<T>): T[];
 /**
  * Implementation for all overloads.
  * @param value The input value to cast to an array.
  * @returns An array containing the input value, or the input value itself if it is already an array.
+ * @example
+ * ```ts
+ * castArray('foo'); // ['foo']
+ * castArray(['foo']); // ['foo']
+ * castArray(null); // []
+ * castArray(undefined); // []
+ * ```
  */
 export function castArray<T>(
   value: Maybe<

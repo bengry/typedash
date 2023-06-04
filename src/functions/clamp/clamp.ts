@@ -18,7 +18,6 @@ interface ClampOptions {
  * - If `false`, the clamping is exclusive of both min and max.
  * - If `'min'`, the clamping is inclusive of the min value but exclusive of the max value.
  * - If `'max'`, the clamping is exclusive of the min value but inclusive of the max value.
- * @default
  * @returns The clamped number.
  * @example
  * ```typescript

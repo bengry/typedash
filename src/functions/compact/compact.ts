@@ -7,7 +7,7 @@ import { Maybe } from '../../types';
  * @returns The new array of filtered values.
  * @example
  * ```ts
- * compact([0, 1, false, 2, '', 3]) // [1, 2, 3]
+ * compact([0, 1, false, 2, '', 3, null, 4, undefined]) // [1, 2, 3, 4]
  * ```
  */
 export function compact<T>(array: Maybe<readonly T[]>): T[] {
