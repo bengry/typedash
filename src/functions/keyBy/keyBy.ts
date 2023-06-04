@@ -21,7 +21,7 @@
  * // }
  * ```
  */
-export function keyBy<T, K extends string>(
+export function keyBy<T, K extends PropertyKey>(
   array: readonly T[],
   keyGetter: (item: T) => K
 ): Partial<Record<K, T>> {
