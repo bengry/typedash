@@ -1,6 +1,6 @@
 import { KeysOfUnion, Many, PropertyValueOfUnion } from '../../../types';
 import { castArray } from '../../castArray';
-import { createKnownTypeGuard } from '../../createKnownTypeGuard';
+import { createTypeGuard } from '../../createTypeGuard';
 
 export function createObjectPredicate<
   T extends object,
@@ -32,7 +32,7 @@ function createPropertiesPredicate<
   T extends object,
   const K extends keyof T | KeysOfUnion<T>
 >(properties: Many<K>): ObjectPredicate<T> {
-  const isKnownProperty = createKnownTypeGuard(castArray(properties));
+  const isKnownProperty = createTypeGuard(castArray(properties));
 
   return (_value, key) => isKnownProperty(key);
 }

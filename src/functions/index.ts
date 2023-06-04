@@ -8,7 +8,7 @@ export * from './clamp';
 export * from './compact';
 export * from './constantCase';
 export * from './count';
-export * from './createKnownTypeGuard';
+export * from './createTypeGuard';
 export * from './ensurePrefix';
 export * from './ensureSuffix';
 export * from './get';

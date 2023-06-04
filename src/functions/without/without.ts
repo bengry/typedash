@@ -1,4 +1,4 @@
-import { createKnownTypeGuard } from '../createKnownTypeGuard';
+import { createTypeGuard } from '../createTypeGuard';
 
 /**
  * Returns a new array containing all elements of the input array except the specified items to exclude.
@@ -15,6 +15,6 @@ export function without<T, const S extends T>(
   array: readonly T[],
   itemsToExclude: Iterable<S>
 ): Exclude<T, S>[] {
-  const isItemToExclude = createKnownTypeGuard(itemsToExclude);
+  const isItemToExclude = createTypeGuard(itemsToExclude);
   return array.filter((item): item is Exclude<T, S> => !isItemToExclude(item));
 }
