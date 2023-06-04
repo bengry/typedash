@@ -24,3 +24,7 @@ it('should return the sum the values in the array, using the iteratee', () => {
 it('should sum numbers in a numbers array', () => {
   expect(sum([1, 2, 3])).toEqual(6);
 });
+
+it('should allow passing an array of `Maybe` numbers', () => {
+  expect(sum([1, null, 3, undefined])).toEqual(4);
+});
