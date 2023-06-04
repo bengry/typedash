@@ -23,6 +23,7 @@ export * from './isEmpty';
 export * from './isNonNullable';
 export * from './join';
 export * from './keyBy';
+export * from './mapKeys';
 export * from './mapValues';
 export * from './max';
 export * from './memoize';
