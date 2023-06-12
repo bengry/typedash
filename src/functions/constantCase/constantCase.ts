@@ -15,7 +15,6 @@ export function constantCase<S extends string>(string: S): ConstantCase<S> {
     return '' as ConstantCase<S>;
   }
 
-  // return string.replace(/[\W_]+/g, '_').toUpperCase() as ConstantCase<S>;
   return string
     .replace(/([a-z])([A-Z])/g, '$1_$2')
     .replace(/[\s-]+/g, '_')
