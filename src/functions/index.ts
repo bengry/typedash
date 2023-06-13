@@ -22,6 +22,7 @@ export * from './isArray';
 export * from './isEmpty';
 export * from './isNonNullable';
 export * from './join';
+export * from './kebabCase';
 export * from './keyBy';
 export * from './mapKeys';
 export * from './mapValues';
