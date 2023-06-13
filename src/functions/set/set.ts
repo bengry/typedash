@@ -2,6 +2,7 @@ import { Get } from 'type-fest';
 
 import { ObjectPath } from '../../types';
 import { RequireKeysDeep } from '../../types/_internal';
+import { isMaliciousObjectProperty } from '../_internal/isMaliciousObjectPath';
 import { assert } from '../assert';
 
 /**
@@ -34,13 +35,16 @@ export function set<
 ): asserts object is TObject & RequireKeysDeep<TObject, Path> {
   const segments = path.match(pathSegmentsRegex);
   assert(segments !== null, 'Invalid path');
+  assert(
+    segments.every((segment) => isMaliciousObjectProperty(segment) === false),
+    'Potentially malicious path'
+  );
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any -- easier to work with, and we're trusting the compiler
   let currentObject: any = object;
   for (let index = 0; index < segments.length - 1; index++) {
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- trust the compiler (and unit tests 😄).
     const segment = segments[index]!;
-
     if (segment in currentObject === false) {
       currentObject[segment] = {};
     }

@@ -58,3 +58,22 @@ it('should set a value at an array index inside an object', () => {
     },
   });
 });
+
+it('should not allow passing in a potentially unsafe path', () => {
+  const object = {
+    foo: 'bar',
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- testing invalid input
+  expect(() => set(object, '__proto__' as any, true as any)).toThrow(
+    'Potentially malicious path'
+  );
+  expect(() => set(object, '__proto__.polluted' as any, true as any)).toThrow(
+    'Potentially malicious path'
+  );
+  expect(() =>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- testing invalid input
+    set(object, 'constructor.prototype.polluted' as any, true as any)
+  ).toThrow('Potentially malicious path');
+  expect(object).toEqual({ foo: 'bar' });
+});
