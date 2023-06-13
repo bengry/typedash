@@ -1,5 +1,6 @@
 export * from './assert';
 export * from './assertNever';
+export * from './camelCase';
 export * from './capitalize';
 export * from './castArray';
 export * from './castArrayIfDefined';
