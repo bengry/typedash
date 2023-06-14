@@ -68,6 +68,7 @@ it('should not allow passing in a potentially unsafe path', () => {
   expect(() => set(object, '__proto__' as any, true as any)).toThrow(
     'Potentially malicious path'
   );
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any -- testing invalid input
   expect(() => set(object, '__proto__.polluted' as any, true as any)).toThrow(
     'Potentially malicious path'
   );
