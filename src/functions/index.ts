@@ -36,6 +36,7 @@ export * from './objectEntries';
 export * from './objectFromEntries';
 export * from './objectKeys';
 export * from './omit';
+export * from './once';
 export * from './orderBy';
 export * from './partition';
 export * from './pick';
