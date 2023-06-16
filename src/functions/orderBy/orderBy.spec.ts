@@ -123,3 +123,12 @@ it('should not mutate the original array', () => {
     { name: 'Jane', age: 30 },
   ]);
 });
+
+it('should return the original array when all iterms are equal', () => {
+  const input = [
+    { name: 'John', age: 25 },
+    { name: 'Jane', age: 25 },
+  ];
+  const result = orderBy(input, ['age']);
+  expect(result).toEqual(input);
+});

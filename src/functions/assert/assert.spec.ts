@@ -26,3 +26,10 @@ it('should type check an expression', () => {
 
   expectTypeOf(maybeValue).toBeString();
 });
+
+it('should throw with a default message when called with a falsy condition and no message', () => {
+  const run = () => assert(false);
+
+  expect(run).toThrowError(AssertionError);
+  expect(run).toThrowError(/Assertion not satisfied/);
+});

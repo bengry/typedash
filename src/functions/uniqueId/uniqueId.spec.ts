@@ -26,3 +26,20 @@ it('should use the built-in crypto.randomUUID function if available', () => {
 
   vi.clearAllMocks();
 });
+
+it('should use a pseudo-random UUID if crypto.randomUUID is not available', () => {
+  vi.stubGlobal('crypto', undefined);
+
+  const result = uniqueId();
+  expect(result).toMatch(/^[\da-z-]+$/);
+
+  vi.unstubAllGlobals();
+
+  vi.stubGlobal('crypto', {
+    randomUUID: undefined,
+  } satisfies Partial<Crypto>);
+  const result2 = uniqueId();
+  expect(result2).toMatch(/^[\da-z-]+$/);
+
+  vi.unstubAllGlobals();
+});

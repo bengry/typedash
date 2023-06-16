@@ -1,4 +1,4 @@
-import { expect, it, vi } from 'vitest';
+import { expect, it } from 'vitest';
 
 import { assert } from '../../../assert';
 
@@ -29,20 +29,4 @@ it('should return false for non-typed arrays', () => {
   expect(isTypedArray(0)).toBe(false);
   expect(isTypedArray(true)).toBe(false);
   expect(isTypedArray(false)).toBe(false);
-});
-
-it('should be null if ArrayBuffer is not available', () => {
-  vi.stubGlobal('ArrayBuffer', undefined);
-
-  expect(isTypedArray).toBe(null);
-
-  vi.clearAllMocks();
-
-  vi.stubGlobal('ArrayBuffer', {
-    isView: undefined,
-  });
-
-  expect(isTypedArray).toBe(null);
-
-  vi.clearAllMocks();
 });

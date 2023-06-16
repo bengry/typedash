@@ -16,3 +16,43 @@ it('should group an array with groups of single items', () => {
     c: [{ name: 'c', value: 3 }],
   });
 });
+
+it('should group an array with groups of multiple items', () => {
+  const input = [
+    { id: 1, name: 'Alice' },
+    { id: 2, name: 'Bob' },
+    { id: 3, name: 'Charlie' },
+    { id: 4, name: 'Alice' },
+    { id: 5, name: 'Charlie' },
+    { id: 6, name: 'Bob' },
+  ];
+
+  const expectedOutput = {
+    Alice: [
+      { id: 1, name: 'Alice' },
+      { id: 4, name: 'Alice' },
+    ],
+    Bob: [
+      { id: 2, name: 'Bob' },
+      { id: 6, name: 'Bob' },
+    ],
+    Charlie: [
+      { id: 3, name: 'Charlie' },
+      { id: 5, name: 'Charlie' },
+    ],
+  };
+
+  const actualOutput = groupBy(input, (item) => item.name);
+
+  expect(actualOutput).toEqual(expectedOutput);
+});
+
+it('should group an empty array', () => {
+  const result = groupBy([], (item) => item);
+  expect(result).toEqual({});
+});
+
+it('should group null', () => {
+  const result = groupBy(null, () => 'foo');
+  expect(result).toEqual({});
+});
