@@ -16,10 +16,8 @@ import { Writable } from 'type-fest';
  * ```
  */
 export function invert<
-  /* const generic is used to make sure we capture the value as a string literal */ const T extends Record<
-    PropertyKey,
-    PropertyKey
-  >
+  /* const generic is used to make sure we capture the value as a string literal */ const T extends
+    Record<PropertyKey, PropertyKey>,
 >(
   object: T
 ): // we run it through writeable to simplify the type and "remove" the effect of the const generic parameter.

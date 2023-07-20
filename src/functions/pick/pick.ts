@@ -13,7 +13,7 @@ import {
  */
 export function pick<
   T extends object,
-  const K extends keyof T | KeysOfUnion<T>
+  const K extends keyof T | KeysOfUnion<T>,
 >(object: Maybe<T>, properties: Many<K>): Pick<T, K>;
 /**
  * Returns a new object with only the properties that satisfy the predicate function from the input object.
@@ -33,7 +33,7 @@ export function pick<T extends object>(
  */
 export function pick<
   T extends object,
-  const K extends keyof T | KeysOfUnion<T>
+  const K extends keyof T | KeysOfUnion<T>,
 >(object: Maybe<T>, propertiesOrPredicate: Many<K> | ObjectPredicate<T>) {
   return filterObject(object, createObjectPredicate(propertiesOrPredicate));
 }

@@ -22,6 +22,6 @@ export function ensureSuffix<S extends string, Suffix extends string>(
 
 type EnsureSuffix<
   S extends string,
-  Suffix extends string
+  Suffix extends string,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
 > = S extends `${infer _Prefix}${Suffix}` ? S : `${S}${Suffix}`;

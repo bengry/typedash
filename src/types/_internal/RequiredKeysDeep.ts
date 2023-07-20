@@ -23,7 +23,7 @@ type TailUnion<P, T extends readonly unknown[]> = T extends readonly unknown[]
  * Converts a string like "a.b.c" to an array ["a", "b", "c"]
  */
 type PathToStringArray<
-  T extends string
+  T extends string,
   // eslint-disable-next-line @typescript-eslint/no-shadow
 > = T extends `${infer Head}.${infer Tail}`
   ? [...PathToStringArray<Head>, ...PathToStringArray<Tail>]
@@ -38,7 +38,7 @@ type PathToStringArray<
  */
 type RequireKeysDeepArray<
   TObject,
-  PathsToRequire extends readonly string[]
+  PathsToRequire extends readonly string[],
   // eslint-disable-next-line @typescript-eslint/ban-types
 > = TObject extends object
   ? Omit<TObject, Extract<keyof TObject, PathsToRequire[0]>> &
@@ -63,5 +63,5 @@ type RequireKeysDeepArray<
  */
 export type RequireKeysDeep<
   TObject extends object,
-  TPath extends string
+  TPath extends string,
 > = RequireKeysDeepArray<TObject, PathToStringArray<TPath>>;

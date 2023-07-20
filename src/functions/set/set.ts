@@ -27,7 +27,7 @@ import { assert } from '../assert';
  */
 export function set<
   TObject extends Record<string, unknown>,
-  Path extends ObjectPath<TObject>
+  Path extends ObjectPath<TObject>,
 >(
   object: TObject,
   path: Path,

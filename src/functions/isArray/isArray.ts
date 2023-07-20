@@ -25,9 +25,9 @@ interface IsArray {
    * isArray('foo') // false
    * ```
    */
-  <T>(value: Maybe<ReadonlyArray<ArrayElement<T>>>): value is NonNullable<
-    typeof value
-  >;
+  <T>(
+    value: Maybe<ReadonlyArray<ArrayElement<T>>>
+  ): value is NonNullable<typeof value>;
 
   /**
    * The same as `Array.isArray` but with a better type guard.

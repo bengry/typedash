@@ -4,18 +4,18 @@ import { createTypeGuard } from '../../createTypeGuard';
 
 export function createObjectPredicate<
   T extends object,
-  const K extends keyof T | KeysOfUnion<T>
+  const K extends keyof T | KeysOfUnion<T>,
 >(properties: Many<K>): ObjectPredicate<T>;
 export function createObjectPredicate<T extends object>(
   predicate: ObjectPredicate<T>
 ): ObjectPredicate<T>;
 export function createObjectPredicate<
   T extends object,
-  const K extends keyof T | KeysOfUnion<T>
+  const K extends keyof T | KeysOfUnion<T>,
 >(propertiesOrPredicate: Many<K> | ObjectPredicate<T>): ObjectPredicate<T>;
 export function createObjectPredicate<
   T extends object,
-  const K extends keyof T | KeysOfUnion<T>
+  const K extends keyof T | KeysOfUnion<T>,
 >(propertiesOrPredicate: Many<K> | ObjectPredicate<T>): ObjectPredicate<T> {
   return typeof propertiesOrPredicate === 'function'
     ? propertiesOrPredicate
@@ -30,7 +30,7 @@ export type ObjectPredicate<T extends object> = (
 
 function createPropertiesPredicate<
   T extends object,
-  const K extends keyof T | KeysOfUnion<T>
+  const K extends keyof T | KeysOfUnion<T>,
 >(properties: Many<K>): ObjectPredicate<T> {
   const isKnownProperty = createTypeGuard(castArray(properties));
 

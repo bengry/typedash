@@ -75,7 +75,7 @@ export function pipe<
   T6,
   T7,
   T8,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -98,7 +98,7 @@ export function pipe<
   T7,
   T8,
   T9,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -123,7 +123,7 @@ export function pipe<
   T8,
   T9,
   T10,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -150,7 +150,7 @@ export function pipe<
   T9,
   T10,
   T11,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -179,7 +179,7 @@ export function pipe<
   T10,
   T11,
   T12,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -210,7 +210,7 @@ export function pipe<
   T11,
   T12,
   T13,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -243,7 +243,7 @@ export function pipe<
   T12,
   T13,
   T14,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -278,7 +278,7 @@ export function pipe<
   T13,
   T14,
   T15,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -315,7 +315,7 @@ export function pipe<
   T14,
   T15,
   T16,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -354,7 +354,7 @@ export function pipe<
   T15,
   T16,
   T17,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -395,7 +395,7 @@ export function pipe<
   T16,
   T17,
   T18,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -438,7 +438,7 @@ export function pipe<
   T17,
   T18,
   T19,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,
@@ -483,7 +483,7 @@ export function pipe<
   T18,
   T19,
   T20,
-  TOut
+  TOut,
 >(
   f0: Func<TIn, T1>,
   f1: UnaryFunction<T1, T2>,

@@ -25,7 +25,7 @@ export function zip<T extends TypedArray, U extends TypedArray>(
  */
 export function zip<
   T extends readonly unknown[] | TypedArray,
-  U extends readonly unknown[] | TypedArray
+  U extends readonly unknown[] | TypedArray,
 >(first: T, second: U) {
   const result: [T[number], U[number]][] = [];
 

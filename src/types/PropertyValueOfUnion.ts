@@ -7,5 +7,5 @@ import { KeysOfUnion } from './KeysOfUnion';
  */
 export type PropertyValueOfUnion<
   T extends object,
-  K extends KeysOfUnion<T>
+  K extends KeysOfUnion<T>,
 > = Get<UnionToIntersection<T>, K & string>;

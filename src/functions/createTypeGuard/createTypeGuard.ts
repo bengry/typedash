@@ -15,7 +15,7 @@
  */
 export function createTypeGuard<
   const TKnownValue,
-  TInput extends TKnownValue | unknown = unknown
+  TInput extends TKnownValue | unknown = unknown,
 >(values: Iterable<TKnownValue>): (v: TInput) => v is TInput & TKnownValue {
   const setValues = new Set<unknown>(values);
   return function predicate(v: unknown): v is TInput & TKnownValue {
