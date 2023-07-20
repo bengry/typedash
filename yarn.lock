@@ -1338,9 +1338,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/coverage-v8@npm:^0.32.4":
-  version: 0.32.4
-  resolution: "@vitest/coverage-v8@npm:0.32.4"
+"@vitest/coverage-v8@npm:^0.33.0":
+  version: 0.33.0
+  resolution: "@vitest/coverage-v8@npm:0.33.0"
   dependencies:
     "@ampproject/remapping": ^2.2.1
     "@bcoe/v8-coverage": ^0.2.3
@@ -1348,14 +1348,14 @@ __metadata:
     istanbul-lib-report: ^3.0.0
     istanbul-lib-source-maps: ^4.0.1
     istanbul-reports: ^3.1.5
-    magic-string: ^0.30.0
+    magic-string: ^0.30.1
     picocolors: ^1.0.0
     std-env: ^3.3.3
     test-exclude: ^6.0.0
     v8-to-istanbul: ^9.1.0
   peerDependencies:
     vitest: ">=0.32.0 <1"
-  checksum: 612bf300e685ede10bec3be862ef78d87b238938fb2f2f1cd9d9d0155d0ef4a8f8afd689ccf80e40831c9c5f36fa4810563e98240c84a8ea170cf3ccf8ef2f28
+  checksum: d7cbc0be72831e1b863a5ca25e39356fae765965c2bfa54f0d25b94dcdd7616962475d5fff848c531df3a9d56dc62b76d9ccdd4507f9772bab554c6cce655bc4
   languageName: node
   linkType: hard
 
@@ -1401,12 +1401,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/ui@npm:^0.32.4":
-  version: 0.32.4
-  resolution: "@vitest/ui@npm:0.32.4"
+"@vitest/ui@npm:^0.33.0":
+  version: 0.33.0
+  resolution: "@vitest/ui@npm:0.33.0"
   dependencies:
-    "@vitest/utils": 0.32.4
-    fast-glob: ^3.2.12
+    "@vitest/utils": 0.33.0
+    fast-glob: ^3.3.0
     fflate: ^0.8.0
     flatted: ^3.2.7
     pathe: ^1.1.1
@@ -1414,18 +1414,7 @@ __metadata:
     sirv: ^2.0.3
   peerDependencies:
     vitest: ">=0.30.1 <1"
-  checksum: e228a9573c81f341aa044832914a3332f477b0d6ff81416135d07d54581967956f8901a4099dd33e7c7dbaef813f53a89eb8d2f597c0c98b97ed87f496e9e554
-  languageName: node
-  linkType: hard
-
-"@vitest/utils@npm:0.32.4":
-  version: 0.32.4
-  resolution: "@vitest/utils@npm:0.32.4"
-  dependencies:
-    diff-sequences: ^29.4.3
-    loupe: ^2.3.6
-    pretty-format: ^29.5.0
-  checksum: 7d81162c3afaa638d30c47a28b7eced62abb8d7a8c891b10fa2f9756b2b6609d767142162044fe976c2cb8c17911d135fb3950f83e6d2bbd90150a042237bd25
+  checksum: 46e9bd9529d9cb8a7c3b9d7e1a4d56ef74a43efd35d33283305e837d411e267ef72b78481546605a605f89962271f02f6c63638941fe542177d00e9d192b1255
   languageName: node
   linkType: hard
 
@@ -3670,7 +3659,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.12, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0":
+"fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.0":
   version: 3.3.0
   resolution: "fast-glob@npm:3.3.0"
   dependencies:
@@ -5727,7 +5716,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.30.0, magic-string@npm:^0.30.1":
+"magic-string@npm:^0.30.1":
   version: 0.30.1
   resolution: "magic-string@npm:0.30.1"
   dependencies:
@@ -8375,8 +8364,8 @@ __metadata:
     "@types/react": ^18.2.15
     "@typescript-eslint/eslint-plugin": ^5.62.0
     "@typescript-eslint/parser": ^5.62.0
-    "@vitest/coverage-v8": ^0.32.4
-    "@vitest/ui": ^0.32.4
+    "@vitest/coverage-v8": ^0.33.0
+    "@vitest/ui": ^0.33.0
     concurrently: ^8.2.0
     eslint: ^8.45.0
     eslint-config-airbnb: ^19.0.4
