@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import { Falsey, Maybe } from '../../types';
 
 /**
  * Creates an array with all falsey values removed.
@@ -10,6 +10,6 @@ import { Maybe } from '../../types';
  * compact([0, 1, false, 2, '', 3, null, 4, undefined]) // [1, 2, 3, 4]
  * ```
  */
-export function compact<T>(array: Maybe<readonly T[]>): T[] {
-  return array?.filter(Boolean) ?? [];
+export function compact<T>(array: Maybe<readonly (T | Falsey)[]>): T[] {
+  return (array?.filter(Boolean) as T[] | undefined) ?? [];
 }

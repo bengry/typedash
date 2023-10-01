@@ -1,4 +1,5 @@
 export * from './EmptyObject';
+export * from './Falsey';
 export * from './IsEqual';
 export * from './KeysOfUnion';
 export * from './Many';
