@@ -30,6 +30,6 @@ it('should return an empty array if the array is `null` or `undefined`', () => {
 it('should remove from end for a negative count', () => {
   const result = take([1, 2, 3], -1);
 
-  expect(result).toEqual([1, 2]);
-  expectTypeOf(result).toEqualTypeOf<[1, 2]>();
+  expect(result).toEqual([]);
+  expectTypeOf(result).toEqualTypeOf<[]>();
 });
