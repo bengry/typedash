@@ -36,7 +36,7 @@ export function difference<T, S extends T>(
   comparator?: Comparator<T, S>
 ): Array<IsLiteral<T> | IsLiteral<S> extends true ? Exclude<T, S> : T>;
 // eslint-disable-next-line jsdoc/require-jsdoc -- implementation of the overload signatures
-export function difference<const T, const S extends T>(
+export function difference<T, S extends T>(
   array1: readonly T[],
   array2: readonly S[],
   comparator?: Comparator<T, S>
