@@ -1,3 +1,4 @@
+import { CastToString } from '../../types';
 import { objectEntries } from '../objectEntries';
 import { objectFromEntries } from '../objectFromEntries';
 
@@ -9,7 +10,11 @@ import { objectFromEntries } from '../objectFromEntries';
  */
 export function mapKeys<T extends object, K extends PropertyKey>(
   object: T,
-  mapperFunction: (key: keyof T, value: T[keyof T], object: T) => K
+  mapperFunction: (
+    key: CastToString<keyof T>,
+    value: T[keyof T],
+    object: T
+  ) => K
 ): Record<K, T[keyof T]> {
   return objectFromEntries(
     objectEntries(object).map(([key, value]) => [

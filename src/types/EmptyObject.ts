@@ -2,7 +2,7 @@ import type { EmptyObject as UnkeyedEmptyObject } from 'type-fest';
 
 import { IsEqual } from './IsEqual';
 
-export type EmptyObject<T extends object | never = never> = IsEqual<
+export type EmptyObject<T extends object = never> = IsEqual<
   T,
   never
 > extends true

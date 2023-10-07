@@ -14,7 +14,7 @@ import { createTypeGuard } from '../createTypeGuard';
 export function without<T, const S extends T>(
   array: readonly T[],
   itemsToExclude: Iterable<S>
-): Exclude<T, S>[] {
+): Array<Exclude<T, S>> {
   const isItemToExclude = createTypeGuard(itemsToExclude);
   return array.filter((item): item is Exclude<T, S> => !isItemToExclude(item));
 }

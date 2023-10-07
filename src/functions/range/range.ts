@@ -34,7 +34,7 @@ export function range(startOrEnd: number, end?: number, step = 1): number[] {
   }
 
   const calculatedStart = end == null ? 0 : startOrEnd;
-  const calculatedEnd = end == null ? startOrEnd : end;
+  const calculatedEnd = end ?? startOrEnd;
 
   const result = [];
 

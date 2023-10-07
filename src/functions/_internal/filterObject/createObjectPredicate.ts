@@ -1,4 +1,9 @@
-import { KeysOfUnion, Many, PropertyValueOfUnion } from '../../../types';
+import {
+  CastToString,
+  KeysOfUnion,
+  Many,
+  PropertyValueOfUnion,
+} from '../../../types';
 import { castArray } from '../../castArray';
 import { createTypeGuard } from '../../createTypeGuard';
 
@@ -24,7 +29,7 @@ export function createObjectPredicate<
 
 export type ObjectPredicate<T extends object> = (
   value: Exclude<PropertyValueOfUnion<T, KeysOfUnion<T>>, undefined>,
-  key: KeysOfUnion<T>,
+  key: CastToString<KeysOfUnion<T>>,
   object: T
 ) => boolean;
 

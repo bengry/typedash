@@ -1,3 +1,4 @@
+import { CastToString, KeysOfUnion } from '../../types';
 import { objectEntries } from '../objectEntries';
 import { objectFromEntries } from '../objectFromEntries';
 
@@ -13,7 +14,7 @@ import { objectFromEntries } from '../objectFromEntries';
  */
 export function mapValues<T extends object, V>(
   object: T,
-  mapperFunction: (value: T[keyof T], key: keyof T) => V
+  mapperFunction: (value: T[keyof T], key: CastToString<KeysOfUnion<T>>) => V
 ): Record<keyof T, V> {
   return objectFromEntries(
     objectEntries(object).map(([key, value]) => [

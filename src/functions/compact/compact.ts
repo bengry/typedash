@@ -10,6 +10,6 @@ import { Falsey, Maybe } from '../../types';
  * compact([0, 1, false, 2, '', 3, null, 4, undefined]) // [1, 2, 3, 4]
  * ```
  */
-export function compact<T>(array: Maybe<readonly (T | Falsey)[]>): T[] {
+export function compact<T>(array: Maybe<ReadonlyArray<T | Falsey>>): T[] {
   return (array?.filter(Boolean) as T[] | undefined) ?? [];
 }
