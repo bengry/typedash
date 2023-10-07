@@ -137,5 +137,6 @@ module.exports = {
         default: 'array-simple',
       },
     ],
+    '@typescript-eslint/unbound-method': 'off',
   },
 };
