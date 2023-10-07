@@ -43,7 +43,7 @@
     "lint": "concurrently \"yarn lint:eslint\" \"yarn lint:format\" \"yarn lint:type-check\" \"yarn lint:dependencies:dedup:check\"",
     "lint:dependencies:dedup:check": "yarn dedupe --check",
     "lint:dependencies:dedup:fix": "yarn dedupe && yarn",
-    "lint:eslint": "eslint --cache --ignore-path .gitignore \"src/**/*.+(ts|js)\"",
+    "lint:eslint": "eslint --max-warnings 0 --ext .js,.mjs,.ts,.mts --cache --cache-strategy content",
     "lint:eslint:fix": "yarn lint:eslint --fix",
     "lint:fix": "yarn lint --fix && prettier --write .",
     "lint:format": "prettier --check .",
