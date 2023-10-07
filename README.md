@@ -28,7 +28,7 @@ yarn add typedash
 
 ## Usage
 
-typedash provides a set of utility functions that can be imported and used in your TypeScript projects. Here’s an example of how to import and use the `pick` function:
+typedash provides utility functions that can be imported and used in your TypeScript projects. Here’s an example of how to import and use the `pick` function:
 
 ```ts
 import { objectKeys } from 'typedash';
