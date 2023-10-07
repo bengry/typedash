@@ -20,7 +20,7 @@ yarn test:watch
 
 ### Committing
 
-When you are ready to commit simply run the following command to get a well formatted commit message. All staged files will automatically be linted and fixed as well.
+When you are ready to commit, run the following command to get a well-formatted commit message. All staged files will automatically be linted and fixed as well.
 
 ```console
 yarn commit
@@ -36,7 +36,7 @@ yarn build
 
 ### Releasing, tagging & publishing to NPM
 
-Create a semantic version tag and publish to Github Releases. When a new release is detected a Github Action will automatically build the package and publish it to NPM.
+Create a semantic version tag and publish it to Github Releases. When a new release is detected, a Github Action will automatically build the package and publish it to NPM.
 
 ```console
 yarn release
