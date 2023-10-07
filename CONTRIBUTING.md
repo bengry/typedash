@@ -20,7 +20,7 @@ yarn test:watch
 
 ### Committing
 
-When you are ready to commit simply run the following command to get a well formatted commit message. All staged files will automatically be linted and fixed as well.
+When you are ready to commit, run the following command to get a formatted commit message. All staged files will automatically be linted and fixed as well.
 
 ```console
 yarn commit
