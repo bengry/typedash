@@ -15,5 +15,6 @@ export function assertNever(inclusive: never, noThrow = false): never {
     return undefined as never;
   }
 
+  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions -- this is unexpected to happen, but if it does, it's better to have the value.
   throw new Error(`Unexpected inclusive value: ${inclusive}`);
 }

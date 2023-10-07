@@ -16,10 +16,12 @@ export function once<TFunction extends AnyFunction>(
 
   return ((...args: Parameters<TFunction>) => {
     if (!hasBeenCalled) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       result = fn(...args);
       hasBeenCalled = true;
     }
 
-    return result as ReturnType<TFunction>;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+    return result;
   }) as TFunction;
 }

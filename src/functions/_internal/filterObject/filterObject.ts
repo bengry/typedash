@@ -1,4 +1,5 @@
-import { KeysOfUnion, Maybe } from '../../../types';
+import { KeysOfUnion, Maybe, PropertyValueOfUnion } from '../../../types';
+import { objectEntries } from '../../objectEntries';
 
 import { ObjectPredicate } from './createObjectPredicate';
 
@@ -11,8 +12,12 @@ export function filterObject<T extends object>(
   }
 
   return Object.fromEntries(
-    Object.entries(object).filter(([key, value]) =>
-      predicate(value, key as KeysOfUnion<T>, object)
+    objectEntries(object).filter(([key, value]) =>
+      predicate(
+        value as Exclude<PropertyValueOfUnion<T, KeysOfUnion<T>>, undefined>,
+        key,
+        object
+      )
     )
   );
 }
