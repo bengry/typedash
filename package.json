@@ -55,7 +55,8 @@
     "test:ci": "yarn test",
     "test:coverage": "yarn test --coverage",
     "test:ui": "yarn test:watch --ui",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "util:function-count": "exa -1 | grep -v '^_' | wc -l"
   },
   "husky": {
     "hooks": {
