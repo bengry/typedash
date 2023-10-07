@@ -509,7 +509,7 @@ export function pipe<
 ): Func<TIn, TOut>;
 export function pipe<TIn extends unknown[], TOut>(
   o1: Func<TIn, any>,
-  ...operations: UnaryFunction<any, any>[]
+  ...operations: Array<UnaryFunction<any, any>>
 ): Func<TIn, TOut>;
 /**
  * Implementation of pipe function.
@@ -519,7 +519,8 @@ export function pipe<TIn extends unknown[], TOut>(
  */
 export function pipe<TIn extends unknown[], TOut>(
   o1: Func<TIn, any>,
-  ...operations: UnaryFunction<any, any>[]
+  ...operations: Array<UnaryFunction<any, any>>
 ): Func<TIn, TOut> {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return -- this is untyped here, but we type it correctly in the overloads for consumers
   return (...argsP: TIn) => operations.reduce((acc, f) => f(acc), o1(...argsP));
 }

@@ -13,16 +13,22 @@ export function memoize<TFunction extends AnyFunction>(
 ): TFunction {
   const cache = new Map<unknown, ReturnType<TFunction>>();
 
-  return function memoizedFunction(...args: Parameters<TFunction>) {
-    const cacheKey = cacheKeyResolver ? cacheKeyResolver(...args) : args[0];
+  return function memoizedFunction(
+    ...args: Parameters<TFunction>
+  ): ReturnType<TFunction> {
+    const cacheKey: unknown = cacheKeyResolver
+      ? cacheKeyResolver(...args)
+      : args[0];
 
     if (cache.has(cacheKey)) {
-      return cache.get(cacheKey);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      return cache.get(cacheKey)!;
     }
 
-    const result = fn(...args);
+    const result = fn(...args) as ReturnType<TFunction>;
     cache.set(cacheKey, result);
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return result;
   } as TFunction;
 }

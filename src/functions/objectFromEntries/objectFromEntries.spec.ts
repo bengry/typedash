@@ -12,14 +12,14 @@ it('should allow composing with `objectEntries`', () => {
 
   const entries = objectEntries(originalObject);
 
-  expectTypeOf(entries).toEqualTypeOf<(['a', string] | ['b', string])[]>;
+  expectTypeOf(entries).toEqualTypeOf<Array<['a', string] | ['b', string]>>;
 
   const transformedEntries = entries.map(
     ([key, value]) => [key, value.length] as const
   );
 
   expectTypeOf(transformedEntries).toEqualTypeOf<
-    (readonly ['a' | 'b', number])[]
+    Array<readonly ['a' | 'b', number]>
   >();
 
   const modifiedObject = objectFromEntries(transformedEntries);

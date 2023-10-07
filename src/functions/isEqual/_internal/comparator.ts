@@ -25,6 +25,7 @@ export const OBJECT_TAG = '[object Object]';
 export const STRING_TAG = '[object String]';
 
 export const getTag = Object.prototype.toString.call.bind(
+  // eslint-disable-next-line @typescript-eslint/unbound-method
   Object.prototype.toString
 ) as (a: object) => string;
 

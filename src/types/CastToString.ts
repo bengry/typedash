@@ -1,7 +1,4 @@
-/**
- * Casts a type to a string.
- */
-export type CastToString<T> = T extends number
+export type CastToString<T> = T extends number | boolean
   ? `${T}`
   : T extends symbol
   ? never
