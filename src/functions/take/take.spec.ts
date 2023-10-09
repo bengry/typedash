@@ -21,15 +21,27 @@ it('should return an empty array if the array is `null` or `undefined`', () => {
   const resultUndefined = take(undefined, 2);
 
   expect(resultNull).toEqual([]);
-  expectTypeOf(resultNull).toEqualTypeOf<[]>();
+  expectTypeOf(resultNull).toEqualTypeOf<unknown[]>();
 
   expect(resultUndefined).toEqual([]);
-  expectTypeOf(resultUndefined).toEqualTypeOf<[]>();
+  expectTypeOf(resultUndefined).toEqualTypeOf<unknown[]>();
 });
 
-it('should remove from end for a negative count', () => {
+it('should return an empty array for a negative count', () => {
   const result = take([1, 2, 3], -1);
 
   expect(result).toEqual([]);
   expectTypeOf(result).toEqualTypeOf<[]>();
+});
+
+it('should return proper types for types array', () => {
+  const numberArray: number[] = [];
+  const stringArray: string[] = [];
+  const emptyArray: unknown[] = [];
+  const objectArray: { a: string }[] = [];
+
+  expectTypeOf(take(numberArray, 2)).toEqualTypeOf<number[]>();
+  expectTypeOf(take(stringArray, 2)).toEqualTypeOf<string[]>();
+  expectTypeOf(take(emptyArray, 2)).toEqualTypeOf<unknown[]>();
+  expectTypeOf(take(objectArray, 2)).toEqualTypeOf<{ a: string }[]>();
 });
