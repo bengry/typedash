@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access -- this entire file is basically unsafe at the type-level, but we check the types at runtime
+   and act accordingly. */
+
 import { TypedArray } from 'type-fest';
 
 import { isArray } from '../../isArray';

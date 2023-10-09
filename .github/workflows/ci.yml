@@ -1,6 +1,6 @@
-name: Main
+name: CI
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   run-ci:

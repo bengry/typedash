@@ -14,7 +14,7 @@ interface IsArray {
    * isArray('foo') // false
    * ```
    */
-  <T>(value: Maybe<ArrayElement<T>[]>): value is NonNullable<typeof value>;
+  <T>(value: Maybe<Array<ArrayElement<T>>>): value is NonNullable<typeof value>;
   /**
    * The same as `Array.isArray` but with a better type guard.
    * @param value The value to check.
@@ -53,4 +53,4 @@ interface IsArray {
   <T>(value: unknown): value is readonly T[];
 }
 
-type ArrayElement<T> = T extends readonly (infer U)[] ? U : never;
+type ArrayElement<T> = T extends ReadonlyArray<infer U> ? U : never;

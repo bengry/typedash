@@ -1,6 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires -- we're using commonjs here */
-/* eslint-disable unicorn/prefer-module -- not supported in eslint yet */
-
+// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const {
   rules: airbnbStyleRules,
 } = require('eslint-config-airbnb-base/rules/style');
@@ -17,6 +15,8 @@ module.exports = {
     'airbnb-typescript',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-type-checked',
+    'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:unicorn/recommended',
     'plugin:jsdoc/recommended-typescript-error',
     // prettier must be last
@@ -26,7 +26,8 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: ['./tsconfig.json'],
+    project: true,
+    tsconfigRootDir: __dirname,
   },
   plugins: [
     '@typescript-eslint',
@@ -35,6 +36,13 @@ module.exports = {
     'prettier',
   ],
   overrides: [
+    {
+      files: ['.eslintrc.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off', // not supported in eslint yet
+        'unicorn/prefer-module': 'off', // not supported in eslint yet
+      },
+    },
     {
       files: ['**/*.spec.{ts,js}'],
       rules: {
@@ -103,7 +111,9 @@ module.exports = {
     'unicorn/no-null': 'off',
     'unicorn/no-array-reduce': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
     'no-restricted-syntax': airbnbStyleRules['no-restricted-syntax'].filter(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       (item) => typeof item === 'string' || item.selector !== 'ForOfStatement'
     ),
     'unicorn/prefer-string-replace-all': 'off', // we prefer to allow older browsers/Node.js versions for now
@@ -121,5 +131,12 @@ module.exports = {
         definedTags: ['note'],
       },
     ],
+    '@typescript-eslint/array-type': [
+      'error',
+      {
+        default: 'array-simple',
+      },
+    ],
+    '@typescript-eslint/unbound-method': 'off',
   },
 };

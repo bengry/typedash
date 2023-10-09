@@ -3,7 +3,7 @@ import { expect, expectTypeOf, it } from 'vitest';
 import { keyBy } from './keyBy';
 
 it('should return an empty object when given an empty array', () => {
-  const input: readonly { id: string }[] = [];
+  const input: ReadonlyArray<{ id: string }> = [];
   const output = keyBy(input, (item) => item.id);
   expect(output).toEqual({});
 });

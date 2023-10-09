@@ -194,7 +194,9 @@ const testSuites = [
       },
       {
         name: 'empty objects with `null` as prototype are equal',
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value1: Object.create(null),
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value2: Object.create(null),
         expected: true,
       },

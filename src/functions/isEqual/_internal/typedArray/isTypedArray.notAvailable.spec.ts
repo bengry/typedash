@@ -11,7 +11,7 @@ describe('ArrayBuffer is not available', () => {
     vi.stubGlobal('ArrayBuffer', undefined);
   });
 
-  it('should be null if ArrayBuffer is not available', async () => {
+  it('should be null if ArrayBuffer is not available', () => {
     expect(isTypedArray).toBeNull();
 
     vi.stubGlobal('ArrayBuffer', {

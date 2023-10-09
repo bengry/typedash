@@ -1,4 +1,4 @@
-import { CastToString } from '../../types/_internal';
+import { CastToString } from '../../types';
 
 interface ClampOptions {
   /**

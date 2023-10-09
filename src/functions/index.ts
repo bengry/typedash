@@ -10,6 +10,8 @@ export * from './compact';
 export * from './constantCase';
 export * from './count';
 export * from './createTypeGuard';
+export * from './debounce';
+export * from './difference';
 export * from './ensurePrefix';
 export * from './ensureSuffix';
 export * from './get';

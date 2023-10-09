@@ -46,12 +46,14 @@ export function set<
     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- trust the compiler (and unit tests 😄).
     const segment = segments[index]!;
     if (segment in currentObject === false) {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access -- we're initializing the `segment` property
       currentObject[segment] = {};
     }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     currentObject = currentObject[segment];
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-unsafe-member-access -- this is checked at the type-level
   currentObject[segments.at(-1)!] = value;
 }
 

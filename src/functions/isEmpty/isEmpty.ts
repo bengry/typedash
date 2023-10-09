@@ -49,7 +49,7 @@ export function isEmpty(
  * isEmpty([1]) // false
  * ```
  */
-export function isEmpty<T extends ReadonlyArray<unknown> | EmptyArray>(
+export function isEmpty<T extends readonly unknown[] | EmptyArray>(
   value: Maybe<T>
 ): value is Maybe<T & EmptyArray>;
 /**

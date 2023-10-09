@@ -12,5 +12,11 @@
     "types": ["vitest/importMeta"],
     "rootDirs": ["./src"]
   },
-  "include": ["./src", ".eslintrc.js", "vitest.config.ts", "tsup.config.ts"]
+  "include": [
+    "./src",
+    ".eslintrc.js",
+    "prettier.config.mjs",
+    "vitest.config.ts",
+    "tsup.config.ts"
+  ]
 }
