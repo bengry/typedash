@@ -34,7 +34,7 @@ it('should return an empty array for a negative count', () => {
   expectTypeOf(result).toEqualTypeOf<[]>();
 });
 
-it('should return proper types for types array', () => {
+it('should return proper types for typed array', () => {
   const numberArray: number[] = [];
   const stringArray: string[] = [];
   const emptyArray: unknown[] = [];
