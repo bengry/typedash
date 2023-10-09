@@ -42,4 +42,4 @@ type TakeFromStart<
   ? Taken
   : TArray extends readonly [infer First, ...infer Rest]
   ? TakeFromStart<Rest, TCount, [...Taken, First]>
-  : [];
+  : Array<TArray[number]>;
