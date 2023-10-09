@@ -10,10 +10,36 @@ import { Maybe } from '../../types';
  * take([1, 2, 3, 4, 5], 3) // [1, 2, 3]
  * ```
  */
-export function take<T>(array: Maybe<readonly T[]>, count: number): T[] {
+export function take<const T extends readonly unknown[], C extends number>(
+  array: Maybe<T>,
+  count: C
+): Take<T, C> {
   if (count <= 0) {
-    return [];
+    return [] as Take<T, C>;
   }
 
-  return array?.slice(0, count) ?? [];
+  return (array?.slice(0, count) ?? []) as Take<T, C>;
 }
+
+type Take<
+  TArray extends readonly unknown[],
+  TCount extends number,
+> = TCount extends 0
+  ? []
+  : `${TCount}` extends `-${number}`
+  ? []
+  : TArray extends readonly unknown[]
+  ? TakeFromStart<TArray, TCount>
+  : [];
+
+type TakeFromStart<
+  TArray extends readonly unknown[],
+  TCount extends number,
+  Taken extends unknown[] = [],
+> = TArray['length'] extends 0
+  ? Taken
+  : TCount extends Taken['length']
+  ? Taken
+  : TArray extends readonly [infer First, ...infer Rest]
+  ? TakeFromStart<Rest, TCount, [...Taken, First]>
+  : Array<TArray[number]>;
