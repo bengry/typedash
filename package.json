@@ -1,6 +1,6 @@
 {
   "name": "typedash",
-  "version": "3.1.1",
+  "version": "3.2.0",
   "description": "modern, type-safe collection of utility functions",
   "keywords": [
     "typescript",
