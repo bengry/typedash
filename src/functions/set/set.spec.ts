@@ -29,16 +29,20 @@ it('should create missing objects when setting a value at a nested level', () =>
   const object: {
     foo?: {
       bar?: {
-        baz?: string;
+        baz?: {
+          'qux-quux'?: string;
+        };
       };
     };
   } = {};
 
-  set(object, 'foo.bar.baz', 'qux');
+  set(object, 'foo.bar.baz.qux-quux', 'corge');
   expect(object).toEqual({
     foo: {
       bar: {
-        baz: 'qux',
+        baz: {
+          'qux-quux': 'corge',
+        },
       },
     },
   });

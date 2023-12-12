@@ -57,4 +57,4 @@ export function set<
   currentObject[segments.at(-1)!] = value;
 }
 
-const pathSegmentsRegex = /\w+|\d+/g;
+const pathSegmentsRegex = /[\w-]+/g;
