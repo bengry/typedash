@@ -13,9 +13,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Enable corepack
+        shell: bash
+        run: corepack enable yarn
 
       - name: Set up Node
         uses: actions/setup-node@v4
