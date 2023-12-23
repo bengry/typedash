@@ -15,6 +15,11 @@ description: 'Run yarn install with node_modules linker and cache enabled'
 runs:
   using: 'composite'
   steps:
+    - name: Enable corepack
+      shell: bash
+      run: |
+        corepack enable yarn
+
     - name: Expose yarn config as "$GITHUB_OUTPUT"
       id: yarn-config
       shell: bash
