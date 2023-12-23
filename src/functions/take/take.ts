@@ -27,10 +27,10 @@ type Take<
 > = TCount extends 0
   ? []
   : `${TCount}` extends `-${number}`
-  ? []
-  : TArray extends readonly unknown[]
-  ? TakeFromStart<TArray, TCount>
-  : [];
+    ? []
+    : TArray extends readonly unknown[]
+      ? TakeFromStart<TArray, TCount>
+      : [];
 
 type TakeFromStart<
   TArray extends readonly unknown[],
@@ -39,7 +39,7 @@ type TakeFromStart<
 > = TArray['length'] extends 0
   ? Taken
   : TCount extends Taken['length']
-  ? Taken
-  : TArray extends readonly [infer First, ...infer Rest]
-  ? TakeFromStart<Rest, TCount, [...Taken, First]>
-  : Array<TArray[number]>;
+    ? Taken
+    : TArray extends readonly [infer First, ...infer Rest]
+      ? TakeFromStart<Rest, TCount, [...Taken, First]>
+      : Array<TArray[number]>;

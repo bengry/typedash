@@ -43,8 +43,8 @@ export type KebabCase<S extends string> = TrimDashes<
 type ReduceDashes<S extends string> = S extends `${infer L}--${infer R}`
   ? ReduceDashes<`${L}-${R}`>
   : S extends `${infer L}${infer D}--${infer R}`
-  ? ReduceDashes<`${L}${D}-${R}`>
-  : S;
+    ? ReduceDashes<`${L}${D}-${R}`>
+    : S;
 
 /**
  * Trims dashes from the start and end of a string.
@@ -61,5 +61,5 @@ type ReduceDashes<S extends string> = S extends `${infer L}--${infer R}`
 type TrimDashes<S extends string> = S extends `-${infer R}`
   ? TrimDashes<R>
   : S extends `${infer L}-`
-  ? TrimDashes<L>
-  : S;
+    ? TrimDashes<L>
+    : S;

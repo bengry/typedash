@@ -26,11 +26,11 @@ export type ConstantCase<S extends string> = Uppercase<
     ? `${S1 extends '-'
         ? '_'
         : S1 extends ' '
-        ? '_'
-        : S1 extends '_'
-        ? '_'
-        : S1 extends Capitalize<S1>
-        ? `_${Lowercase<S1>}`
-        : S1}${ConstantCase<S2>}`
+          ? '_'
+          : S1 extends '_'
+            ? '_'
+            : S1 extends Capitalize<S1>
+              ? `_${Lowercase<S1>}`
+              : S1}${ConstantCase<S2>}`
     : S
 >;
