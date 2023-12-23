@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const {
   rules: airbnbStyleRules,
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
 } = require('eslint-config-airbnb-base/rules/style');
 
 /**
@@ -37,10 +38,18 @@ module.exports = {
   ],
   overrides: [
     {
-      files: ['.eslintrc.js'],
+      files: ['.eslintrc.cjs'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off', // not supported in eslint yet
         'unicorn/prefer-module': 'off', // not supported in eslint yet
+      },
+    },
+    {
+      files: ['lint-staged.config.js'],
+      rules: {
+        'unicorn/filename-case': 'off',
+        'jsdoc/require-returns': 'off',
+        'jsdoc/require-param': 'off',
       },
     },
     {

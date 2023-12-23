@@ -8,14 +8,16 @@
     "strict": true,
     "noEmit": true,
     "incremental": true,
+    "allowJs": true,
     "noUncheckedIndexedAccess": true,
     "types": ["vitest/importMeta"],
     "rootDirs": ["./src"]
   },
   "include": [
     "./src",
-    ".eslintrc.js",
-    "prettier.config.mjs",
+    ".eslintrc.cjs",
+    "prettier.config.js",
+    "lint-staged.config.js",
     "vitest.config.ts",
     "tsup.config.ts"
   ]

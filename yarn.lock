@@ -1058,6 +1058,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lint-staged@npm:^13.3.0":
+  version: 13.3.0
+  resolution: "@types/lint-staged@npm:13.3.0"
+  checksum: c8ed7c9ca9a8782ce53dad55968c03f4f63e9d568c799fb511fb9df1d234a7fd83a92d0b70f6fd083b34c3c521e4945f80d2118eeef2bb01a935c49b273e3dc7
+  languageName: node
+  linkType: hard
+
 "@types/minimist@npm:^1.2.0":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
@@ -8345,6 +8352,7 @@ __metadata:
     "@ryansonshine/commitizen": "npm:^4.2.8"
     "@ryansonshine/cz-conventional-changelog": "npm:^3.3.4"
     "@types/eslint": "npm:^8.56.0"
+    "@types/lint-staged": "npm:^13.3.0"
     "@types/node": "npm:^20.10.5"
     "@types/react": "npm:^18.2.45"
     "@typescript-eslint/eslint-plugin": "npm:^6.15.0"
