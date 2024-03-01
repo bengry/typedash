@@ -10,6 +10,10 @@ on:
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write # The OIDC ID token is used for authentication with JSR.
+
     steps:
       - uses: actions/checkout@v4
 
@@ -28,6 +32,10 @@ jobs:
 
       - run: yarn build
 
-      - run: npm publish --access public
+      - name: Publish to npm
+        run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+
+      - name: Publish to JSR
+        run: npx jsr publish
