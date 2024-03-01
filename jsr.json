@@ -1,5 +1,5 @@
 {
   "name": "@typedash/typedash",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "exports": "./src/index.ts"
 }
