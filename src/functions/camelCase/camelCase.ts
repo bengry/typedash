@@ -25,6 +25,10 @@ export function camelCase<S extends string>(string: S): CamelCase<S> {
     .join('') as CamelCase<S>;
 }
 
+/**
+ * Changes the casing of a string to camel case.
+ * @see {@link camelCase}.
+ */
 export type CamelCase<S extends string> = CamelCaseImplementation<S>;
 
 const wordsRegex = /[\s_-]+|(?<=[a-z])(?=[A-Z])/;

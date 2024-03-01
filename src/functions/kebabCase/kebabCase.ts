@@ -25,6 +25,10 @@ export function kebabCase<S extends string>(string: S): KebabCase<S> {
 
 const KEBAB_REGEX = /[A-Z]{2,}(?=[A-Z][a-z]+\d*|\b)|[A-Z]?[a-z]+\d*|[A-Z]|\d+/g;
 
+/**
+ * Changes the casing of a string to kebab case.
+ * @see {@link kebabCase}.
+ */
 export type KebabCase<S extends string> = TrimDashes<
   ReduceDashes<KebabCaseImplementation<S>>
 >;

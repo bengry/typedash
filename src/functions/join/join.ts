@@ -10,7 +10,7 @@ import { NonFunction } from '../../types/_internal';
 export function join<T extends NonFunction<any>, U extends NonFunction<any>>(
   elements: ReadonlyArray<NonNullable<T>>,
   separator: U | ((index: number) => U)
-) {
+): Array<symbol | U | NonNullable<T>> {
   const emptySeparator = Symbol('emptySeparator');
 
   const separatorFunction =

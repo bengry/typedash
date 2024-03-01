@@ -21,6 +21,10 @@ export function constantCase<S extends string>(string: S): ConstantCase<S> {
     .toUpperCase() as ConstantCase<S>;
 }
 
+/**
+ * Changes the casing of a string to constant case.
+ * @see {@link constantCase}.
+ */
 export type ConstantCase<S extends string> = Uppercase<
   S extends `${infer S1}${infer S2}`
     ? `${S1 extends '-'

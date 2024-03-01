@@ -12,7 +12,9 @@ import { AnyFunction } from '../../types/_internal';
  * isOdd(2); // false
  * ```
  */
-export function negate<Func extends AnyFunction<boolean>>(func: Func) {
+export function negate<Func extends AnyFunction<boolean>>(
+  func: Func
+): (...args: Parameters<Func>) => boolean {
   return (...args: Parameters<Func>) => {
     const result = func(...args);
     return !result;

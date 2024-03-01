@@ -9,6 +9,6 @@ import { objectFromEntries } from '../objectFromEntries';
  * toObject(['a', 'b']) // { a: 'a', b: 'b' }
  * ```
  */
-export function toObject<T extends string>(array: readonly T[]) {
+export function toObject<T extends string>(array: readonly T[]): Record<T, T> {
   return objectFromEntries(array.map((value) => [value, value]));
 }

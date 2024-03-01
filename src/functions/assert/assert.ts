@@ -34,6 +34,10 @@ export function assert(
   }
 }
 
+/**
+ * An error that is thrown when an assertion is not satisfied.
+ * Thrown by {@link assert}.
+ */
 export class AssertionError extends Error {
   constructor(message?: string) {
     super(

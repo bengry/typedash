@@ -29,7 +29,7 @@ import { Maybe } from '../../types';
 export function groupBy<T, K extends string>(
   array: Maybe<readonly T[]>,
   getter: (item: T) => K
-) {
+): Partial<Record<K, T[]>> {
   return (array ?? []).reduce(
     (draftGroups, currentItem) => {
       const key = getter(currentItem);
