@@ -1,4 +1,4 @@
-import { CamelCase as CamelCaseImplementation } from 'type-fest';
+import type { CamelCase as CamelCaseImplementation } from 'type-fest';
 
 import { capitalize } from '../capitalize';
 

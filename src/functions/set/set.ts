@@ -1,4 +1,4 @@
-import { Get } from 'type-fest';
+import type { Get } from 'type-fest';
 
 import { ObjectPath } from '../../types';
 import { RequireKeysDeep } from '../../types/_internal';

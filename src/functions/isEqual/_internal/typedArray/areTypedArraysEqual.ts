@@ -1,4 +1,4 @@
-import { TypedArray } from 'type-fest';
+import type { TypedArray } from 'type-fest';
 
 import { zip } from '../../../zip';
 

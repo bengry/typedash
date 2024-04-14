@@ -1,4 +1,4 @@
-import { IsLiteral } from 'type-fest';
+import type { IsLiteral } from 'type-fest';
 
 import { createTypeGuard } from '../createTypeGuard';
 import { negate } from '../negate';

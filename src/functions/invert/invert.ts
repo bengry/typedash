@@ -1,4 +1,4 @@
-import { Writable } from 'type-fest';
+import type { Writable } from 'type-fest';
 
 /**
  * Inverts the keys and values of an object.

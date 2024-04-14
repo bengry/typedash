@@ -1,4 +1,4 @@
-import { TypedArray } from 'type-fest';
+import type { TypedArray } from 'type-fest';
 
 import { Dictionary } from '../object';
 import { PrimitiveWrapper } from '../primitiveWrappers';

@@ -1,4 +1,4 @@
-import { Primitive } from 'type-fest';
+import type { Primitive } from 'type-fest';
 
 import { KeysOfUnion, Many, Maybe } from '../../types';
 import { castArray } from '../castArray';

@@ -1,4 +1,4 @@
-import { TypedArray } from 'type-fest';
+import type { TypedArray } from 'type-fest';
 
 /**
  * Zips two arrays together into an array of tuples.

@@ -1,4 +1,4 @@
-import { KebabCase as KebabCaseImplementation } from 'type-fest';
+import type { KebabCase as KebabCaseImplementation } from 'type-fest';
 
 /**
  * Changes the casing of a string to kebab case.

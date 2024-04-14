@@ -1,4 +1,4 @@
-import { StringKeyOf } from 'type-fest';
+import type { StringKeyOf } from 'type-fest';
 
 import { AnyFunction } from '../../types/_internal';
 
