@@ -23,6 +23,7 @@ export * from './intersection';
 export * from './invert';
 export * from './isArray';
 export * from './isEmpty';
+export * from './isEqual';
 export * from './isNonNullable';
 export * from './join';
 export * from './kebabCase';
