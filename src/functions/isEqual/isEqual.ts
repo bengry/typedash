@@ -23,8 +23,9 @@ import { createEqualityComparator } from './_internal/createEqualityComparator';
  * isEqual({ a: 1 }, { a: 2 }); // false
  * isEqual(new Date('2020-01-01'), new Date('2020-01-01')); // true
  * isEqual(new Set([1, 2, 3]), new Set([3, 2, 1])); // true
+ * ```
  */
-export const isEqual = createCustomEqual();
+export const isEqual: IsEqual = createCustomEqual();
 
 /**
  * Create a custom equality comparison method.
@@ -42,3 +43,5 @@ function createCustomEqual() {
 
   return createIsEqual({ comparator, equals });
 }
+
+type IsEqual = <T1, T2>(value1: T1, value2: T2) => boolean;
