@@ -50,6 +50,7 @@ export * from './set';
 export * from './single';
 export * from './sum';
 export * from './take';
+export * from './throttle';
 export * from './toObject';
 export * from './unique';
 export * from './uniqueId';
