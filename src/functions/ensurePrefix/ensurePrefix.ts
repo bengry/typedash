@@ -23,5 +23,9 @@ export function ensurePrefix<S extends string, Prefix extends string>(
 type EnsurePrefix<
   S extends string,
   Prefix extends string,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-> = S extends `${Prefix}${infer _Suffix}` ? S : `${Prefix}${S}`;
+> = S extends `${Prefix}${
+  // biome-ignore lint/style/useNamingConvention: we have to do something here for typescript to work
+  infer _Suffix
+}`
+  ? S
+  : `${Prefix}${S}`;

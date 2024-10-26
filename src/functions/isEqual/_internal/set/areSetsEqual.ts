@@ -1,4 +1,4 @@
-import { Context } from '../types';
+import type { Context } from '../types';
 
 /**
  * Whether the `Set`s are equal in value.
@@ -26,7 +26,7 @@ export function areSetsEqual(
       if (
         !hasMatch &&
         !matchedIndices[matchIndex] &&
-        // eslint-disable-next-line no-cond-assign
+        // biome-ignore lint/suspicious/noAssignInExpressions: faster and simpler in this case due to the nature of the callsite
         (hasMatch = context.equals(
           element1,
           element2,

@@ -11,5 +11,4 @@ export function arePrimitiveWrappersEqual(
   return Object.is(value1.valueOf(), value2.valueOf());
 }
 
-// eslint-disable-next-line @typescript-eslint/ban-types -- we explicitly check for primitive wrapper types
-export type PrimitiveWrapper = Boolean | Number | String;
+export type PrimitiveWrapper = boolean | number | string;

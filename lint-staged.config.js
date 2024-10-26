@@ -4,6 +4,6 @@
  * @type { import('lint-staged').Config }
  */
 export default {
-  './src/**/*.{ts,js}': ['eslint --ignore-path .gitignore --fix'],
+  './src/**/*.{ts,js}': 'yarn lint:linter:fix',
   '*': 'yarn lint:format:fix',
 };

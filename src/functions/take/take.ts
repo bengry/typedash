@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Returns the first `count` items from `array`.
@@ -42,4 +42,4 @@ type TakeFromStart<
     ? Taken
     : TArray extends readonly [infer First, ...infer Rest]
       ? TakeFromStart<Rest, TCount, [...Taken, First]>
-      : Array<TArray[number]>;
+      : TArray[number][];

@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Returns an array containing only the unique elements of the input iterable.

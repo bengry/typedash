@@ -1,4 +1,4 @@
-import { Context, TypeEqualityComparator } from './types';
+import type { Context, TypeEqualityComparator } from './types';
 
 /**
  * Wrap the provided `areItemsEqual` method to manage the circular state, allowing

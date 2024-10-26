@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Splits an array into chunks of the given size.

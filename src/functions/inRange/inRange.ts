@@ -1,4 +1,4 @@
-import { CastToString } from '../../types';
+import type { CastToString } from '../../types';
 
 interface InRangeOptions {
   /**
@@ -27,7 +27,6 @@ interface InRangeOptions {
  * inRange(1, [1, 5], { inclusive: 'end' }); // false
  * ```
  */
-// eslint-disable-next-line consistent-return -- we have an exhaustive check, so we never get to the end of the function
 export function inRange(
   value: number,
   range: readonly [start: number, end: number],

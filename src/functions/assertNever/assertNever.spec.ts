@@ -14,12 +14,11 @@ it('should not throw an error when `noThrow` argument is `true`', () => {
 
 it('should help verify exhaustiveness', () => {
   enum Color {
-    Red,
-    Green,
-    Blue,
+    Red = 0,
+    Green = 1,
+    Blue = 2,
   }
 
-  // eslint-disable-next-line consistent-return
   function getColorName(color: Color) {
     switch (color) {
       case Color.Red: {

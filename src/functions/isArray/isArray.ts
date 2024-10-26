@@ -1,6 +1,5 @@
-import { Many, Maybe } from '../../types';
+import type { Many, Maybe } from '../../types';
 
-// eslint-disable-next-line prefer-destructuring
 export const isArray: IsArray = Array.isArray;
 
 interface IsArray {
@@ -14,7 +13,7 @@ interface IsArray {
    * isArray('foo') // false
    * ```
    */
-  <T>(value: Maybe<Array<ArrayElement<T>>>): value is NonNullable<typeof value>;
+  <T>(value: Maybe<ArrayElement<T>[]>): value is NonNullable<typeof value>;
   /**
    * The same as `Array.isArray` but with a better type guard.
    * @param value The value to check.
@@ -26,7 +25,7 @@ interface IsArray {
    * ```
    */
   <T>(
-    value: Maybe<ReadonlyArray<ArrayElement<T>>>
+    value: Maybe<readonly ArrayElement<T>[]>
   ): value is NonNullable<typeof value>;
 
   /**

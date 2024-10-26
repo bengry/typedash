@@ -8,6 +8,7 @@ it('returns true for non-null and non-undefined values', () => {
   expect(isNonNullable(false)).toBe(true);
   expect(isNonNullable({})).toBe(true);
   expect(isNonNullable([])).toBe(true);
+  // biome-ignore lint/suspicious/noEmptyBlockStatements: is is the test
   expect(isNonNullable(() => {})).toBe(true);
 });
 

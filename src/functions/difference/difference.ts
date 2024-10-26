@@ -35,16 +35,14 @@ export function difference<T, S extends T>(
   array2: readonly S[],
   comparator?: Comparator<T, S>
 ): Array<IsLiteral<T> | IsLiteral<S> extends true ? Exclude<T, S> : T>;
-// eslint-disable-next-line jsdoc/require-jsdoc -- implementation of the overload signatures
 export function difference<T, S extends T>(
   array1: readonly T[],
   array2: readonly S[],
   comparator?: Comparator<T, S>
 ): Array<IsLiteral<T> | IsLiteral<S> extends true ? Exclude<T, S> : T> {
-  // no comparator provided - we can do a quicker check using `Object.is` via a Set.
   if (!comparator) {
     const isArray2Item = createTypeGuard(array2);
-    return array1.filter(negate(isArray2Item)) as Array<Exclude<T, S>>;
+    return array1.filter(negate(isArray2Item)) as Exclude<T, S>[];
   }
 
   return array1.filter(

@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Returns a random item from the input iterable.
@@ -83,7 +83,7 @@ export function sample<const T>(
   const result: T[] = [];
 
   for (const index of indices) {
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion -- we already know the index is valid because we generated to be within the bounds of the array
+    // biome-ignore lint/style/noNonNullAssertion: we already know the index is valid because we generated to be within the bounds of the array
     result.push(sourceArray[index]!);
   }
 

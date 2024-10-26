@@ -1,12 +1,9 @@
-// eslint-disable-next-line max-len
-/* eslint-disable unicorn/prevent-abbreviations, unicorn/new-for-builtins, no-new-wrappers -- we do these things on purpose to test */
-
 import * as React from 'react';
 import { describe, expect, test } from 'vitest';
 
 import { isEqual } from './isEqual';
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
+// biome-ignore lint/suspicious/noEmptyBlockStatements: on purpose for testing purposes
 const fn = () => {};
 const promise = Promise.resolve('foo');
 
@@ -52,13 +49,17 @@ const testSuites = [
       },
       {
         name: 'equal number objects',
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Number(1),
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Number(1),
         expected: true,
       },
       {
         name: 'not equal number objects',
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Number(1),
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Number(2),
         expected: false,
       },
@@ -94,13 +95,17 @@ const testSuites = [
       },
       {
         name: 'equal string objects',
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new String('foo'),
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new String('foo'),
         expected: true,
       },
       {
         name: 'not equal string objects',
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new String('foo'),
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new String('bar'),
         expected: false,
       },
@@ -130,13 +135,17 @@ const testSuites = [
       },
       {
         name: 'equal boolean objects (true)',
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Boolean(true),
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Boolean(true),
         expected: true,
       },
       {
         name: 'equal boolean objects (false)',
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Boolean(false),
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Boolean(false),
         expected: true,
       },
@@ -148,7 +157,9 @@ const testSuites = [
       },
       {
         name: 'not equal boolean objects',
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Boolean(true),
+        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Boolean(false),
         expected: false,
       },
@@ -178,7 +189,7 @@ const testSuites = [
       {
         name: 'function and different function are not equal',
         value1: fn,
-        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        // biome-ignore lint/suspicious/noEmptyBlockStatements: on purpose for testing purposes
         value2: () => {},
         expected: false,
       },
@@ -195,9 +206,7 @@ const testSuites = [
       },
       {
         name: 'empty objects with `null` as prototype are equal',
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value1: Object.create(null),
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         value2: Object.create(null),
         expected: true,
       },
@@ -427,7 +436,6 @@ const testSuites = [
       {
         name: 'equal RegExp objects (different flags "order")',
         value1: /foo/gi,
-        // eslint-disable-next-line unicorn/better-regex
         expected: true,
         value2: /foo/gi,
       },
@@ -852,9 +860,7 @@ const testSuites = [
 
 for (const { name: suiteName, tests } of testSuites) {
   describe(suiteName, () => {
-    for (const {
-      name: testName, value1, value2, expected,
-    } of tests) {
+    for (const { name: testName, value1, value2, expected } of tests) {
       test(testName, () => {
         expect(isEqual(value1, value2)).toBe(expected);
       });

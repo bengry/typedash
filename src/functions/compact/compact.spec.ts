@@ -1,6 +1,6 @@
 import { expect, expectTypeOf, it } from 'vitest';
 
-import { Falsey } from '../../types';
+import type { Falsey } from '../../types';
 
 import { compact } from './compact';
 
@@ -59,6 +59,6 @@ const allFalsyValues = [
 ] as const;
 
 type OmitFalsey<T> = Exclude<T, Falsey>;
-type OmitFalseyArrayElements<T extends readonly unknown[]> = Array<
-  OmitFalsey<T[number]>
->;
+type OmitFalseyArrayElements<T extends readonly unknown[]> = OmitFalsey<
+  T[number]
+>[];

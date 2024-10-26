@@ -25,7 +25,10 @@ export function assert(
   condition?: unknown,
   message?: string
 ): asserts condition {
-  if (arguments.length === 0) {
+  if (
+    // biome-ignore lint/style/noArguments: simpler than anything else to be honest
+    arguments.length === 0
+  ) {
     return;
   }
 
@@ -42,7 +45,7 @@ export class AssertionError extends Error {
   constructor(message?: string) {
     super(
       compact([
-        `Assertion not satisfied`,
+        'Assertion not satisfied',
         message ? `: "${message}"` : '',
       ]).join('')
     );

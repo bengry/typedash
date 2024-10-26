@@ -1,4 +1,4 @@
-import { AnyFunction } from '../../types/_internal';
+import type { AnyFunction } from '../../types/_internal';
 
 /**
  * Memoizes a function.
@@ -7,7 +7,6 @@ import { AnyFunction } from '../../types/_internal';
  * @returns The memoized function.
  */
 export function memoize<TFunction extends AnyFunction>(
-  // eslint-disable-next-line unicorn/prevent-abbreviations -- `function` is a reserved word
   fn: TFunction,
   cacheKeyResolver?: (...args: Parameters<TFunction>) => string
 ): TFunction {
@@ -21,14 +20,13 @@ export function memoize<TFunction extends AnyFunction>(
       : args[0];
 
     if (cache.has(cacheKey)) {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+      // biome-ignore lint/style/noNonNullAssertion: we check using `has` before calling `get`
       return cache.get(cacheKey)!;
     }
 
     const result = fn(...args) as ReturnType<TFunction>;
     cache.set(cacheKey, result);
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     return result;
   } as TFunction;
 }

@@ -1,4 +1,4 @@
-import { AnyFunction } from '../../types/_internal';
+import type { AnyFunction } from '../../types/_internal';
 
 /**
  * Creates a debounced function that delays invoking `func` until after `delay` milliseconds have elapsed since the last time the debounced function was invoked.
@@ -8,6 +8,7 @@ import { AnyFunction } from '../../types/_internal';
  * @param options.leading Whether to call the function on the leading edge of the timeout.
  * @returns A debounced function that can be called multiple times, but only invokes `func` once per `delay` milliseconds.
  */
+// biome-ignore lint/suspicious/noConfusingVoidType: this is not a confusing void location, it defines the return type of the `TFunction`
 export function debounce<TFunction extends AnyFunction<void | undefined>>(
   func: TFunction,
   delay: number,
@@ -60,6 +61,7 @@ export function debounce<TFunction extends AnyFunction<void | undefined>>(
   return debouncedFunction;
 }
 
+// biome-ignore lint/suspicious/noConfusingVoidType: this is not a confusing void location, it defines the return type of the `TFunction`
 interface DebouncedFunction<TFunction extends AnyFunction<void | undefined>> {
   (...args: Parameters<TFunction>): void;
   clear(): void;

@@ -1,9 +1,9 @@
 import type { TypedArray } from 'type-fest';
 
-import { Dictionary } from '../object';
-import { PrimitiveWrapper } from '../primitiveWrappers';
+import type { Dictionary } from '../object';
+import type { PrimitiveWrapper } from '../primitiveWrappers';
 
-import { TypeEqualityComparator } from './types';
+import type { TypeEqualityComparator } from './types';
 
 export interface ComparatorConfig {
   /**

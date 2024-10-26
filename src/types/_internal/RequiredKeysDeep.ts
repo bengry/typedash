@@ -22,12 +22,10 @@ type TailUnion<P, T extends readonly unknown[]> = T extends readonly unknown[]
 /**
  * Converts a string like "a.b.c" to an array ["a", "b", "c"]
  */
-type PathToStringArray<
-  T extends string,
-  // eslint-disable-next-line @typescript-eslint/no-shadow
-> = T extends `${infer Head}.${infer Tail}`
-  ? [...PathToStringArray<Head>, ...PathToStringArray<Tail>]
-  : [T];
+type PathToStringArray<T extends string> =
+  T extends `${infer Head}.${infer Tail}`
+    ? [...PathToStringArray<Head>, ...PathToStringArray<Tail>]
+    : [T];
 
 /**
  * For any object, enforces that the keys provided are all present; paths are
@@ -39,7 +37,6 @@ type PathToStringArray<
 type RequireKeysDeepArray<
   TObject,
   PathsToRequire extends readonly string[],
-  // eslint-disable-next-line @typescript-eslint/ban-types
 > = TObject extends object
   ? Omit<TObject, Extract<keyof TObject, PathsToRequire[0]>> &
       Required<{

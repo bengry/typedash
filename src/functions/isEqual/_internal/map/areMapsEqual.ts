@@ -1,4 +1,4 @@
-import { Context } from '../types';
+import type { Context } from '../types';
 
 /**
  * Whether the `Map`s are equal in value.
@@ -28,7 +28,7 @@ export function areMapsEqual(
       if (
         !hasMatch &&
         !matchedIndices[matchIndex] &&
-        // eslint-disable-next-line no-cond-assign
+        // biome-ignore lint/suspicious/noAssignInExpressions: faster and simpler in this case due to the nature of the callsite
         (hasMatch =
           context.equals(
             aKey,

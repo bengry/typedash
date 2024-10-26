@@ -1,6 +1,6 @@
 import type { Get } from 'type-fest';
 
-import { Many, ObjectPath } from '../../types';
+import type { Many, ObjectPath } from '../../types';
 import { hasKey } from '../hasKey';
 import { isArray } from '../isArray';
 
@@ -64,7 +64,6 @@ export function get<T, Path extends ObjectPath<T> | Many<string>>(
       return (value as Record<typeof key, unknown>)[key];
     }
 
-    // eslint-disable-next-line unicorn/no-useless-undefined -- default value, explicitly declare it
     return undefined;
   }, object as object) as Get<T, Path>;
 }

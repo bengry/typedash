@@ -42,8 +42,7 @@ describe('debounce', () => {
   });
 
   it('should have the same type signature as the original function', () => {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const func = vi.fn((a: number, b: string) => undefined);
+    const func = vi.fn((_a: number, _b: string) => undefined);
     const debouncedFunction = debounce(func, 100);
 
     expectTypeOf(debouncedFunction).parameters.toEqualTypeOf<

@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import { readdir } from 'node:fs/promises';
 import { defineConfig } from 'tsup';
 

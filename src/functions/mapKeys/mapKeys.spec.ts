@@ -11,6 +11,7 @@ it('should return an empty object when given an empty object', () => {
 it('should return a new object with the same values as the input object', () => {
   const input = { a: 1, b: 2, c: 3 };
   const output = mapKeys(input, (key) => key.toUpperCase());
+  // biome-ignore lint/style/useNamingConvention: this is what the function does..
   expect(output).toEqual({ A: 1, B: 2, C: 3 });
 });
 
@@ -23,5 +24,6 @@ it('should handle objects with non-string keys', () => {
 it('should handle objects with null or undefined values', () => {
   const input = { a: null, b: undefined };
   const output = mapKeys(input, (key) => key.toUpperCase());
+  // biome-ignore lint/style/useNamingConvention: this is what the function does..
   expect(output).toEqual({ A: null, B: undefined });
 });

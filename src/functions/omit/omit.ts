@@ -1,8 +1,8 @@
-import { KeysOfUnion, Many, Maybe } from '../../types';
+import type { KeysOfUnion, Many, Maybe } from '../../types';
 import {
   createObjectPredicate,
   filterObject,
-  ObjectPredicate,
+  type ObjectPredicate,
 } from '../_internal/filterObject';
 import { negate } from '../negate';
 

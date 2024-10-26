@@ -1,6 +1,6 @@
 import type { Primitive } from 'type-fest';
 
-import { KeysOfUnion, Many, Maybe } from '../../types';
+import type { KeysOfUnion, Many, Maybe } from '../../types';
 import { castArray } from '../castArray';
 
 /**
@@ -33,10 +33,19 @@ export function orderBy<TValue>(
       const aValue = iteratee(a);
       const bValue = iteratee(b);
 
-      /* eslint-disable @typescript-eslint/no-non-null-assertion -- JS can compare null and undefined using `<` and */
-      if (aValue! < bValue!) return -1 * order;
-      if (aValue! > bValue!) return 1 * order;
-      /* eslint-enable @typescript-eslint/no-non-null-assertion */
+      if (
+        // biome-ignore lint/style/noNonNullAssertion: JS can compare null and undefined using `<` and
+        aValue! < bValue!
+      ) {
+        return -1 * order;
+      }
+
+      if (
+        // biome-ignore lint/style/noNonNullAssertion: JS can compare null and undefined using `<` and
+        aValue! > bValue!
+      ) {
+        return 1 * order;
+      }
     }
 
     return 0;

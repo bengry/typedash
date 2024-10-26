@@ -1,4 +1,4 @@
-import { Maybe } from '../../../types';
+import type { Maybe } from '../../../types';
 
 export function filter<T>(source: Maybe<Iterable<T>>): T[] | undefined;
 export function filter<T>(
@@ -19,9 +19,8 @@ export function filter<T>(
 
   const relevantItems =
     predicate == null
-      ? [...source]
-      : // eslint-disable-next-line unicorn/no-array-callback-reference -- this is fine, we want to use the same predicate
-        [...source].filter(predicate);
+      ? Array.from(source)
+      : Array.from(source).filter(predicate);
 
   return relevantItems;
 }

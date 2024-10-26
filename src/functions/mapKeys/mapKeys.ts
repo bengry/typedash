@@ -1,4 +1,4 @@
-import { CastToString } from '../../types';
+import type { CastToString } from '../../types';
 import { objectEntries } from '../objectEntries';
 import { objectFromEntries } from '../objectFromEntries';
 

@@ -22,7 +22,12 @@ it('should handle arrays with duplicate values', () => {
 it('should handle arrays with special characters', () => {
   const input = ['a', 'b_c', 'd-e'];
   const result = toObject(input);
-  expect(result).toEqual({ a: 'a', b_c: 'b_c', 'd-e': 'd-e' });
+  expect(result).toEqual({
+    a: 'a',
+    // biome-ignore lint/style/useNamingConvention: this is the correct key post-transformation
+    b_c: 'b_c',
+    'd-e': 'd-e',
+  });
 });
 
 it('should handle arrays with empty strings', () => {

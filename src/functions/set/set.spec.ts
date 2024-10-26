@@ -68,16 +68,17 @@ it('should not allow passing in a potentially unsafe path', () => {
     foo: 'bar',
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument -- testing invalid input
+  // biome-ignore lint/suspicious/noExplicitAny: testing invalid input
   expect(() => set(object, '__proto__' as any, true as any)).toThrow(
     'Potentially malicious path'
   );
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument -- testing invalid input
+
+  // biome-ignore lint/suspicious/noExplicitAny: testing invalid input
   expect(() => set(object, '__proto__.polluted' as any, true as any)).toThrow(
     'Potentially malicious path'
   );
   expect(() =>
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument -- testing invalid input
+    // biome-ignore lint/suspicious/noExplicitAny: testing invalid input
     set(object, 'constructor.prototype.polluted' as any, true as any)
   ).toThrow('Potentially malicious path');
   expect(object).toEqual({ foo: 'bar' });

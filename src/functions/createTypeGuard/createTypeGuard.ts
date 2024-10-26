@@ -15,7 +15,6 @@
  */
 export function createTypeGuard<
   const TKnownValue,
-  // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents -- without this we can't have a default type of `unknown`
   TInput extends TKnownValue | unknown = unknown,
 >(values: Iterable<TKnownValue>): (v: TInput) => v is TInput & TKnownValue {
   const setValues = new Set<unknown>(values);

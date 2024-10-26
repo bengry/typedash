@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Partitions an array into two arrays based on a predicate function.
@@ -9,7 +9,7 @@ import { Maybe } from '../../types';
 export function partition<T, S extends T>(
   array: Maybe<readonly T[]>,
   predicate: (item: T) => item is S
-): readonly [equals: S[], notEquals: Array<Exclude<T, S>>];
+): readonly [equals: S[], notEquals: Exclude<T, S>[]];
 /**
  * Partitions an array into two arrays based on a predicate function.
  * @param array The input array to partition.
@@ -29,13 +29,13 @@ export function partition<T>(
 export function partition<T, S extends T>(
   array: Maybe<readonly T[]>,
   predicate: ((item: T) => item is S) | ((item: T) => boolean)
-): readonly [S[], Array<Exclude<T, S>>] {
+): readonly [S[], Exclude<T, S>[]] {
   if (array == null) {
     return [[], []];
   }
 
   const equals: S[] = [];
-  const notEquals: Array<Exclude<T, S>> = [];
+  const notEquals: Exclude<T, S>[] = [];
 
   for (const item of array) {
     if (predicate(item)) {

@@ -15,7 +15,6 @@
   },
   "include": [
     "./src",
-    ".eslintrc.cjs",
     "lint-staged.config.js",
     "vitest.config.ts",
     "tsup.config.ts"

@@ -1,6 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access -- this entire file is basically unsafe at the type-level, but we check the types at runtime
-   and act accordingly. */
-
 import type { TypedArray } from 'type-fest';
 
 import { isArray } from '../../isArray';
@@ -51,9 +48,9 @@ export function createEqualityComparator({
    * @returns true if the two values are equivalent in values
    */
   return function comparator(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // biome-ignore lint/suspicious/noExplicitAny: implicit any is necessary for the comparison
     value1: any,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // biome-ignore lint/suspicious/noExplicitAny: implicit any is necessary for the comparison
     value2: any,
     context: Context
   ): boolean {
@@ -136,8 +133,6 @@ export function createEqualityComparator({
         // be treated the same as standard `Promise` objects, which means strict equality, and if
         // it reaches this point then that strict equality comparison has already failed.
         return (
-          // eslint-disable-next-line unicorn/consistent-destructuring
-          // eslint-disable-next-line unicorn/consistent-destructuring
           typeof value1.then !== 'function' &&
           typeof value2.then !== 'function' &&
           areObjectsEqual(value1, value2, context)

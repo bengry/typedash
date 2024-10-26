@@ -138,7 +138,7 @@ describe('map', () => {
     ],
   ])(
     'should handle `Map` entries %s',
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    // biome-ignore lint/suspicious/noExplicitAny: simpler to type as any since we know `a` and `b` will match fine
     (_, aEntries: any[], bEntries: any[], expected) => {
       const mapA = new Map(aEntries);
       const mapB = new Map(bEntries);

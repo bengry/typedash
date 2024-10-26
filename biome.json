@@ -1,7 +1,11 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": { "enabled": false, "clientKind": "git", "useIgnoreFile": false },
-  "files": { "ignoreUnknown": false, "ignore": [] },
+
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
@@ -13,8 +17,6 @@
     "attributePosition": "auto",
     "bracketSpacing": true,
     "ignore": [
-      "**/dist",
-      "**/coverage",
       "**/yarn.lock",
       "**/*.snap",
       "**/.npmrc",
@@ -324,7 +326,6 @@
     }
   },
   "overrides": [
-    { "include": [".eslintrc.cjs"], "linter": { "rules": {} } },
     {
       "include": ["lint-staged.config.js"],
       "linter": {
@@ -341,8 +342,16 @@
         }
       }
     },
-    { "include": ["**/*.spec.{ts,js}"], "linter": { "rules": {} } },
-    { "include": ["**/_internal/**/*.{ts,js}"], "linter": { "rules": {} } },
+    {
+      "include": ["**/*.spec.{ts,js}"],
+      "linter": {
+        "rules": {
+          "suspicious": {
+            "noEmptyBlockStatements": "off"
+          }
+        }
+      }
+    },
     {
       "include": ["*.ts", "*.tsx"],
       "linter": {
