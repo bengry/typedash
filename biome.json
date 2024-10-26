@@ -63,7 +63,6 @@
         "useRegexLiterals": "error"
       },
       "correctness": {
-        "noChildrenProp": "error",
         "noConstAssign": "error",
         "noConstantCondition": "error",
         "noConstructorReturn": "error",
@@ -292,60 +291,11 @@
   },
   "overrides": [
     {
-      "include": ["lint-staged.config.js"],
-      "linter": {
-        "rules": {
-          "style": {
-            "useFilenamingConvention": {
-              "level": "off",
-              "options": {
-                "requireAscii": true,
-                "filenameCases": ["kebab-case"]
-              }
-            }
-          }
-        }
-      }
-    },
-    {
       "include": ["**/*.spec.{ts,js}"],
       "linter": {
         "rules": {
           "suspicious": {
             "noEmptyBlockStatements": "off"
-          }
-        }
-      }
-    },
-    {
-      "include": ["*.ts", "*.tsx", "*.mts", "*.cts"],
-      "linter": {
-        "rules": {
-          "correctness": {
-            "noConstAssign": "off",
-            "noGlobalObjectCalls": "off",
-            "noInvalidBuiltinInstantiation": "off",
-            "noInvalidConstructorSuper": "off",
-            "noNewSymbol": "off",
-            "noSetterReturn": "off",
-            "noUndeclaredVariables": "off",
-            "noUnreachable": "off",
-            "noUnreachableSuper": "off"
-          },
-          "style": {
-            "noArguments": "error",
-            "noVar": "error",
-            "useConst": "error"
-          },
-          "suspicious": {
-            "noDuplicateClassMembers": "off",
-            "noDuplicateObjectKeys": "off",
-            "noDuplicateParameters": "off",
-            "noFunctionAssign": "off",
-            "noImportAssign": "off",
-            "noRedeclare": "off",
-            "noUnsafeNegation": "off",
-            "useGetterReturn": "off"
           }
         }
       }

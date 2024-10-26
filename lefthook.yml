@@ -1,0 +1,9 @@
+pre-commit:
+  parallel: true
+  commands:
+    lint:
+      glob: "src/**/*.{js,ts}"
+      run: yarn lint:linter:fix {staged_files}
+    format:
+      glob: "{*.*,**/*.*}"
+      run: yarn lint:format:fix {staged_files}
