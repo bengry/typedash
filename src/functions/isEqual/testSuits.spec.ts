@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-len
 /* eslint-disable unicorn/prevent-abbreviations, unicorn/new-for-builtins, no-new-wrappers -- we do these things on purpose to test */
 
 import * as React from 'react';
@@ -426,7 +427,7 @@ const testSuites = [
       {
         name: 'equal RegExp objects (different flags "order")',
         value1: /foo/gi,
-        // eslint-disable-next-line unicorn/better-regex, prettier/prettier
+        // eslint-disable-next-line unicorn/better-regex
         expected: true,
         value2: /foo/gi,
       },
@@ -851,7 +852,9 @@ const testSuites = [
 
 for (const { name: suiteName, tests } of testSuites) {
   describe(suiteName, () => {
-    for (const { name: testName, value1, value2, expected } of tests) {
+    for (const {
+      name: testName, value1, value2, expected,
+    } of tests) {
       test(testName, () => {
         expect(isEqual(value1, value2)).toBe(expected);
       });

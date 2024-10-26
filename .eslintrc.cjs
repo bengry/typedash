@@ -20,8 +20,6 @@ module.exports = {
     'plugin:@typescript-eslint/stylistic-type-checked',
     'plugin:unicorn/recommended',
     'plugin:jsdoc/recommended-typescript-error',
-    // prettier must be last
-    'prettier',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -30,12 +28,7 @@ module.exports = {
     project: true,
     tsconfigRootDir: __dirname,
   },
-  plugins: [
-    '@typescript-eslint',
-    'simple-import-sort',
-    'no-only-tests',
-    'prettier',
-  ],
+  plugins: ['@typescript-eslint', 'simple-import-sort', 'no-only-tests'],
   overrides: [
     {
       files: ['.eslintrc.cjs'],
@@ -77,7 +70,6 @@ module.exports = {
     'no-plusplus': 'off',
     'no-unused-vars': 'off',
     'no-use-before-define': 'off',
-    'prettier/prettier': 'warn',
     'unicorn/filename-case': [
       'error',
       {
@@ -104,15 +96,19 @@ module.exports = {
       {
         groups: [
           // Side effect imports.
-          ['^\\u0000'],
+          [String.raw`^\u0000`],
           // Things that start with a letter (or digit or underscore), or `@` followed by a letter.
-          ['^@?\\w'],
+          [String.raw`^@?\w`],
           // Parent imports. Put `..` last.
-          ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+          [String.raw`^\.\.(?!/?$)`, String.raw`^\.\./?$`],
           // Other relative imports. Put same-folder imports and `.` last.
-          ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+          [
+            String.raw`^\./(?=.*/)(?!/?$)`,
+            String.raw`^\.(?!/?$)`,
+            String.raw`^\./?$`,
+          ],
           // Style imports.
-          ['^.+\\.s?css$'],
+          [String.raw`^.+\.s?css$`],
         ],
       },
     ],
