@@ -25,7 +25,8 @@
       "**/.editorconfig",
       "**/.nvmrc",
       "**/.yarn/",
-      "docs/assets"
+      "docs/assets",
+      "package.json"
     ]
   },
   "organizeImports": {
