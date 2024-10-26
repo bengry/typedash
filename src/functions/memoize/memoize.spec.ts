@@ -1,4 +1,3 @@
-/* eslint-disable unicorn/prevent-abbreviations */
 import { expect, it } from 'vitest';
 
 import { memoize } from './memoize';

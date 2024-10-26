@@ -39,8 +39,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# ESLint
-.eslintcache
-
 # Local playground folder
 /playground

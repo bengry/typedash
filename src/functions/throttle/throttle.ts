@@ -1,4 +1,4 @@
-import { AnyFunction } from '../../types/_internal';
+import type { AnyFunction } from '../../types/_internal';
 
 interface ThrottleOptions {
   /**
@@ -68,7 +68,6 @@ export function throttle<TFunction extends AnyFunction>(
 
     const remaining = wait - (time - lastInvokeTime);
     lastArguments = args;
-    // eslint-disable-next-line unicorn/no-this-assignment, @typescript-eslint/no-this-alias
     lastContext = this;
 
     if (remaining <= 0 || remaining > wait) {

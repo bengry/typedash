@@ -1,4 +1,4 @@
-import { AnyFunction } from '../../types/_internal';
+import type { AnyFunction } from '../../types/_internal';
 
 /**
  * Returns a new function that negates the result of the input function.

@@ -1,4 +1,4 @@
-import { Many, Maybe } from '../../types';
+import type { Many, Maybe } from '../../types';
 import { castArrayIfDefined } from '../castArrayIfDefined';
 
 // NOTE: all JSDocs here are duplicated of one another since there's no way to inherit them at this time.

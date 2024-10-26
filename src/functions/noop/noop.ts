@@ -7,5 +7,6 @@
  * noop(1, 2, 3) // undefined
  * ```
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars -- this is the whole point of the function
+
+// biome-ignore lint/suspicious/noEmptyBlockStatements: this is the whole point of the function
 export function noop(...args: readonly unknown[]): void {}

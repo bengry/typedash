@@ -1,6 +1,3 @@
-/* eslint-disable jsdoc/require-returns */
-/* eslint-disable jsdoc/require-param */
-
 import { areArraysEqual } from './array';
 import { createIsCircularTypeEqualityComparator } from './createIsCircularTypeEqualityComparator';
 import { areDatesEqual } from './date';

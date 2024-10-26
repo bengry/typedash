@@ -1,6 +1,6 @@
 import type { Get, UnionToIntersection } from 'type-fest';
 
-import { KeysOfUnion } from './KeysOfUnion';
+import type { KeysOfUnion } from './KeysOfUnion';
 
 /**
  * Similar to `T[K]`, but gets the value of all the types in a union.

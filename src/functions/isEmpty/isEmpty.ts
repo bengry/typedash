@@ -1,4 +1,4 @@
-import { EmptyObject, Maybe } from '../../types';
+import type { EmptyObject, Maybe } from '../../types';
 import { isArray } from '../isArray';
 
 /**

@@ -21,7 +21,7 @@ it('should handle empty objects', () => {
 });
 
 it('should have the correct type signature', () => {
-  // eslint-disable-next-line @typescript-eslint/ban-types -- this is correct in this case
+  // biome-ignore lint/complexity/noBannedTypes: this is the test..
   expectTypeOf(invert({})).toEqualTypeOf<{}>();
 
   expectTypeOf(

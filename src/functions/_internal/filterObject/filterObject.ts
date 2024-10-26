@@ -1,7 +1,7 @@
-import { KeysOfUnion, Maybe, PropertyValueOfUnion } from '../../../types';
+import type { KeysOfUnion, Maybe, PropertyValueOfUnion } from '../../../types';
 import { objectEntries } from '../../objectEntries';
 
-import { ObjectPredicate } from './createObjectPredicate';
+import type { ObjectPredicate } from './createObjectPredicate';
 
 export function filterObject<T extends object>(
   object: Maybe<T>,

@@ -1,6 +1,6 @@
 import { expect, expectTypeOf, it } from 'vitest';
 
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 import { sample } from './sample';
 

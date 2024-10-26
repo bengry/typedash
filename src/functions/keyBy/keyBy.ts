@@ -29,7 +29,6 @@ export function keyBy<T, K extends PropertyKey>(
     (draftObject, currentItem) => {
       const key = keyGetter(currentItem);
 
-      // eslint-disable-next-line no-param-reassign
       draftObject[key] = currentItem;
 
       return draftObject;

@@ -1,4 +1,4 @@
-import { AnyFunction } from './_internal/AnyFunction';
+import type { AnyFunction } from './_internal/AnyFunction';
 
 type RecordFunctions<T> = keyof {
   [K in keyof T as NonNullable<T[K]> extends AnyFunction ? K : never]: K;
@@ -13,11 +13,11 @@ type NormalizedPath<Type, ExcludeFromType> = Path<
 type OfType<D, E> = NonNullable<D> extends E ? true : false;
 
 type Path<T, K extends keyof T> = K extends string
-  ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  ? // biome-ignore lint/suspicious/noExplicitAny:
     OfType<T[K], Record<string, any>> extends true
-    ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    ? // biome-ignore lint/suspicious/noExplicitAny:
       OfType<T[K], ArrayLike<any>> extends true
-      ? // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ? // biome-ignore lint/suspicious/noExplicitAny:
         K | `${K}.${NormalizedPath<T[K], keyof any[]>}` | `${K}[${number}]`
       : K | `${K}.${NormalizedPath<T[K], RecordFunctions<T[K]>>}`
     : K

@@ -1,7 +1,7 @@
 import { REACT_OWNER_PROPERTY_NAME } from '../react';
-import { Context } from '../types/types';
+import type { Context } from '../types/types';
 
-import { Dictionary } from './Dictionary';
+import type { Dictionary } from './Dictionary';
 import { getObjectProperties } from './getObjectProperties';
 
 /**

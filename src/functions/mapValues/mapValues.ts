@@ -1,4 +1,4 @@
-import { CastToString, KeysOfUnion } from '../../types';
+import type { CastToString, KeysOfUnion } from '../../types';
 import { objectEntries } from '../objectEntries';
 import { objectFromEntries } from '../objectFromEntries';
 

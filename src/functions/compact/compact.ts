@@ -1,4 +1,4 @@
-import { Falsey, Maybe } from '../../types';
+import type { Falsey, Maybe } from '../../types';
 
 /**
  * Creates an array with all falsey values removed.

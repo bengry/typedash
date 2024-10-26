@@ -1,4 +1,4 @@
-import { Dictionary } from './Dictionary';
+import type { Dictionary } from './Dictionary';
 
 /**
  * Get the properties to strictly examine, which include both own properties that are

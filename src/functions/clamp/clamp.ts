@@ -1,4 +1,4 @@
-import { CastToString } from '../../types';
+import type { CastToString } from '../../types';
 
 interface ClampOptions {
   /**
@@ -27,7 +27,6 @@ interface ClampOptions {
  * clamp(1, [1, 5], { inclusive: 'max' }); // 5
  * ```
  */
-// eslint-disable-next-line consistent-return -- we have an exhaustive check, so we never get to the end of the function
 export function clamp(
   value: number,
   range: readonly [min: number, max: number],

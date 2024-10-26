@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Computes the sum of all values in array. If array is empty or nil, `0` is returned.
@@ -13,7 +13,7 @@ import { Maybe } from '../../types';
  * sum([1, 2, null, 3, undefined, 4]); // 10
  * ```
  */
-export function sum(array: Maybe<ReadonlyArray<Maybe<number>>>): number;
+export function sum(array: Maybe<readonly Maybe<number>[]>): number;
 /**
  * Computes the sum of all values in array. If array is empty or nil, `0` is returned.
  * @param array The array to iterate over.
@@ -39,7 +39,7 @@ export function sum<T>(
  * @returns The sum of all values in the array, or `0` if the array is empty or nil.
  */
 export function sum<T>(
-  array: Maybe<ReadonlyArray<Maybe<T>>>,
+  array: Maybe<readonly Maybe<T>[]>,
   mapper?: ArrayIterator<Maybe<T>>
 ): number {
   if (array == null) {

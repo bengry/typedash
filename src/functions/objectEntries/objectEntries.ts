@@ -1,4 +1,4 @@
-import { CastToString, KeysOfUnion } from '../../types';
+import type { CastToString, KeysOfUnion } from '../../types';
 
 export const objectEntries: ObjetEntries = Object.entries;
 
@@ -10,4 +10,4 @@ export const objectEntries: ObjetEntries = Object.entries;
  */
 type ObjetEntries = <T extends object>(
   object: T
-) => Array<[CastToString<KeysOfUnion<T>>, T[keyof T]]>;
+) => [CastToString<KeysOfUnion<T>>, T[keyof T]][];

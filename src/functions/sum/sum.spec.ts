@@ -1,6 +1,6 @@
 import { expect, it } from 'vitest';
 
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 import { sum } from './sum';
 

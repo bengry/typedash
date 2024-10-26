@@ -32,7 +32,6 @@ export function intersection<T, S extends T>(
   array2: readonly S[],
   comparator?: Comparator<T, S>
 ): S[];
-// eslint-disable-next-line jsdoc/require-jsdoc -- implementation of the overload signatures
 export function intersection<T, S extends T>(
   array1: readonly T[],
   array2: readonly S[],
@@ -41,7 +40,6 @@ export function intersection<T, S extends T>(
   // no comparator provided - we can do a quicker check using `Object.is` via a Set.
   if (!comparator) {
     const isArray2Item = createTypeGuard(array2);
-    // eslint-disable-next-line unicorn/no-array-callback-reference -- smaller bundle size, and we know that we're not using the other arguments in our implementation
     return array1.filter(isArray2Item);
   }
 

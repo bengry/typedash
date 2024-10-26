@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Computes the maximum value of array. If array is empty or nil, `undefined` is returned.

@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable unicorn/prevent-abbreviations */
-import { Func } from './types/Func';
-import { UnaryFunction } from './types/UnaryFunction';
+import type { Func } from './types/Func';
+import type { UnaryFunction } from './types/UnaryFunction';
 
 /**
  * Type-enforcing left-to-right function composition function.
@@ -508,8 +506,10 @@ export function pipe<
   f20: UnaryFunction<T20, TOut>
 ): Func<TIn, TOut>;
 export function pipe<TIn extends unknown[], TOut>(
+  // biome-ignore lint/suspicious/noExplicitAny: final overload, which isn't typed
   o1: Func<TIn, any>,
-  ...operations: Array<UnaryFunction<any, any>>
+  // biome-ignore lint/suspicious/noExplicitAny: final overload, which isn't typed
+  ...operations: UnaryFunction<any, any>[]
 ): Func<TIn, TOut>;
 /**
  * Implementation of pipe function.
@@ -518,9 +518,10 @@ export function pipe<TIn extends unknown[], TOut>(
  * @returns function that will execute all operations in order
  */
 export function pipe<TIn extends unknown[], TOut>(
+  // biome-ignore lint/suspicious/noExplicitAny: implementation of overloads
   o1: Func<TIn, any>,
-  ...operations: Array<UnaryFunction<any, any>>
+  // biome-ignore lint/suspicious/noExplicitAny: implementation of overloads
+  ...operations: UnaryFunction<any, any>[]
 ): Func<TIn, TOut> {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return -- this is untyped here, but we type it correctly in the overloads for consumers
   return (...argsP: TIn) => operations.reduce((acc, f) => f(acc), o1(...argsP));
 }

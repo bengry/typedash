@@ -1,4 +1,4 @@
-import { Many, Maybe } from '../../types';
+import type { Many, Maybe } from '../../types';
 import { isArray } from '../isArray';
 
 /**

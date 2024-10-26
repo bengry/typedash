@@ -1,4 +1,4 @@
-import { KeysOfUnion, StringWithAutocomplete } from '../../types';
+import type { KeysOfUnion, StringWithAutocomplete } from '../../types';
 
 /**
  * Returns whether the input value has the specified key.

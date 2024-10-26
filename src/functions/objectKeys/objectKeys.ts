@@ -1,6 +1,6 @@
 import type { StringKeyOf } from 'type-fest';
 
-import { AnyFunction } from '../../types/_internal';
+import type { AnyFunction } from '../../types/_internal';
 
 export const objectKeys: ObjectKeys = Object.keys;
 
@@ -14,4 +14,4 @@ export const objectKeys: ObjectKeys = Object.keys;
  */
 type ObjectKeys = <T extends object>(
   object: Exclude<T, AnyFunction>
-) => Array<StringKeyOf<T>>;
+) => StringKeyOf<T>[];

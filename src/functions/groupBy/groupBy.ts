@@ -1,4 +1,4 @@
-import { Maybe } from '../../types';
+import type { Maybe } from '../../types';
 
 /**
  * Takes an array and returns an object with the keys of the array mapped to the items of the array.
@@ -34,9 +34,8 @@ export function groupBy<T, K extends string>(
     (draftGroups, currentItem) => {
       const key = getter(currentItem);
 
-      // eslint-disable-next-line no-param-reassign
       draftGroups[key] ??= [];
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      // biome-ignore lint/style/noNonNullAssertion: surely exists because of the line above
       draftGroups[key]!.push(currentItem);
 
       return draftGroups;
