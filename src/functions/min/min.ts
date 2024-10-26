@@ -5,17 +5,17 @@ import type { Maybe } from '../../types';
  * @param array The array to iterate over.
  * @returns The maximum value in the array, or `undefined` if the array is empty or nil.
  */
-export function min<T>(array: Maybe<readonly T[]>): number;
+export function min(array: Maybe<readonly number[]>): number;
 /**
  * Computes the minimum value of array. If array is empty or nil, `undefined` is returned.
  * @param array The array to iterate over.
  * @param valueExtractor An optional function used to extract a numeric value from each element.
- * @returns The minimum value in the array, or `undefined` if the array is empty or nil.
+ * @returns The element with the minimum value in the array according to the `valueExtractor`, or `undefined` if the array is empty or nil.
  */
 export function min<T>(
   array: Maybe<readonly T[]>,
-  valueExtractor?: (value: T) => number
-): number;
+  valueExtractor: (value: T) => number
+): T | undefined;
 /**
  * Implementation for all overloads.
  * @param array The array to iterate over.
@@ -25,10 +25,12 @@ export function min<T>(
 export function min<T>(
   array: Maybe<readonly T[]>,
   valueExtractor: (value: T) => number = (value) => value as unknown as number
-): number | undefined {
+): T | number | undefined {
   if (array == null || array.length === 0) {
     return undefined;
   }
 
-  return Math.min(...array.map((element) => valueExtractor(element)));
+  return array.reduce((a, b) =>
+    valueExtractor(a) < valueExtractor(b) ? a : b
+  );
 }
