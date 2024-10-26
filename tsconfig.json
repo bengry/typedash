@@ -13,10 +13,5 @@
     "types": ["vitest/importMeta"],
     "rootDirs": ["./src"]
   },
-  "include": [
-    "./src",
-    "lint-staged.config.js",
-    "vitest.config.ts",
-    "tsup.config.ts"
-  ]
+  "include": ["./src", "vitest.config.ts", "tsup.config.ts"]
 }
