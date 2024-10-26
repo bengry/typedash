@@ -24,6 +24,13 @@ it('should return undefined when given null or undefined', () => {
   expect(result2).toEqual(expected2);
 });
 
+it('should return the minimum value of an array of numbers using a value extractor', () => {
+  const numbers = [2, 3, 4, 5];
+  const result = min(numbers, (n) => n * n);
+  const expected = 2;
+  expect(result).toEqual(expected);
+});
+
 it('should return the minimum value of an array of objects using a value extractor', () => {
   const people = [
     { name: 'Alice', age: 25 },
@@ -32,6 +39,6 @@ it('should return the minimum value of an array of objects using a value extract
   ];
 
   const result = min(people, (person) => person.age);
-  const expected = 20;
+  const expected = { name: 'Charlie', age: 20 };
   expect(result).toEqual(expected);
 });
