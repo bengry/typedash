@@ -20,9 +20,7 @@ export function ensureSuffix<S extends string, Suffix extends string>(
   return `${string}${suffix}` as EnsureSuffix<S, Suffix>;
 }
 
-type EnsureSuffix<S extends string, Suffix extends string> = S extends `${
-  // biome-ignore lint/style/useNamingConvention: we have to do something here for typescript to work
-  infer _Prefix
-}${Suffix}`
-  ? S
-  : `${S}${Suffix}`;
+type EnsureSuffix<
+  S extends string,
+  Suffix extends string,
+> = S extends `${infer _Prefix}${Suffix}` ? S : `${S}${Suffix}`;

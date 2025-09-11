@@ -79,7 +79,7 @@ it('picks properties based on a predicate function', () => {
 
   const result2 = pick(
     object,
-    (value, key, object_) => key === 'a' && object_.b === 2
+    (_value, key, object_) => key === 'a' && object_.b === 2
   );
   expect(result2).toEqual({ a: 1 });
 

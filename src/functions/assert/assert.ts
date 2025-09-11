@@ -26,7 +26,7 @@ export function assert(
   message?: string
 ): asserts condition {
   if (
-    // biome-ignore lint/style/noArguments: simpler than anything else to be honest
+    // biome-ignore lint/complexity/noArguments: simpler than anything else to be honest
     arguments.length === 0
   ) {
     return;

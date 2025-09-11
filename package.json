@@ -74,21 +74,24 @@
   "dependencies": {
     "type-fest": "^4.41.0"
   },
+  "optionalDependencies": {
+    "react": ">=18 < 20"
+  },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "^2.2.4",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "@ryansonshine/commitizen": "^4.2.8",
     "@ryansonshine/cz-conventional-changelog": "^3.3.4",
     "@types/node": "^22.18.1",
-    "@types/react": "^18.3.24",
+    "@types/react": "^19.1.12",
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "concurrently": "^9.2.1",
     "husky": "^9.1.7",
     "lefthook": "^1.12.4",
-    "react": "^18.3.1",
-    "release-it": "^17.11.0",
+    "react": "^19.1.1",
+    "release-it": "^19.0.4",
     "taze": "^19.6.0",
     "tsup": "^8.5.0",
     "type-fest": "^4.41.0",

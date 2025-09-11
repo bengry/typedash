@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -16,20 +16,25 @@
     "lineWidth": 80,
     "attributePosition": "auto",
     "bracketSpacing": true,
-    "ignore": [
-      "**/pnpm-lock.yaml",
-      "**/*.snap",
-      "**/.npmrc",
-      "**/.husky",
-      "**/.gitignore",
-      "**/.editorconfig",
-      "**/.nvmrc",
-      "docs/assets",
-      "package.json"
+    "includes": [
+      "**",
+      "!**/pnpm-lock.yaml",
+      "!**/*.snap",
+      "!**/.npmrc",
+      "!**/.husky",
+      "!**/.gitignore",
+      "!**/.editorconfig",
+      "!**/.nvmrc",
+      "!**/docs/assets",
+      "!**/package.json"
     ]
   },
-  "organizeImports": {
-    "enabled": true
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "linter": {
     "enabled": true,
@@ -39,7 +44,6 @@
         "noBannedTypes": "error",
         "noExtraBooleanCast": "error",
         "noForEach": "error",
-        "noMultipleSpacesInRegularExpressionLiterals": "error",
         "noStaticOnlyClass": "error",
         "noUselessCatch": "error",
         "noUselessConstructor": "error",
@@ -54,16 +58,20 @@
         "noUselessTypeConstraint": "error",
         "noUselessUndefinedInitialization": "error",
         "noVoid": "error",
-        "noWith": "error",
         "useArrowFunction": "error",
         "useDateNow": "error",
         "useFlatMap": "error",
         "useLiteralKeys": "error",
         "useOptionalChain": "error",
-        "useRegexLiterals": "error"
+        "useRegexLiterals": "error",
+        "noAdjacentSpacesInRegex": "error",
+        "noArguments": "error",
+        "noCommaOperator": "error",
+        "useNumericLiterals": "error"
       },
       "correctness": {
         "noConstAssign": "error",
+        "useParseIntRadix": "off",
         "noConstantCondition": "error",
         "noConstructorReturn": "error",
         "noEmptyCharacterClassInRegex": "error",
@@ -73,7 +81,6 @@
         "noInvalidBuiltinInstantiation": "error",
         "noInvalidConstructorSuper": "error",
         "noInvalidUseBeforeDeclaration": "off",
-        "noNewSymbol": "error",
         "noNodejsModules": "off",
         "noNonoctalDecimalEscape": "error",
         "noPrecisionLoss": "error",
@@ -89,11 +96,11 @@
         "noUnusedPrivateClassMembers": "off",
         "noUnusedVariables": "off",
         "noVoidElementsWithChildren": "error",
-        "useArrayLiterals": "off",
         "useIsNan": "error",
         "useJsxKeyInIterable": "off",
         "useValidForDirection": "error",
-        "useYield": "error"
+        "useYield": "error",
+        "useValidTypeof": "error"
       },
       "security": {
         "noDangerouslySetInnerHtml": "warn",
@@ -101,8 +108,6 @@
         "noGlobalEval": "error"
       },
       "style": {
-        "noArguments": "error",
-        "noCommaOperator": "error",
         "noDefaultExport": "off",
         "noImplicitBoolean": "error",
         "noInferrableTypes": "error",
@@ -112,72 +117,10 @@
         "noRestrictedGlobals": {
           "level": "error",
           "options": {
-            "deniedGlobals": [
-              "isFinite",
-              "isNaN",
-              "addEventListener",
-              "blur",
-              "close",
-              "closed",
-              "confirm",
-              "defaultStatus",
-              "defaultstatus",
-              "event",
-              "external",
-              "find",
-              "focus",
-              "frameElement",
-              "frames",
-              "history",
-              "innerHeight",
-              "innerWidth",
-              "length",
-              "location",
-              "locationbar",
-              "menubar",
-              "moveBy",
-              "moveTo",
-              "name",
-              "onblur",
-              "onerror",
-              "onfocus",
-              "onload",
-              "onresize",
-              "onunload",
-              "open",
-              "opener",
-              "opera",
-              "outerHeight",
-              "outerWidth",
-              "pageXOffset",
-              "pageYOffset",
-              "parent",
-              "print",
-              "removeEventListener",
-              "resizeBy",
-              "resizeTo",
-              "screen",
-              "screenLeft",
-              "screenTop",
-              "screenX",
-              "screenY",
-              "scroll",
-              "scrollbars",
-              "scrollBy",
-              "scrollTo",
-              "scrollX",
-              "scrollY",
-              "self",
-              "status",
-              "statusbar",
-              "stop",
-              "toolbar",
-              "top"
-            ]
+            "deniedGlobals": {}
           }
         },
         "noUselessElse": "error",
-        "noVar": "error",
         "noYodaExpression": "error",
         "useAsConstAssertion": "error",
         "useBlockStatements": "off",
@@ -220,13 +163,13 @@
         },
         "useNodejsImportProtocol": "error",
         "useNumberNamespace": "error",
-        "useNumericLiterals": "error",
         "useShorthandAssign": "error",
         "useShorthandFunctionType": "error",
         "useSingleVarDeclarator": "error",
         "useTemplate": "error",
         "useThrowNewError": "error",
-        "useThrowOnlyError": "off"
+        "useThrowOnlyError": "off",
+        "useArrayLiterals": "off"
       },
       "suspicious": {
         "noArrayIndexKey": "error",
@@ -272,7 +215,8 @@
         "useIsArray": "error",
         "useNamespaceKeyword": "error",
         "useNumberToFixedDigitsArgument": "error",
-        "useValidTypeof": "error"
+        "noWith": "error",
+        "noVar": "error"
       }
     }
   },
@@ -291,7 +235,7 @@
   },
   "overrides": [
     {
-      "include": ["**/*.spec.{ts,js}"],
+      "includes": ["**/*.spec.{ts,js}"],
       "linter": {
         "rules": {
           "suspicious": {

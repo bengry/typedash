@@ -59,7 +59,7 @@ it('omits properties based on a predicate function', () => {
 
   const result2 = omit(
     object,
-    (value, key, object_) => key === 'a' && object_.b === 2
+    (_value, key, object_) => key === 'a' && object_.b === 2
   );
   expect(result2).toEqual({ b: 2, c: 3 });
 

@@ -3,7 +3,6 @@ import { describe, expect, test } from 'vitest';
 
 import { isEqual } from './isEqual';
 
-// biome-ignore lint/suspicious/noEmptyBlockStatements: on purpose for testing purposes
 const fn = () => {};
 const promise = Promise.resolve('foo');
 
@@ -189,7 +188,6 @@ const testSuites = [
       {
         name: 'function and different function are not equal',
         value1: fn,
-        // biome-ignore lint/suspicious/noEmptyBlockStatements: on purpose for testing purposes
         value2: () => {},
         expected: false,
       },
