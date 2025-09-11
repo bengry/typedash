@@ -1,4 +1,4 @@
-import { defineConfig } from 'taze'
+import { defineConfig } from 'taze';
 
 export default defineConfig({
   // Write to package.json automatically
@@ -11,4 +11,4 @@ export default defineConfig({
   exclude: [],
   // For minor/patch mode: only update minor and patch versions
   mode: 'minor',
-})
+});
