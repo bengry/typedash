@@ -42,9 +42,6 @@ importers:
       concurrently:
         specifier: ^9.2.1
         version: 9.2.1
-      husky:
-        specifier: ^9.1.7
-        version: 9.1.7
       lefthook:
         specifier: ^1.12.4
         version: 1.12.4
@@ -1469,11 +1466,6 @@ packages:
   human-signals@5.0.0:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
-
-  husky@9.1.7:
-    resolution: {integrity: sha512-5gs5ytaNjBrh5Ow3zrvdUUY+0VxIuWVL4i9irt6friV+BqdCfmV11CQTWMiBYWHbXhco+J1kHfTOUkePhCDvMA==}
-    engines: {node: '>=18'}
-    hasBin: true
 
   iconv-lite@0.6.3:
     resolution: {integrity: sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw==}
@@ -3847,8 +3839,6 @@ snapshots:
       - supports-color
 
   human-signals@5.0.0: {}
-
-  husky@9.1.7: {}
 
   iconv-lite@0.6.3:
     dependencies:
