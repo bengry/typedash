@@ -1,5 +1,5 @@
 import { readdir } from 'node:fs/promises';
-import { defineConfig } from 'tsup';
+import { defineConfig, type UserConfig } from 'tsdown';
 
 export default defineConfig(async () => {
   const functionNames = await readdir('src/functions', {
@@ -28,5 +28,5 @@ export default defineConfig(async () => {
     dts: true,
     format: ['cjs', 'esm'],
     tsconfig: 'tsconfig.build.json',
-  };
+  } satisfies UserConfig;
 });
