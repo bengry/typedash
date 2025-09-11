@@ -17,14 +17,13 @@
     "attributePosition": "auto",
     "bracketSpacing": true,
     "ignore": [
-      "**/yarn.lock",
+      "**/pnpm-lock.yaml",
       "**/*.snap",
       "**/.npmrc",
       "**/.husky",
       "**/.gitignore",
       "**/.editorconfig",
       "**/.nvmrc",
-      "**/.yarn/",
       "docs/assets",
       "package.json"
     ]

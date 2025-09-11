@@ -22,8 +22,8 @@ Similar to [lodash](https://lodash.com/) but with a focus on simplicity and type
 
 ```console
 npm install typedash
-# or using yarn
-yarn add typedash
+# or using pnpm
+pnpm add typedash
 ```
 
 ## Usage

@@ -7,15 +7,15 @@ If you find a bug or have a feature request, please open an issue on the GitHub 
 Watch and rebuild code with `tsup`:
 
 ```console
-yarn dev
+pnpm dev
 ```
 
 Run tests with `vitest`:
 
 ```console
-yarn test
+pnpm test
 # or watch for changes
-yarn test:watch
+pnpm test:watch
 ```
 
 ### Committing
@@ -23,7 +23,7 @@ yarn test:watch
 When you are ready to commit, run the following command to get a formatted commit message. All staged files will automatically be linted and fixed as well.
 
 ```console
-yarn commit
+pnpm commit
 ```
 
 ### Building
@@ -31,7 +31,7 @@ yarn commit
 Build package with `tsup` for production.
 
 ```console
-yarn build
+pnpm build
 ```
 
 ### Releasing, tagging & publishing to NPM
@@ -39,5 +39,5 @@ yarn build
 Create a semantic version tag and publish to Github Releases. When a new release is detected a Github Action will automatically build the package and publish it to NPM.
 
 ```console
-yarn release
+pnpm release
 ```

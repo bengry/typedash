@@ -19,25 +19,25 @@ jobs:
 
       - name: Enable corepack
         shell: bash
-        run: corepack enable yarn
+        run: corepack enable pnpm
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
-          cache: 'yarn'
+          cache: 'pnpm'
 
       - name: Install dependencies
-        uses: ./.github/actions/yarn-nm-install
+        uses: ./.github/actions/pnpm-nm-install
 
       - name: Check types & linting
-        run: yarn lint
+        run: pnpm lint
 
       - name: Run tests
-        run: yarn test:ci
+        run: pnpm test:ci
 
       - name: Build package
-        run: yarn build
+        run: pnpm build
 
       - name: Check commits messages
         uses: wagoid/commitlint-github-action@v6

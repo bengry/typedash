@@ -1,0 +1,53 @@
+########################################################################################
+# "pnpm install" composite action for pnpm 9+ and "nodeLinker: node-modules"       #
+#--------------------------------------------------------------------------------------#
+# Cache:                                                                               #
+#   - Downloaded zip archive (multi-arch, preserved across pnpm-lock.yaml changes)          #
+#   - pnpm install state (discarded on pnpm-lock.yaml changes)                              #
+# References:                                                                          #
+#   - bench: https://gist.github.com/belgattitude/0ecd26155b47e7be1be6163ecfbb0f0b     #
+#   - vs @setup/node: https://github.com/actions/setup-node/issues/325                 #
+########################################################################################
+
+name: "pnpm install"
+description: "Run pnpm install with node_modules linker and cache enabled"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Expose pnpm config as "$GITHUB_OUTPUT"
+      id: pnpm-config
+      shell: bash
+      run: |
+        echo "CACHE_FOLDER=$(pnpm config get cacheFolder)" >> $GITHUB_OUTPUT
+
+    # pnpm rotates the downloaded cache archives, @see https://github.com/actions/setup-node/issues/325
+    # pnpm cache is also reusable between arch and os.
+    - name: Restore pnpm cache
+      uses: actions/cache@v3
+      id: pnpm-download-cache
+      with:
+        path: ${{ steps.pnpm-config.outputs.CACHE_FOLDER }}
+        key: pnpm-download-cache-${{ hashFiles('pnpm-lock.yaml') }}
+        restore-keys: |
+          pnpm-download-cache-
+
+    # Invalidated on pnpm-lock.yaml changes
+    - name: Restore pnpm install state
+      id: pnpm-install-state-cache
+      uses: actions/cache@v3
+      with:
+        path: .pnpm/ci-cache/
+        key: ${{ runner.os }}-pnpm-install-state-cache-${{ hashFiles('pnpm-lock.yaml', '.pnpmrc.yml') }}
+
+    - name: Install dependencies
+      shell: bash
+      run: |
+        pnpm install --immutable --inline-builds
+      env:
+        # CI optimizations. Overrides pnpmrc.yml options (or their defaults) in the CI action.
+        PNPM_ENABLE_GLOBAL_CACHE: "false" # Use local cache folder to keep downloaded archives
+        PNPM_NM_MODE: "hardlinks-local" # Hardlinks-(local|global) reduces io / node_modules size
+        PNPM_INSTALL_STATE_PATH: .pnpm/ci-cache/install-state.gz # Very small speedup when lock does not change
+        # Other environment variables
+        HUSKY: "0" # By default do not run HUSKY install
