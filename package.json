@@ -34,7 +34,9 @@
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "commit": "cz",
@@ -42,6 +44,10 @@
     "lint": "concurrently \"pnpm lint:linter\" \"pnpm lint:format\" \"pnpm lint:type-check\" \"pnpm lint:dependencies:dedup:check\"",
     "lint:dependencies:dedup:check": "pnpm dedupe --check",
     "lint:dependencies:dedup:fix": "pnpm dedupe && pnpm install",
+    "update:check": "taze",
+    "update:deps": "taze --interactive",
+    "update:deps:write": "taze --write --install",
+    "update:check:major": "taze major",
     "lint:linter": "biome lint --error-on-warnings .",
     "lint:linter:fix": "biome lint --error-on-warnings --write .",
     "lint:fix": "pnpm lint --fix && pnpm lint:format:fix",
@@ -85,6 +91,7 @@
     "lefthook": "^1.8.1",
     "react": "^18.3.1",
     "release-it": "^17.10.0",
+    "taze": "^19.6.0",
     "tsup": "^8.3.5",
     "type-fest": "^4.26.1",
     "typescript": "^5.6.3",
