@@ -13,5 +13,5 @@
     "types": ["vitest/importMeta"],
     "rootDirs": ["./src"]
   },
-  "include": ["./src", "vitest.config.ts", "tsup.config.ts"]
+  "include": ["./src", "vitest.config.ts", "tsdown.config.ts"]
 }

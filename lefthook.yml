@@ -7,3 +7,14 @@ pre-commit:
     format:
       glob: "{*.*,**/*.*}"
       run: pnpm lint:format:fix {staged_files}
+
+commit-msg:
+  commands:
+    commitlint:
+      run: pnpm commitlint --edit {1}
+
+prepare-commit-msg:
+  commands:
+    commitizen:
+      run: exec < /dev/tty && pnpm cz --hook || true
+      interactive: true

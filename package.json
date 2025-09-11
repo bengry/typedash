@@ -52,7 +52,7 @@
     "lint:format": "biome format .",
     "lint:format:fix": "biome format --write .",
     "lint:type-check": "tsc --noEmit",
-    "prepare": "husky",
+    "prepare": "lefthook install",
     "release": "pnpm build && pnpm release-it",
     "test": "vitest run --passWithNoTests",
     "test:ci": "pnpm test",
@@ -60,11 +60,6 @@
     "test:ui": "pnpm test:watch --ui",
     "test:watch": "vitest",
     "util:function-count": "exa -1 | grep -v '^_' | wc -l"
-  },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
-    }
   },
   "config": {
     "commitizen": {
@@ -88,7 +83,6 @@
     "@vitest/coverage-v8": "^3.2.4",
     "@vitest/ui": "^3.2.4",
     "concurrently": "^9.2.1",
-    "husky": "^9.1.7",
     "lefthook": "^1.12.4",
     "react": "^19.1.1",
     "release-it": "^19.0.4",
