@@ -49,6 +49,7 @@ export * from './sample';
 export * from './set';
 export * from './shuffle';
 export * from './single';
+export * from './snakeCase';
 export * from './startCase';
 export * from './sum';
 export * from './take';
