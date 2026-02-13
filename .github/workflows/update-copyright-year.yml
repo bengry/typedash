@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   update-copyright-year:
@@ -20,14 +21,19 @@ jobs:
           CURRENT_YEAR=$(date +'%Y')
           sed -i -E "s/Copyright \(c\) ([0-9]{4})(-[0-9]{4})?/Copyright (c) \1-$CURRENT_YEAR/" LICENSE
 
-      - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add LICENSE
-          if git diff --staged --quiet; then
-            echo "No changes needed"
-          else
-            git commit -m "chore: update copyright year to $(date +'%Y')"
-            git push
-          fi
+      - name: Create Pull Request
+        id: create-pr
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: update copyright year to $(date +'%Y')"
+          branch: automated/update-copyright-year
+          delete-branch: true
+          title: "Update copyright year"
+          body: "Automated update of copyright year in LICENSE file."
+          labels: automated
+
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-number
+        run: gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --squash --auto
+        env:
+          GH_TOKEN: ${{ github.token }}
