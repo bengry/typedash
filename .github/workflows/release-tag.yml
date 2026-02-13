@@ -28,4 +28,4 @@ jobs:
       - name: Create GitHub Release
         run: gh release create "${{ steps.version.outputs.tag }}" --generate-notes --latest
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.RELEASE_PAT }}
