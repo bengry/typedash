@@ -11,10 +11,23 @@ A modern collection of utility functions for all occasions, all written in TypeS
 
 Similar to [lodash](https://lodash.com/) but with a focus on simplicity and type-safety (no excessive checks are made, [trust the compiler](https://slack.engineering/typescript-at-slack/)), tree-shaking, and leveraging the platform whenever possible.
 
+## Features
+
+- 📦 Modern and tree-shakeable
+- 🔥 Written in and designed to work with TypeScript (plain JavaScript also supported)
+- 🚫 Zero runtime dependencies
+- 🌱 Growing collection of 60+ type-safe utility functions
+
+## Installation
+
+```console
+npm install typedash
+# or using pnpm
+pnpm add typedash
+```
+
 ## Table of Contents
 
-- [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
 - [API](#api)
   - [Array](#array)
@@ -25,21 +38,6 @@ Similar to [lodash](https://lodash.com/) but with a focus on simplicity and type
   - [Math](#math)
   - [Utility](#utility)
 - [License](#license)
-
-## Features
-
-- Modern and tree-shakeable
-- Written in and designed to work with TypeScript (plain JavaScript also supported)
-- Zero runtime dependencies
-- Growing collection of 60+ type-safe utility functions
-
-## Installation
-
-```console
-npm install typedash
-# or using pnpm
-pnpm add typedash
-```
 
 ## Usage
 
