@@ -83,3 +83,17 @@ it('should not allow passing in a potentially unsafe path', () => {
   ).toThrow('Potentially malicious path');
   expect(object).toEqual({ foo: 'bar' });
 });
+
+it('should create intermediate objects without a prototype chain', () => {
+  const object: {
+    foo?: {
+      bar?: string;
+    };
+  } = {};
+
+  set(object, 'foo.bar', 'baz');
+
+  // Intermediate objects should not have Object.prototype methods
+  // to prevent prototype pollution attacks
+  expect(Object.getPrototypeOf(object.foo)).toBeNull();
+});

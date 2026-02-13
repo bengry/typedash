@@ -46,7 +46,7 @@ export function set<
     // biome-ignore lint/style/noNonNullAssertion: trust the compiler (and unit tests 😄).
     const segment = segments[index]!;
     if (segment in currentObject === false) {
-      currentObject[segment] = {};
+      currentObject[segment] = Object.create(null) as Record<string, unknown>;
     }
     currentObject = currentObject[segment];
   }
