@@ -47,10 +47,12 @@ jobs:
           echo "next=${major}.${minor}.${patch}" >> "$GITHUB_OUTPUT"
           echo "Bumping $current → ${major}.${minor}.${patch}"
 
-      - name: Bump version in package.json
+      - name: Bump version in package.json and jsr.json
         run: |
           jq --arg v "${{ steps.version.outputs.next }}" '.version = $v' package.json > package.json.tmp
           mv package.json.tmp package.json
+          jq --arg v "${{ steps.version.outputs.next }}" '.version = $v' jsr.json > jsr.json.tmp
+          mv jsr.json.tmp jsr.json
 
       - name: Create release PR
         uses: peter-evans/create-pull-request@v7
