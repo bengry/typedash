@@ -67,7 +67,7 @@
     }
   },
   "dependencies": {
-    "type-fest": "^4.41.0"
+    "type-fest": "^5.4.4"
   },
   "optionalDependencies": {
     "react": ">=18 < 20"
@@ -88,7 +88,7 @@
     "release-it": "^19.0.4",
     "taze": "^19.6.0",
     "tsdown": "^0.20.3",
-    "type-fest": "^4.41.0",
+    "type-fest": "^5.4.4",
     "typescript": "^5.9.2",
     "vitest": "^4.0.18"
   },

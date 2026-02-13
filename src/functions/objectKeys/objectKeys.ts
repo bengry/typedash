@@ -1,4 +1,4 @@
-import type { StringKeyOf } from 'type-fest';
+import type { KeyAsString } from 'type-fest';
 
 import type { AnyFunction } from '../../types/_internal';
 
@@ -14,4 +14,4 @@ export const objectKeys: ObjectKeys = Object.keys;
  */
 type ObjectKeys = <T extends object>(
   object: Exclude<T, AnyFunction>
-) => StringKeyOf<T>[];
+) => KeyAsString<T>[];
