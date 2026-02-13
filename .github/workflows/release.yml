@@ -13,8 +13,7 @@ on:
           - major
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   release:
@@ -57,6 +56,7 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         id: create-pr
         with:
+          token: ${{ secrets.RELEASE_PAT }}
           commit-message: "chore(release): v${{ steps.version.outputs.next }}"
           branch: release/v${{ steps.version.outputs.next }}
           delete-branch: true
@@ -71,4 +71,4 @@ jobs:
         if: steps.create-pr.outputs.pull-request-number
         run: gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --squash --auto
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.RELEASE_PAT }}
