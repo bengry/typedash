@@ -1,0 +1,35 @@
+name: Publish Preview
+
+on:
+  pull_request:
+    branches:
+      - "**"
+  push:
+    branches-ignore:
+      - main
+    tags:
+      - "!**"
+
+permissions: {}
+
+jobs:
+  publish-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enable corepack
+        shell: bash
+        run: corepack enable pnpm
+
+      - name: Install dependencies
+        uses: ./.github/actions/pnpm-nm-install
+
+      - name: Build package
+        run: pnpm build
+
+      - name: Publish preview package
+        run: pnpm dlx pkg-pr-new publish --pnpm --compact --no-template --packageManager=pnpm
