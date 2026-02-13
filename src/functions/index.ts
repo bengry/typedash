@@ -47,6 +47,7 @@ export * from './pipe';
 export * from './range';
 export * from './sample';
 export * from './set';
+export * from './shuffle';
 export * from './single';
 export * from './startCase';
 export * from './sum';
