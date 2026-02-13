@@ -1,0 +1,31 @@
+name: Tag Release
+
+on:
+  pull_request:
+    types: [closed]
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  tag-release:
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract version from branch name
+        id: version
+        run: |
+          version="${{ github.event.pull_request.head.ref }}"
+          version="${version#release/v}"
+          echo "tag=${version}" >> "$GITHUB_OUTPUT"
+
+      - name: Create GitHub Release
+        run: gh release create "${{ steps.version.outputs.tag }}" --generate-notes --latest
+        env:
+          GH_TOKEN: ${{ github.token }}
