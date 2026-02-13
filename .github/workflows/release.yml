@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   release:
@@ -23,8 +24,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Enable corepack
         shell: bash
@@ -33,15 +32,40 @@ jobs:
       - name: Install dependencies
         uses: ./.github/actions/pnpm-nm-install
 
-      - name: Configure git
+      - name: Compute next version
+        id: version
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          current=$(jq -r .version package.json)
+          IFS='.' read -r major minor patch <<< "$current"
+          case "${{ inputs.release-type }}" in
+            major) major=$((major + 1)); minor=0; patch=0 ;;
+            minor) minor=$((minor + 1)); patch=0 ;;
+            patch) patch=$((patch + 1)) ;;
+          esac
+          echo "next=${major}.${minor}.${patch}" >> "$GITHUB_OUTPUT"
+          echo "Bumping $current → ${major}.${minor}.${patch}"
 
-      - name: Disable git hooks
-        run: git config --unset core.hooksPath || true
+      - name: Bump version in package.json
+        run: |
+          jq --arg v "${{ steps.version.outputs.next }}" '.version = $v' package.json > package.json.tmp
+          mv package.json.tmp package.json
 
-      - name: Release
-        run: LEFTHOOK=0 pnpm release-it ${{ inputs.release-type }} --ci
+      - name: Create release PR
+        uses: peter-evans/create-pull-request@v7
+        id: create-pr
+        with:
+          commit-message: "chore(release): v${{ steps.version.outputs.next }}"
+          branch: release/v${{ steps.version.outputs.next }}
+          delete-branch: true
+          title: "chore(release): v${{ steps.version.outputs.next }}"
+          body: |
+            Automated ${{ inputs.release-type }} release bump to v${{ steps.version.outputs.next }}.
+
+            After merging, a GitHub Release will be created automatically which triggers publishing to npm and JSR.
+          labels: automated
+
+      - name: Enable auto-merge
+        if: steps.create-pr.outputs.pull-request-number
+        run: gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --squash --auto
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
