@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "mcp__github__search_repositories",
-      "mcp__github__search_code",
-      "mcp__github__get_file_contents"
-    ]
-  }
-}
