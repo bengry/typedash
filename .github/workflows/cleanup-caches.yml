@@ -6,6 +6,11 @@ on:
     types:
       - closed
   workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to clean up caches for"
+        required: true
+        type: string
 
 permissions:
   actions: write
@@ -22,7 +27,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-          BRANCH: refs/pull/${{ github.event.pull_request.number }}/merge
+          BRANCH: refs/pull/${{ github.event.pull_request.number || inputs.pr_number }}/merge
         run: |
           echo "Fetching cache keys for PR branch"
           cacheKeys=$(gh cache list -R "$REPO" -B "$BRANCH" --json key --jq '.[].key')
@@ -33,7 +38,7 @@ jobs:
           fi
 
           echo "Deleting caches..."
-          for key in $cacheKeys; do
-            gh cache delete "$key" -R "$REPO" -B "$BRANCH" --confirm || true
+          echo "$cacheKeys" | while IFS= read -r key; do
+            [ -n "$key" ] && gh cache delete "$key" -R "$REPO" || true
           done
           echo "Done"

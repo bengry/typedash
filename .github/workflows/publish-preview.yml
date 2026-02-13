@@ -7,8 +7,6 @@ on:
   push:
     branches-ignore:
       - main
-    tags:
-      - "!**"
 
 permissions: {}
 
