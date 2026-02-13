@@ -45,12 +45,14 @@
     {
       "description": "Group vitest-related packages",
       "groupName": "vitest packages",
-      "matchPackageNames": ["/^vitest/", "/^@vitest\\//"]
+      "matchPackageNames": ["/^vitest/", "/^@vitest\\//"],
+      "matchUpdateTypes": ["minor", "patch"]
     },
     {
       "description": "Group commitlint packages",
       "groupName": "commitlint packages",
-      "matchPackageNames": ["/^@commitlint\\//"]
+      "matchPackageNames": ["/^@commitlint\\//"],
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ]
 }
