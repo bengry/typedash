@@ -48,6 +48,7 @@ export * from './range';
 export * from './sample';
 export * from './set';
 export * from './single';
+export * from './startCase';
 export * from './sum';
 export * from './take';
 export * from './throttle';
