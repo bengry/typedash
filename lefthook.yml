@@ -15,6 +15,6 @@ commit-msg:
 
 prepare-commit-msg:
   commands:
-    commitizen:
-      run: exec < /dev/tty && pnpm cz --hook || true
+    czg:
+      run: exec < /dev/tty && pnpm czg --hook || true
       interactive: true
