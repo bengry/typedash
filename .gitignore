@@ -30,3 +30,6 @@ pnpm-error.log*
 
 # Local playground folder
 /playground
+
+# Claude Code local settings
+.claude/settings.local.json
