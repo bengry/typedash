@@ -1,0 +1,27 @@
+name: Compressed Size
+
+on: [pull_request]
+
+permissions:
+  pull-requests: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enable corepack
+        shell: bash
+        run: corepack enable pnpm
+
+      - name: Check compressed size changes
+        uses: preactjs/compressed-size-action@v2
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          build-script: build
+          pattern: "dist/**/index.{js,cjs}"
+          compression: brotli
