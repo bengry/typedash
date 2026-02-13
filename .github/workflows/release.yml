@@ -38,7 +38,10 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+      - name: Disable git hooks
+        run: git config --unset core.hooksPath || true
+
       - name: Release
-        run: pnpm release-it ${{ inputs.release-type }} --ci
+        run: LEFTHOOK=0 pnpm release-it ${{ inputs.release-type }} --ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
