@@ -1,3 +1,7 @@
+minimumReleaseAge: 4320 # 3 days in minutes
+
+blockExoticSubdeps: true
+
 onlyBuiltDependencies:
   - esbuild
   - lefthook
