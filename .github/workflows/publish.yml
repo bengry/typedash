@@ -26,7 +26,7 @@ jobs:
         uses: ./.github/actions/pnpm-nm-install
 
       - name: Setup npm registry
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           registry-url: https://registry.npmjs.org/
 
