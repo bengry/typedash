@@ -3,7 +3,7 @@
 <a href="https://www.npmjs.com/package/typedash"><img src="https://img.shields.io/npm/v/typedash?color=blue" alt="npm link" target="_blank" />
 </a>
 <a href="https://www.npmjs.com/package/typedash" target="_blank"><img src="https://img.shields.io/npm/dm/typedash" alt="downloads" /></a>
-<a href="https://bundlejs.com/?q=typedash" target="_blank"><img src="https://deno.bundlejs.com/?q=typedash&config={%22analysis%22:undefined}&badge=" /></a>
+<a href="https://bundlejs.com/?q=typedash" target="_blank"><img src="https://deno.bundlejs.com/?q=typedash&badge=detailed" alt="bundle size" /></a>
 <img src="https://img.shields.io/npm/l/typedash" />
 <a href="https://tsplay.dev/Woxbjw" target="_blank"><img src="https://img.shields.io/badge/%F0%9F%9A%80-playground-yellow" alt="playground" /></a>
 
