@@ -19,7 +19,7 @@ jobs:
       - name: Update year in LICENSE
         run: |
           CURRENT_YEAR=$(date +'%Y')
-          sed -i -E "s/Copyright \(c\) ([0-9]{4})(-[0-9]{4})?/Copyright (c) \1-$CURRENT_YEAR/" LICENSE
+          sed -i -E "s/Copyright \(c\) [0-9]{4}(-[0-9]{4})?/Copyright (c) $CURRENT_YEAR/" LICENSE
 
       - name: Create Pull Request
         id: create-pr
