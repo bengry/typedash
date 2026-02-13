@@ -12,6 +12,7 @@ permissions:
 jobs:
   update-copyright-year:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,3 +38,8 @@ jobs:
         run: gh pr merge ${{ steps.create-pr.outputs.pull-request-number }} --squash --auto
         env:
           GH_TOKEN: ${{ github.token }}
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::warning::Copyright year update workflow failed. This runs only once a year — manual intervention required."

@@ -6,31 +6,39 @@ on:
     types:
       - closed
   workflow_dispatch:
+    inputs:
+      pr_number:
+        description: "PR number to clean up caches for"
+        required: true
+        type: string
+
+permissions:
+  actions: write
 
 jobs:
   cleanup:
     runs-on: ubuntu-latest
+    timeout-minutes: 5
     steps:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Cleanup
-        run: |
-          gh extension install actions/gh-actions-cache
-
-          REPO=${{ github.repository }}
-          BRANCH="refs/pull/${{ github.event.pull_request.number }}/merge"
-
-          echo "Fetching list of cache key"
-          cacheKeysForPR=$(gh actions-cache list -R $REPO -B $BRANCH | cut -f 1 )
-
-          ## Setting this to not fail the workflow while deleting cache keys.
-          set +e
-          echo "Deleting caches..."
-          for cacheKey in $cacheKeysForPR
-          do
-              gh actions-cache delete $cacheKey -R $REPO -B $BRANCH --confirm
-          done
-          echo "Done"
+      - name: Cleanup PR caches
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          BRANCH: refs/pull/${{ github.event.pull_request.number || inputs.pr_number }}/merge
+        run: |
+          echo "Fetching cache keys for PR branch"
+          cacheKeys=$(gh cache list -R "$REPO" -B "$BRANCH" --json key --jq '.[].key')
+
+          if [ -z "$cacheKeys" ]; then
+            echo "No caches found for this PR"
+            exit 0
+          fi
+
+          echo "Deleting caches..."
+          echo "$cacheKeys" | while IFS= read -r key; do
+            [ -n "$key" ] && gh cache delete "$key" -R "$REPO" || true
+          done
+          echo "Done"

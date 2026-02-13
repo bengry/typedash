@@ -1,21 +1,26 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
-  run-ci:
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    name: Run Type Check & Linters
+  lint:
+    name: Lint & Type Check
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Enable corepack
         shell: bash
@@ -27,11 +32,61 @@ jobs:
       - name: Check types & linting
         run: pnpm lint
 
+  test:
+    name: "Test (Node ${{ matrix.node-version }})"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version: [20, 22, 24]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enable corepack
+        shell: bash
+        run: corepack enable pnpm
+
+      - name: Install dependencies
+        uses: ./.github/actions/pnpm-nm-install
+        with:
+          node-version: ${{ matrix.node-version }}
+
       - name: Run tests
         run: pnpm test:ci
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Enable corepack
+        shell: bash
+        run: corepack enable pnpm
+
+      - name: Install dependencies
+        uses: ./.github/actions/pnpm-nm-install
 
       - name: Build package
         run: pnpm build
 
-      - name: Check commits messages
+  commitlint:
+    name: Lint Commit Messages
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check commit messages
         uses: wagoid/commitlint-github-action@v6

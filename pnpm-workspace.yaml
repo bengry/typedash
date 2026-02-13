@@ -1,3 +1,12 @@
+minimumReleaseAge: 4320 # 3 days in minutes
+
+minimumReleaseAgeExclude:
+  - "@types/*"
+  - "@biomejs/*"
+  - "lefthook*"
+
+blockExoticSubdeps: true
+
 onlyBuiltDependencies:
   - esbuild
   - lefthook

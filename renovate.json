@@ -1,13 +1,58 @@
 {
-  "extends": ["config:base"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:best-practices", ":semanticCommitTypeAll(chore)"],
   "timezone": "Asia/Jerusalem",
-  "schedule": ["on the first day of the month"],
+  "schedule": ["before 9am on monday"],
+  "postUpdateOptions": ["pnpmDedupe"],
+  "rebaseWhen": "behind-base-branch",
+  "separateMajorMinor": true,
+  "lockFileMaintenance": {
+    "enabled": true,
+    "schedule": ["before 5am on monday"],
+    "automerge": true
+  },
   "packageRules": [
     {
-      "matchPackagePatterns": ["*"],
+      "description": "Group non-major production dependency updates",
+      "matchDepTypes": ["dependencies"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch"
+      "groupName": "production dependencies (non-major)",
+      "automerge": true,
+      "automergeType": "pr",
+      "minimumReleaseAge": "3 days"
+    },
+    {
+      "description": "Group non-major dev dependency updates",
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "dev dependencies (non-major)",
+      "automerge": true,
+      "automergeType": "pr"
+    },
+    {
+      "description": "Major updates get individual PRs (no automerge)",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "7 days"
+    },
+    {
+      "description": "Automerge non-major GitHub Actions updates",
+      "matchManagers": ["github-actions"],
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "automerge": true,
+      "automergeType": "pr"
+    },
+    {
+      "description": "Group vitest-related packages",
+      "groupName": "vitest packages",
+      "matchPackageNames": ["/^vitest/", "/^@vitest\\//"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "description": "Group commitlint packages",
+      "groupName": "commitlint packages",
+      "matchPackageNames": ["/^@commitlint\\//"],
+      "matchUpdateTypes": ["minor", "patch"]
     }
   ]
 }
