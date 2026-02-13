@@ -5,12 +5,8 @@ import type { IsEqual } from './IsEqual';
 /**
  * Represents an empty object, either with or without properties.
  */
-export type EmptyObject<T extends object = never> = IsEqual<
-  T,
-  never
-> extends true
-  ? UnkeyedEmptyObject
-  : KeyedEmptyObject<T>;
+export type EmptyObject<T extends object = never> =
+  IsEqual<T, never> extends true ? UnkeyedEmptyObject : KeyedEmptyObject<T>;
 
 /**
  * Represents an empty object with keys from another object.
