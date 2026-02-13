@@ -1,9 +1,5 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
 # dependencies
 /node_modules
-/.pnp
-.pnp.js
 
 # JetBrains IDE files
 .idea/
@@ -21,9 +17,7 @@ tsconfig.tsbuildinfo
 
 # pnpm
 .pnpm-lock.yaml
-
 # debug
-npm-debug.log*
 pnpm-debug.log*
 pnpm-error.log*
 
@@ -37,5 +31,5 @@ pnpm-error.log*
 # Local playground folder
 /playground
 
-# Claude Code configuration
-.claude/
+# Claude Code local settings
+.claude/settings.local.json
