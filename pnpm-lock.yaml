@@ -13,49 +13,49 @@ importers:
         version: 5.4.4
     devDependencies:
       '@biomejs/biome':
-        specifier: ^2.3.15
+        specifier: 2.3.15
         version: 2.3.15
       '@commitlint/cli':
-        specifier: ^20.4.1
+        specifier: 20.4.1
         version: 20.4.1(@types/node@24.10.13)(typescript@5.9.3)
       '@commitlint/config-conventional':
-        specifier: ^20.4.1
+        specifier: 20.4.1
         version: 20.4.1
       '@types/node':
-        specifier: ^24.10.13
+        specifier: 24.10.13
         version: 24.10.13
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
       '@vitest/coverage-v8':
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18(vitest@4.0.18)
       '@vitest/ui':
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18(vitest@4.0.18)
       concurrently:
-        specifier: ^9.2.1
+        specifier: 9.2.1
         version: 9.2.1
       czg:
-        specifier: ^1.12.0
+        specifier: 1.12.0
         version: 1.12.0
       lefthook:
-        specifier: ^2.1.1
+        specifier: 2.1.1
         version: 2.1.1
       release-it:
-        specifier: ^19.2.4
+        specifier: 19.2.4
         version: 19.2.4(@types/node@24.10.13)(magicast@0.5.2)
       taze:
-        specifier: ^19.9.2
+        specifier: 19.9.2
         version: 19.9.2
       tsdown:
-        specifier: ^0.20.3
+        specifier: 0.20.3
         version: 0.20.3(typescript@5.9.3)
       typescript:
-        specifier: ^5.9.3
+        specifier: 5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^4.0.18
+        specifier: 4.0.18
         version: 4.0.18(@types/node@24.10.13)(@vitest/ui@4.0.18)(jiti@2.6.1)(yaml@2.8.2)
     optionalDependencies:
       react:
