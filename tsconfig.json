@@ -10,7 +10,7 @@
     "incremental": true,
     "allowJs": true,
     "noUncheckedIndexedAccess": true,
-    "types": ["vitest/importMeta"],
+    "types": ["vitest/importMeta", "node"],
     "rootDirs": ["./src"]
   },
   "include": ["./src", "vitest.config.ts", "tsdown.config.ts"]
