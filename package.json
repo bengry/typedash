@@ -36,6 +36,7 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
+    "!dist/**/*.map",
     "README.md"
   ],
   "scripts": {
@@ -55,6 +56,7 @@
     "lint:type-check": "tsc --noEmit",
     "prepare": "lefthook install",
     "release": "pnpm build && pnpm release-it",
+    "size:analyze": "node scripts/sizeAnalyze.mjs",
     "test": "vitest run --passWithNoTests",
     "test:ci": "pnpm test",
     "test:coverage": "pnpm test --coverage",
