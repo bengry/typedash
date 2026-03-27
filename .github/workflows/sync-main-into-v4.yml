@@ -1,0 +1,106 @@
+name: Sync main into v4
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+jobs:
+  sync:
+    name: Sync main → v4
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          fetch-depth: 0
+
+      - name: Attempt merge
+        id: merge
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B sync-main-into-v4 origin/v4
+          if git merge --no-ff --no-edit origin/main; then
+            if git diff --quiet origin/v4; then
+              echo "already_synced=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "already_synced=false" >> "$GITHUB_OUTPUT"
+            fi
+          else
+            git merge --abort
+            echo "conflict=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Push sync branch
+        if: steps.merge.outputs.conflict != 'true' && steps.merge.outputs.already_synced != 'true'
+        run: git push origin sync-main-into-v4 --force
+
+      - name: Create or update sync PR
+        if: steps.merge.outputs.conflict != 'true' && steps.merge.outputs.already_synced != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          existing=$(gh pr list --base v4 --head sync-main-into-v4 --state open --json number --jq '.[0].number')
+          if [ -n "$existing" ]; then
+            echo "PR #$existing already exists, branch updated."
+          else
+            gh pr create \
+              --base v4 \
+              --head sync-main-into-v4 \
+              --title "chore: sync main into v4" \
+              --body "Automated sync of \`main\` into \`v4\` to keep the next-major branch up to date with non-breaking changes." \
+              --label "automated"
+          fi
+
+      - name: Open issue on conflict
+        if: steps.merge.outputs.conflict == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea # v7
+        with:
+          script: |
+            const title = 'Manual sync needed: main → v4 merge conflict';
+            const body = [
+              'The automated `main` → `v4` sync hit merge conflicts.',
+              '',
+              `Triggered by: ${context.sha}`,
+              '',
+              'Please resolve manually:',
+              '```sh',
+              'git fetch origin main v4',
+              'git checkout v4',
+              'git merge origin/main',
+              '# resolve conflicts',
+              'git push origin v4',
+              '```',
+            ].join('\n');
+
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'sync',
+            });
+            const existing = issues.find(i => i.title === title);
+            if (!existing) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body,
+                labels: ['sync', 'maintenance'],
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `Still conflicting as of ${context.sha}.`,
+              });
+            }
