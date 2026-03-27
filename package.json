@@ -84,7 +84,7 @@
     "taze": "^19.9.2",
     "tsdown": "^0.21.0",
     "type-fest": "^5.4.4",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.0",
     "vitest": "^4.0.18"
   },
   "packageManager": "pnpm@10.32.1",
