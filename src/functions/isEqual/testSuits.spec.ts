@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { describe, expect, test } from 'vitest';
 
 import { isEqual } from './isEqual';
@@ -544,23 +543,7 @@ const testSuites = [
       },
     ],
   },
-  {
-    name: 'react',
-    tests: [
-      {
-        name: 'simple react elements are deeply equal',
-        value1: React.createElement('div', {}, 'foo'),
-        value2: React.createElement('div', {}, 'foo'),
-        expected: true,
-      },
-      {
-        name: 'simple react elements are not deeply equal',
-        value1: React.createElement('div', {}, 'foo'),
-        value2: React.createElement('div', {}, 'bar'),
-        expected: false,
-      },
-    ],
-  },
+
   {
     name: 'typed arrays',
     tests: [

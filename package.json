@@ -67,21 +67,16 @@
   "dependencies": {
     "type-fest": "^5.5.0"
   },
-  "optionalDependencies": {
-    "react": ">=18 < 20"
-  },
   "devDependencies": {
     "@biomejs/biome": "^2.4.9",
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
     "@types/node": "^24.12.0",
-    "@types/react": "^19.2.14",
     "@vitest/coverage-v8": "^4.1.1",
     "@vitest/ui": "^4.1.1",
     "concurrently": "^9.2.1",
     "czg": "^1.12.0",
     "lefthook": "^2.1.4",
-    "react": "^19.2.4",
     "release-it": "^19.2.4",
     "taze": "^19.10.0",
     "tsdown": "^0.21.4",
