@@ -4,13 +4,13 @@
 
 import { describe, expect, it, vi } from 'vitest';
 
+vi.hoisted(() => {
+  vi.stubGlobal('ArrayBuffer', undefined);
+});
+
 import { isTypedArray } from './isTypedArray';
 
 describe('ArrayBuffer is not available', () => {
-  vi.hoisted(() => {
-    vi.stubGlobal('ArrayBuffer', undefined);
-  });
-
   it('should be null if ArrayBuffer is not available', () => {
     expect(isTypedArray).toBeNull();
 
