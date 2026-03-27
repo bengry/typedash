@@ -1,5 +1,3 @@
-import { compact } from '../compact';
-
 /**
  * Asserts that a condition is true, throwing an Error if it is not.
  * @param condition A condition that should be true
@@ -43,11 +41,6 @@ export function assert(
  */
 export class AssertionError extends Error {
   constructor(message?: string) {
-    super(
-      compact([
-        'Assertion not satisfied',
-        message ? `: "${message}"` : '',
-      ]).join('')
-    );
+    super(`Assertion not satisfied${message ? `: "${message}"` : ''}`);
   }
 }

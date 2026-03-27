@@ -1,7 +1,6 @@
 import type { Primitive } from 'type-fest';
 
 import type { KeysOfUnion, Many, Maybe } from '../../types';
-import { castArray } from '../castArray';
 
 /**
  * Sorts an array of objects by one or more properties, in ascending or descending order.
@@ -17,13 +16,20 @@ export function orderBy<TValue>(
 ): TValue[] {
   if (array == null) return [];
 
-  const normalizedIteratees = castArray(iterators).map((iteratee) =>
+  const normalizedIteratees = (
+    Array.isArray(iterators) ? iterators : [iterators]
+  ).map<(value: TValue) => ComparableValue>((iteratee) =>
     typeof iteratee === 'function'
       ? iteratee
-      : (value: TValue) => value[iteratee]
+      : (value) =>
+          (value as Record<string, ComparableValue>)[iteratee as string]
   );
 
-  const normalizedOrders = castArray(orders);
+  const normalizedOrders = Array.isArray(orders)
+    ? orders
+    : orders != null
+      ? [orders]
+      : [];
 
   return [...array].sort((a, b) => {
     for (const [index, iteratee] of normalizedIteratees.entries()) {
