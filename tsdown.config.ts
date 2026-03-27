@@ -22,11 +22,13 @@ export default defineConfig(async () => {
       ),
     },
     treeshake: true,
+    minify: true,
     sourcemap: true,
     platform: 'neutral',
     clean: true,
     dts: true,
     format: ['cjs', 'esm'],
+    hash: false,
     tsconfig: 'tsconfig.build.json',
   } satisfies UserConfig;
 });
