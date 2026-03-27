@@ -2,8 +2,11 @@ import type { Get } from 'type-fest';
 
 import type { ObjectPath } from '../../types';
 import type { RequireKeysDeep } from '../../types/_internal';
-import { isMaliciousObjectProperty } from '../_internal/isMaliciousObjectPath';
 import { assert } from '../assert';
+
+const MALICIOUS_PROPS = new Set(
+  Object.getOwnPropertyNames(Object.getPrototypeOf({}))
+);
 
 /**
  * Sets a value at the specified (possibly nested) path in an object.
@@ -36,7 +39,7 @@ export function set<
   const segments = path.match(pathSegmentsRegex);
   assert(segments !== null, 'Invalid path');
   assert(
-    segments.every((segment) => isMaliciousObjectProperty(segment) === false),
+    segments.every((segment) => !MALICIOUS_PROPS.has(segment)),
     'Potentially malicious path'
   );
 
