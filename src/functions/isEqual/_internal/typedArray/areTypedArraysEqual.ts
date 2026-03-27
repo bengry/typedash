@@ -1,7 +1,5 @@
 import type { TypedArray } from 'type-fest';
 
-import { zip } from '../../../zip';
-
 /**
  * Whether the TypedArray instances are equal in value.
  * @param array1 The first TypedArray instance.
@@ -13,8 +11,10 @@ export function areTypedArraysEqual(array1: TypedArray, array2: TypedArray) {
     return false;
   }
 
-  for (const [element1, element2] of zip(array1, array2)) {
-    if (element1 !== element2) {
+  // Direct index loop instead of zip() to avoid pulling in the zip module,
+  // reducing isEqual's bundle footprint.
+  for (let index = 0; index < array1.length; index++) {
+    if (array1[index] !== array2[index]) {
       return false;
     }
   }

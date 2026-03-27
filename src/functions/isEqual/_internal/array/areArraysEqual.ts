@@ -1,4 +1,3 @@
-import { zip } from '../../../zip';
 import type { Context } from '../types';
 
 /**
@@ -17,7 +16,12 @@ export function areArraysEqual(
     return false;
   }
 
-  for (const [index, [element1, element2]] of zip(array1, array2).entries()) {
+  // Direct index loop instead of zip() to avoid pulling in the zip module,
+  // reducing isEqual's bundle footprint.
+  for (let index = 0; index < array1.length; index++) {
+    const element1 = array1[index];
+    const element2 = array2[index];
+
     if (
       !context.equals(element1, element2, index, index, array1, array2, context)
     ) {

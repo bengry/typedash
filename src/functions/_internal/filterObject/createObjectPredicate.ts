@@ -4,8 +4,6 @@ import type {
   Many,
   PropertyValueOfUnion,
 } from '../../../types';
-import { castArray } from '../../castArray';
-import { createTypeGuard } from '../../createTypeGuard';
 
 export function createObjectPredicate<
   T extends object,
@@ -37,7 +35,11 @@ function createPropertiesPredicate<
   T extends object,
   const K extends keyof T | KeysOfUnion<T>,
 >(properties: Many<K>): ObjectPredicate<T> {
-  const isKnownProperty = createTypeGuard(castArray(properties));
+  // Using a local Set instead of importing castArray + createTypeGuard to keep the
+  // pick() dependency graph smaller (fewer chunks pulled in at bundle time).
+  const knownProperties = new Set(
+    Array.isArray(properties) ? properties : [properties]
+  );
 
-  return (_value, key) => isKnownProperty(key);
+  return (_value, key) => knownProperties.has(key);
 }
