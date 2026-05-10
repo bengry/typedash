@@ -71,8 +71,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.9",
-    "@commitlint/cli": "^20.5.0",
-    "@commitlint/config-conventional": "^20.5.0",
+    "@commitlint/cli": "^21.0.0",
+    "@commitlint/config-conventional": "^21.0.0",
     "@types/node": "^24.12.0",
     "@types/react": "^19.2.14",
     "@vitest/coverage-v8": "^4.1.1",
