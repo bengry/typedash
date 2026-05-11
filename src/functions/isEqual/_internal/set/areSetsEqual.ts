@@ -26,7 +26,6 @@ export function areSetsEqual(
       if (
         !hasMatch &&
         !matchedIndices[matchIndex] &&
-        // biome-ignore lint/suspicious/noAssignInExpressions: faster and simpler in this case due to the nature of the callsite
         (hasMatch = context.equals(
           element1,
           element2,

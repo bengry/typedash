@@ -35,7 +35,6 @@ export function groupBy<T, K extends string>(
       const key = getter(currentItem);
 
       draftGroups[key] ??= [];
-      // biome-ignore lint/style/noNonNullAssertion: surely exists because of the line above
       draftGroups[key]!.push(currentItem);
 
       return draftGroups;

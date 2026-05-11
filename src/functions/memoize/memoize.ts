@@ -20,7 +20,6 @@ export function memoize<TFunction extends AnyFunction>(
       : args[0];
 
     if (cache.has(cacheKey)) {
-      // biome-ignore lint/style/noNonNullAssertion: we check using `has` before calling `get`
       return cache.get(cacheKey)!;
     }
 

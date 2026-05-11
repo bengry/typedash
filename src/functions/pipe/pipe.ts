@@ -506,9 +506,7 @@ export function pipe<
   f20: UnaryFunction<T20, TOut>
 ): Func<TIn, TOut>;
 export function pipe<TIn extends unknown[], TOut>(
-  // biome-ignore lint/suspicious/noExplicitAny: final overload, which isn't typed
   o1: Func<TIn, any>,
-  // biome-ignore lint/suspicious/noExplicitAny: final overload, which isn't typed
   ...operations: UnaryFunction<any, any>[]
 ): Func<TIn, TOut>;
 /**
@@ -518,9 +516,7 @@ export function pipe<TIn extends unknown[], TOut>(
  * @returns function that will execute all operations in order
  */
 export function pipe<TIn extends unknown[], TOut>(
-  // biome-ignore lint/suspicious/noExplicitAny: implementation of overloads
   o1: Func<TIn, any>,
-  // biome-ignore lint/suspicious/noExplicitAny: implementation of overloads
   ...operations: UnaryFunction<any, any>[]
 ): Func<TIn, TOut> {
   return (...argsP: TIn) => operations.reduce((acc, f) => f(acc), o1(...argsP));

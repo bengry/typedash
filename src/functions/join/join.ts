@@ -6,7 +6,6 @@ import type { NonFunction } from '../../types/_internal';
  * @param separator The separator to use.
  * @returns An array with the elements joined by the separator.
  */
-// biome-ignore lint/suspicious/noExplicitAny: only used as generic constraints
 export function join<T extends NonFunction<any>, U extends NonFunction<any>>(
   elements: readonly NonNullable<T>[],
   separator: U | ((index: number) => U)
