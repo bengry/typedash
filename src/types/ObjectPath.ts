@@ -18,7 +18,7 @@ type Path<T, K extends keyof T> = K extends string
     ? // biome-ignore lint/suspicious/noExplicitAny: expected here
       OfType<T[K], ArrayLike<any>> extends true
       ? // biome-ignore lint/suspicious/noExplicitAny: expected here
-        K | `${K}.${NormalizedPath<T[K], keyof any[]>}` | `${K}[${number}]`
+          K | `${K}.${NormalizedPath<T[K], keyof any[]>}` | `${K}[${number}]`
       : K | `${K}.${NormalizedPath<T[K], RecordFunctions<T[K]>>}`
     : K
   : never;

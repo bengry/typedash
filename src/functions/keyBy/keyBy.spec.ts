@@ -1,4 +1,4 @@
-import { expect, expectTypeOf, it } from 'vitest';
+import { expect, expectTypeOf, it } from 'vite-plus/test';
 
 import { keyBy } from './keyBy';
 
