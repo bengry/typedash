@@ -1,4 +1,4 @@
-import { expectTypeOf, it } from 'vitest';
+import { expectTypeOf, it } from 'vite-plus/test';
 
 import { objectEntries } from '../objectEntries';
 

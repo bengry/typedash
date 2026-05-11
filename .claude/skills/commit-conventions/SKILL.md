@@ -28,19 +28,19 @@ When commitlint is detected, use this format:
 
 ### Types
 
-| Type | Purpose |
-|------|---------|
-| `feat` | New feature |
-| `fix` | Bug fix |
-| `docs` | Documentation only |
-| `style` | Formatting, whitespace (not CSS) |
+| Type       | Purpose                                                 |
+| ---------- | ------------------------------------------------------- |
+| `feat`     | New feature                                             |
+| `fix`      | Bug fix                                                 |
+| `docs`     | Documentation only                                      |
+| `style`    | Formatting, whitespace (not CSS)                        |
 | `refactor` | Code change that neither fixes a bug nor adds a feature |
-| `perf` | Performance improvement |
-| `test` | Adding or updating tests |
-| `build` | Build system or external dependencies |
-| `ci` | CI configuration |
-| `chore` | Other changes that don't modify src or test |
-| `revert` | Reverts a previous commit |
+| `perf`     | Performance improvement                                 |
+| `test`     | Adding or updating tests                                |
+| `build`    | Build system or external dependencies                   |
+| `ci`       | CI configuration                                        |
+| `chore`    | Other changes that don't modify src or test             |
+| `revert`   | Reverts a previous commit                               |
 
 ### Subject rules
 

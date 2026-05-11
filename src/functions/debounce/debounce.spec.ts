@@ -1,4 +1,11 @@
-import { beforeEach, describe, expect, expectTypeOf, it, vi } from 'vitest';
+import {
+  beforeEach,
+  describe,
+  expect,
+  expectTypeOf,
+  it,
+  vi,
+} from 'vite-plus/test';
 
 import { debounce } from './debounce';
 
