@@ -30,4 +30,4 @@ jobs:
         run: vp pack
 
       - name: Publish preview package
-        run: vp dlx pkg-pr-new publish --pnpm --compact --no-template --packageManager=pnpm
+        run: vp dlx pkg-pr-new publish --compact --no-template --packageManager=pnpm
