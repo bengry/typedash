@@ -30,7 +30,6 @@ export function zip<
   const result: [T[number], U[number]][] = [];
 
   for (let index = 0; index < Math.min(first.length, second.length); index++) {
-    // biome-ignore lint/style/noNonNullAssertion: we're getting the min length first
     result.push([first[index]!, second[index]!]);
   }
 

@@ -8,5 +8,4 @@
  * ```
  */
 
-// biome-ignore lint/suspicious/noEmptyBlockStatements: this is the whole point of the function
 export function noop(..._args: readonly unknown[]): void {}

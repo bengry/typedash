@@ -136,7 +136,6 @@ describe('map', () => {
       ],
       false,
     ],
-    // biome-ignore lint/suspicious/noExplicitAny: simpler to type as any since we know `a` and `b` will match fine
   ])(
     'should handle `Map` entries %s',
     (_, aEntries: any[], bEntries: any[], expected) => {

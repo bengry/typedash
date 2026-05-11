@@ -18,7 +18,6 @@ export function shuffle<T>(array: Maybe<readonly T[]>): T[] {
 
   for (let i = result.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    // biome-ignore lint/style/noNonNullAssertion: indices i and j are guaranteed to be within bounds
     [result[i], result[j]] = [result[j]!, result[i]!];
   }
 
