@@ -39,17 +39,11 @@ export function orderBy<TValue>(
       const aValue = iteratee(a);
       const bValue = iteratee(b);
 
-      if (
-        // biome-ignore lint/style/noNonNullAssertion: JS can compare null and undefined using `<` and
-        aValue! < bValue!
-      ) {
+      if (aValue! < bValue!) {
         return -1 * order;
       }
 
-      if (
-        // biome-ignore lint/style/noNonNullAssertion: JS can compare null and undefined using `<` and
-        aValue! > bValue!
-      ) {
+      if (aValue! > bValue!) {
         return 1 * order;
       }
     }

@@ -1,4 +1,4 @@
-import { expect, expectTypeOf, it } from 'vitest';
+import { expect, expectTypeOf, it } from 'vite-plus/test';
 
 import { invert } from './invert';
 
@@ -21,7 +21,6 @@ it('should handle empty objects', () => {
 });
 
 it('should have the correct type signature', () => {
-  // biome-ignore lint/complexity/noBannedTypes: this is the test..
   expectTypeOf(invert({})).toEqualTypeOf<{}>();
 
   expectTypeOf(

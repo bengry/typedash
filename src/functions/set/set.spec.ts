@@ -1,4 +1,4 @@
-import { expect, it } from 'vitest';
+import { expect, it } from 'vite-plus/test';
 
 import { set } from './set';
 
@@ -68,17 +68,14 @@ it('should not allow passing in a potentially unsafe path', () => {
     foo: 'bar',
   };
 
-  // biome-ignore lint/suspicious/noExplicitAny: testing invalid input
   expect(() => set(object, '__proto__' as any, true as any)).toThrow(
     'Potentially malicious path'
   );
 
-  // biome-ignore lint/suspicious/noExplicitAny: testing invalid input
   expect(() => set(object, '__proto__.polluted' as any, true as any)).toThrow(
     'Potentially malicious path'
   );
   expect(() =>
-    // biome-ignore lint/suspicious/noExplicitAny: testing invalid input
     set(object, 'constructor.prototype.polluted' as any, true as any)
   ).toThrow('Potentially malicious path');
   expect(object).toEqual({ foo: 'bar' });

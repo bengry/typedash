@@ -3,7 +3,7 @@ name: Publish Preview
 on:
   pull_request:
     branches:
-      - "**"
+      - '**'
   push:
     branches-ignore:
       - main
@@ -21,15 +21,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - name: Enable corepack
-        shell: bash
-        run: corepack enable pnpm
-
-      - name: Install dependencies
-        uses: ./.github/actions/pnpm-nm-install
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          cache: true
 
       - name: Build package
-        run: pnpm build
+        run: vp pack
 
       - name: Publish preview package
-        run: pnpm dlx pkg-pr-new publish --pnpm --compact --no-template --packageManager=pnpm
+        run: vp dlx pkg-pr-new publish --compact --no-template --packageManager=pnpm

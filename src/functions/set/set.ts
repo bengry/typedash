@@ -43,10 +43,8 @@ export function set<
     'Potentially malicious path'
   );
 
-  // biome-ignore lint/suspicious/noExplicitAny: easier to work with, and we're trusting the compiler
   let currentObject: any = object;
   for (let index = 0; index < segments.length - 1; index++) {
-    // biome-ignore lint/style/noNonNullAssertion: trust the compiler (and unit tests 😄).
     const segment = segments[index]!;
     if (segment in currentObject === false) {
       currentObject[segment] = Object.create(null) as Record<string, unknown>;
@@ -54,7 +52,6 @@ export function set<
     currentObject = currentObject[segment];
   }
 
-  // biome-ignore lint/style/noNonNullAssertion: this is checked at the type-level
   currentObject[segments.at(-1)!] = value;
 }
 

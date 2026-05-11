@@ -1,12 +1,7 @@
 pre-commit:
-  parallel: true
   commands:
-    lint:
-      glob: "src/**/*.{js,ts}"
-      run: pnpm lint:linter:fix {staged_files}
-    format:
-      glob: "{*.*,**/*.*}"
-      run: pnpm lint:format:fix {staged_files}
+    staged:
+      run: pnpm exec vp staged
 
 commit-msg:
   commands:

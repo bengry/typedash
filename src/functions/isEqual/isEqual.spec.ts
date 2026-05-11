@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vite-plus/test';
 
 import { isEqual } from './isEqual';
 
@@ -136,14 +136,16 @@ describe('map', () => {
       ],
       false,
     ],
-    // biome-ignore lint/suspicious/noExplicitAny: simpler to type as any since we know `a` and `b` will match fine
-  ])('should handle `Map` entries %s', (_, aEntries: any[], bEntries: any[], expected) => {
-    const mapA = new Map(aEntries);
-    const mapB = new Map(bEntries);
+  ])(
+    'should handle `Map` entries %s',
+    (_, aEntries: any[], bEntries: any[], expected) => {
+      const mapA = new Map(aEntries);
+      const mapB = new Map(bEntries);
 
-    expect(isEqual(mapA, mapB)).toBe(expected);
-    expect(isEqual(mapB, mapA)).toBe(expected);
-  });
+      expect(isEqual(mapA, mapB)).toBe(expected);
+      expect(isEqual(mapB, mapA)).toBe(expected);
+    }
+  );
 });
 
 describe('set', () => {

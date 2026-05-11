@@ -83,7 +83,6 @@ export function sample<const T>(
   const result: T[] = [];
 
   for (const index of indices) {
-    // biome-ignore lint/style/noNonNullAssertion: we already know the index is valid because we generated to be within the bounds of the array
     result.push(sourceArray[index]!);
   }
 

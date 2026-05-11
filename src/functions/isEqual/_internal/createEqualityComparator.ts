@@ -48,9 +48,7 @@ export function createEqualityComparator({
    * @returns true if the two values are equivalent in values
    */
   return function comparator(
-    // biome-ignore lint/suspicious/noExplicitAny: implicit any is necessary for the comparison
     value1: any,
-    // biome-ignore lint/suspicious/noExplicitAny: implicit any is necessary for the comparison
     value2: any,
     context: Context
   ): boolean {

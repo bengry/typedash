@@ -1,4 +1,4 @@
 export const isTypedArray =
   typeof ArrayBuffer === 'function' && ArrayBuffer.isView
-    ? ArrayBuffer.isView
+    ? (v: unknown) => ArrayBuffer.isView(v)
     : null;

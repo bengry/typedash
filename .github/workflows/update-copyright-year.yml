@@ -2,7 +2,7 @@ name: Update copyright year
 
 on:
   schedule:
-    - cron: "0 0 1 1 *" # Midnight UTC on January 1st
+    - cron: '0 0 1 1 *' # Midnight UTC on January 1st
   workflow_dispatch:
 
 permissions:
@@ -29,8 +29,8 @@ jobs:
           commit-message: "chore: update copyright year to $(date +'%Y')"
           branch: automated/update-copyright-year
           delete-branch: true
-          title: "Update copyright year"
-          body: "Automated update of copyright year in LICENSE file."
+          title: 'Update copyright year'
+          body: 'Automated update of copyright year in LICENSE file.'
           labels: automated
 
       - name: Enable auto-merge

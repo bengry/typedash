@@ -1,4 +1,5 @@
-import { describe, expect, test } from 'vitest';
+import * as React from 'react';
+import { describe, expect, test } from 'vite-plus/test';
 
 import { isEqual } from './isEqual';
 
@@ -47,17 +48,13 @@ const testSuites = [
       },
       {
         name: 'equal number objects',
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Number(1),
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Number(1),
         expected: true,
       },
       {
         name: 'not equal number objects',
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Number(1),
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Number(2),
         expected: false,
       },
@@ -93,17 +90,13 @@ const testSuites = [
       },
       {
         name: 'equal string objects',
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new String('foo'),
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new String('foo'),
         expected: true,
       },
       {
         name: 'not equal string objects',
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new String('foo'),
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new String('bar'),
         expected: false,
       },
@@ -133,17 +126,13 @@ const testSuites = [
       },
       {
         name: 'equal boolean objects (true)',
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Boolean(true),
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Boolean(true),
         expected: true,
       },
       {
         name: 'equal boolean objects (false)',
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Boolean(false),
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Boolean(false),
         expected: true,
       },
@@ -155,9 +144,7 @@ const testSuites = [
       },
       {
         name: 'not equal boolean objects',
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value1: new Boolean(true),
-        // biome-ignore lint/style/useConsistentBuiltinInstantiation: on purpose for testing purposes
         value2: new Boolean(false),
         expected: false,
       },
@@ -543,7 +530,23 @@ const testSuites = [
       },
     ],
   },
-
+  {
+    name: 'react',
+    tests: [
+      {
+        name: 'simple react elements are deeply equal',
+        value1: React.createElement('div', {}, 'foo'),
+        value2: React.createElement('div', {}, 'foo'),
+        expected: true,
+      },
+      {
+        name: 'simple react elements are not deeply equal',
+        value1: React.createElement('div', {}, 'foo'),
+        value2: React.createElement('div', {}, 'bar'),
+        expected: false,
+      },
+    ],
+  },
   {
     name: 'typed arrays',
     tests: [

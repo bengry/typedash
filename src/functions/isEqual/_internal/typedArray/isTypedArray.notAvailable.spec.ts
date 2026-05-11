@@ -2,7 +2,7 @@
  * We have to test this file separately because we need to stub the global and use `vi.hoisted`, which affects the whole file.
  */
 
-import { describe, expect, it, vi } from 'vitest';
+import { describe, expect, it, vi } from 'vite-plus/test';
 
 vi.hoisted(() => {
   vi.stubGlobal('ArrayBuffer', undefined);

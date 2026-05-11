@@ -1,4 +1,4 @@
-import { expect, it } from 'vitest';
+import { expect, it } from 'vite-plus/test';
 
 import { toObject } from './toObject';
 
@@ -24,7 +24,6 @@ it('should handle arrays with special characters', () => {
   const result = toObject(input);
   expect(result).toEqual({
     a: 'a',
-    // biome-ignore lint/style/useNamingConvention: this is the correct key post-transformation
     b_c: 'b_c',
     'd-e': 'd-e',
   });
