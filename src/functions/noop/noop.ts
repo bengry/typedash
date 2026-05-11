@@ -8,6 +8,5 @@
  * ```
  */
 
-// biome-ignore lint/correctness/noUnusedFunctionParameters: this is the whole point of the function
 // biome-ignore lint/suspicious/noEmptyBlockStatements: this is the whole point of the function
-export function noop(...args: readonly unknown[]): void {}
+export function noop(..._args: readonly unknown[]): void {}

@@ -12,6 +12,7 @@ it('should allow composing with `objectEntries`', () => {
 
   const entries = objectEntries(originalObject);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-expressions
   expectTypeOf(entries).toEqualTypeOf<Array<['a', string] | ['b', string]>>;
 
   const transformedEntries = entries.map(
