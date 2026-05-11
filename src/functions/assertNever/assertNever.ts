@@ -15,5 +15,5 @@ export function assertNever(inclusive: never, noThrow = false): never {
     return undefined as never;
   }
 
-  throw new Error(`Unexpected inclusive value: ${inclusive}`);
+  throw new Error(`Unexpected inclusive value: ${String(inclusive)}`);
 }
