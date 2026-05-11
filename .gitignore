@@ -33,3 +33,8 @@ pnpm-error.log*
 
 # Claude Code local settings
 .claude/settings.local.json
+
+.omc/
+
+# Vite+ auto-generated hook scripts (lefthook handles git hooks)
+.vite-hooks/
