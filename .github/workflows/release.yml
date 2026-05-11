@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       release-type:
-        description: "Release type"
+        description: 'Release type'
         required: true
         type: choice
         options:
@@ -24,12 +24,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - name: Enable corepack
-        shell: bash
-        run: corepack enable pnpm
-
-      - name: Install dependencies
-        uses: ./.github/actions/pnpm-nm-install
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          cache: true
 
       - name: Disable git hooks
         run: rm -rf .git/hooks
@@ -59,10 +57,10 @@ jobs:
         id: create-pr
         with:
           token: ${{ secrets.RELEASE_PAT }}
-          commit-message: "chore(release): v${{ steps.version.outputs.next }}"
+          commit-message: 'chore(release): v${{ steps.version.outputs.next }}'
           branch: release/v${{ steps.version.outputs.next }}
           delete-branch: true
-          title: "chore(release): v${{ steps.version.outputs.next }}"
+          title: 'chore(release): v${{ steps.version.outputs.next }}'
           body: |
             Automated ${{ inputs.release-type }} release bump to v${{ steps.version.outputs.next }}.
 

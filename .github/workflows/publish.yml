@@ -18,12 +18,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
-      - name: Enable corepack
-        shell: bash
-        run: corepack enable pnpm
-
-      - name: Install dependencies
-        uses: ./.github/actions/pnpm-nm-install
+      - name: Setup Vite+
+        uses: voidzero-dev/setup-vp@v1
+        with:
+          cache: true
 
       - name: Setup npm registry
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6
@@ -31,13 +29,13 @@ jobs:
           registry-url: https://registry.npmjs.org/
 
       - name: Lint
-        run: pnpm lint
+        run: vp check --no-fmt
 
       - name: Run tests
-        run: pnpm test:ci
+        run: vp test --coverage
 
       - name: Build package
-        run: pnpm build
+        run: vp pack
 
       - name: Generate build provenance attestation
         uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 # v4
@@ -45,7 +43,7 @@ jobs:
           subject-path: dist/**
 
       - name: Publish to npm with provenance
-        run: pnpm publish --access public --no-git-checks --provenance
+        run: vp publish --access public --no-git-checks --provenance
 
       - name: Publish to JSR
-        run: pnpm dlx jsr publish
+        run: vp dlx jsr publish
