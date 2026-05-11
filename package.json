@@ -3,22 +3,30 @@
   "version": "3.3.3",
   "description": "modern, type-safe collection of utility functions",
   "keywords": [
-    "typescript",
     "lodash",
-    "utility",
-    "utilities",
+    "stdlib",
     "type-safe",
+    "typescript",
     "util",
-    "stdlib"
+    "utilities",
+    "utility"
   ],
+  "license": "MIT",
+  "author": "Ben Grynhaus <me@bengr.dev>",
   "repository": {
     "type": "git",
     "url": "https://github.com/bengry/typedash"
   },
-  "license": "MIT",
-  "author": "Ben Grynhaus <me@bengr.dev>",
-  "sideEffects": false,
+  "files": [
+    "dist",
+    "!dist/**/*.map",
+    "README.md"
+  ],
   "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -31,48 +39,38 @@
       "import": "./dist/*/index.js"
     }
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist",
-    "!dist/**/*.map",
-    "README.md"
-  ],
   "scripts": {
-    "build": "tsdown",
+    "build": "vp pack",
+    "check": "concurrently \"vp check\" \"ls-lint\" \"pnpm dedupe --check\"",
+    "check:fix": "vp check --fix && ls-lint",
     "commit": "czg",
-    "dev": "concurrently \"pnpm build --watch\" \"pnpm test:watch\"",
-    "lint": "concurrently \"pnpm lint:linter\" \"pnpm lint:format\" \"pnpm lint:type-check\" \"pnpm lint:dependencies:dedup:check\"",
-    "lint:dependencies:dedup:check": "pnpm dedupe --check",
-    "lint:dependencies:dedup:fix": "pnpm dedupe && pnpm install",
-    "update:minor": "taze minor",
-    "update:interactive": "taze --interactive",
-    "lint:linter": "biome lint --error-on-warnings .",
-    "lint:linter:fix": "biome lint --error-on-warnings --write .",
-    "lint:fix": "pnpm lint --fix && pnpm lint:format:fix",
-    "lint:format": "biome format .",
-    "lint:format:fix": "biome format --write .",
-    "lint:type-check": "tsc --noEmit",
+    "deps:dedupe": "pnpm dedupe --check",
+    "deps:dedupe:fix": "pnpm dedupe && pnpm install",
+    "dev": "concurrently \"vp pack --watch\" \"vp test watch\"",
+    "filenames": "ls-lint",
+    "fmt": "vp fmt --check",
+    "fmt:fix": "vp fmt --write",
+    "lint": "vp lint",
+    "lint:fix": "vp lint --fix",
     "prepare": "lefthook install",
-    "release": "pnpm build && pnpm release-it",
-    "test": "vitest run --passWithNoTests",
-    "test:ci": "pnpm test",
-    "test:coverage": "pnpm test --coverage",
-    "test:ui": "pnpm test:watch --ui",
-    "test:watch": "vitest",
+    "release": "vp pack && release-it",
+    "test": "vp test run --passWithNoTests",
+    "test:ci": "vp test run --coverage",
+    "test:coverage": "vp test run --coverage",
+    "test:ui": "vp test watch --ui",
+    "test:watch": "vp test watch",
+    "type-check": "vp check --no-fmt --no-lint",
+    "update:interactive": "taze --interactive",
+    "update:minor": "taze minor",
     "util:function-count": "exa -1 | grep -v '^_' | wc -l"
   },
   "dependencies": {
     "type-fest": "^5.5.0"
   },
-  "optionalDependencies": {
-    "react": ">=18 < 20"
-  },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.9",
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
+    "@ls-lint/ls-lint": "^2.3.1",
     "@types/node": "^24.12.0",
     "@types/react": "^19.2.14",
     "@vitest/coverage-v8": "^4.1.1",
@@ -82,14 +80,15 @@
     "lefthook": "^2.1.4",
     "react": "^19.2.4",
     "release-it": "^20.0.0",
-    "taze": "^19.10.0",
-    "tsdown": "^0.21.4",
-    "type-fest": "^5.4.4",
+    "taze": "^19.11.0",
     "typescript": "^6.0.2",
-    "vitest": "^4.1.1"
+    "vite-plus": "^0.1.20"
   },
-  "packageManager": "pnpm@11.1.0+sha512.0c44e842e5686b2c061a81adda8b2258bd8818e9704b2cf2c63d56b931a7b2e910092e085027003b96ca3911ab56a07f6df5abaed2be9925034cdd686a535b14",
+  "optionalDependencies": {
+    "react": ">=18 < 20"
+  },
   "engines": {
     "node": ">=22.0.0"
-  }
+  },
+  "packageManager": "pnpm@11.1.0+sha512.0c44e842e5686b2c061a81adda8b2258bd8818e9704b2cf2c63d56b931a7b2e910092e085027003b96ca3911ab56a07f6df5abaed2be9925034cdd686a535b14"
 }
