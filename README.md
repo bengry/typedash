@@ -44,30 +44,30 @@ pnpm add typedash
 Every function can be imported from the main entry point or individually for optimal tree-shaking:
 
 ```ts
-import { pick, objectKeys } from "typedash";
-import { pick } from "typedash/pick"; // individual import also works
+import { pick, objectKeys } from 'typedash';
+import { pick } from 'typedash/pick'; // individual import also works
 ```
 
 typedash shines where TypeScript's built-in types fall short. For example, string casing functions return type-level transformed strings:
 
 ```ts
-import { camelCase } from "typedash";
+import { camelCase } from 'typedash';
 
-const key = camelCase("foo-bar-baz");
+const key = camelCase('foo-bar-baz');
 //    ^? "fooBarBaz" (not just string)
 ```
 
 And object utilities preserve precise key and value types:
 
 ```ts
-import { objectKeys, pick } from "typedash";
+import { objectKeys, pick } from 'typedash';
 
 const obj = { a: 1, b: 2, c: 3 };
 
 const keys = objectKeys(obj);
 //    ^? ("a" | "b" | "c")[]
 
-const subset = pick(obj, ["a", "b"]);
+const subset = pick(obj, ['a', 'b']);
 //    ^? { a: number, b: number }
 ```
 
