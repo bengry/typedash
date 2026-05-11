@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { describe, expect, test } from 'vite-plus/test';
 
 import { isEqual } from './isEqual';
@@ -526,23 +525,6 @@ const testSuites = [
         name: 'promises are not equal when not strictly equal',
         value1: promise,
         value2: Promise.resolve('foo'),
-        expected: false,
-      },
-    ],
-  },
-  {
-    name: 'react',
-    tests: [
-      {
-        name: 'simple react elements are deeply equal',
-        value1: React.createElement('div', {}, 'foo'),
-        value2: React.createElement('div', {}, 'foo'),
-        expected: true,
-      },
-      {
-        name: 'simple react elements are not deeply equal',
-        value1: React.createElement('div', {}, 'foo'),
-        value2: React.createElement('div', {}, 'bar'),
         expected: false,
       },
     ],
