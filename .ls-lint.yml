@@ -1,0 +1,7 @@
+ls:
+  src/**/*.ts: camelCase | PascalCase | regex:^index$
+
+ignore:
+  - node_modules
+  - dist
+  - coverage

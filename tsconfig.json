@@ -10,8 +10,8 @@
     "incremental": true,
     "allowJs": true,
     "noUncheckedIndexedAccess": true,
-    "types": ["vitest/importMeta", "node"],
+    "types": ["node"],
     "rootDirs": ["./src"]
   },
-  "include": ["./src", "vitest.config.ts", "tsdown.config.ts"]
+  "include": ["./src", "vite.config.ts"]
 }
