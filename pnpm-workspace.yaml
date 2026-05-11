@@ -6,7 +6,6 @@ minimumReleaseAgeExclude:
   - "lefthook*"
 
 blockExoticSubdeps: true
-
-onlyBuiltDependencies:
-  - esbuild
-  - lefthook
+allowBuilds:
+  esbuild: true
+  lefthook: true
