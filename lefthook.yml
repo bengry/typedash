@@ -1,7 +1,16 @@
 pre-commit:
+  parallel: true
   commands:
-    staged:
-      run: pnpm exec vp staged
+    fmt:
+      glob: '*.{js,ts,tsx,json,jsonc,md,yaml,yml}'
+      exclude:
+        - pnpm-lock.yaml
+      run: pnpm exec vp fmt --write --no-error-on-unmatched-pattern {staged_files}
+      stage_fixed: true
+    lint:
+      glob: '*.{js,ts,tsx}'
+      run: pnpm exec vp lint --fix {staged_files}
+      stage_fixed: true
 
 commit-msg:
   commands:
