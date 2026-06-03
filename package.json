@@ -65,24 +65,24 @@
     "util:function-count": "exa -1 | grep -v '^_' | wc -l"
   },
   "dependencies": {
-    "type-fest": "^5.5.0"
+    "type-fest": "^5.6.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.0",
-    "@commitlint/config-conventional": "^21.0.0",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
     "@ls-lint/ls-lint": "^2.3.1",
-    "@types/node": "^24.12.0",
-    "@types/react": "^19.2.14",
-    "@vitest/coverage-v8": "^4.1.1",
-    "@vitest/ui": "^4.1.1",
+    "@types/node": "^24.12.4",
+    "@types/react": "^19.2.16",
+    "@vitest/coverage-v8": "^4.1.7",
+    "@vitest/ui": "^4.1.7",
     "concurrently": "^10.0.0",
-    "czg": "^1.12.0",
-    "lefthook": "^2.1.4",
-    "react": "^19.2.4",
-    "release-it": "^20.0.0",
-    "taze": "^19.11.0",
-    "typescript": "^6.0.2",
-    "vite-plus": "^0.1.20"
+    "czg": "^1.13.1",
+    "lefthook": "^2.1.9",
+    "react": "^19.2.6",
+    "release-it": "^20.0.1",
+    "taze": "^19.14.1",
+    "typescript": "^6.0.3",
+    "vite-plus": "^0.1.23"
   },
   "peerDependencies": {
     "react": ">=18 < 20"
@@ -95,5 +95,5 @@
   "engines": {
     "node": ">=22.0.0"
   },
-  "packageManager": "pnpm@11.5.0"
+  "packageManager": "pnpm@11.5.1+sha512.93f7b57422ea7068257235b4c16eb60762eb68e1dc23723199cc739043ea9be2c4143274a399d8c6defa2b1176226d9ca1c4b63482d6200c1a8fbaa78c1d1485"
 }
