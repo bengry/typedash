@@ -82,7 +82,7 @@
     "release-it": "^20.0.1",
     "taze": "^19.14.1",
     "typescript": "^6.0.3",
-    "vite-plus": "^0.1.23"
+    "vite-plus": "^0.2.0"
   },
   "peerDependencies": {
     "react": ">=18 < 20"
