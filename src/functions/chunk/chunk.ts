@@ -15,6 +15,10 @@ export function chunk<T>(array: Maybe<readonly T[]>, size: number): T[][] {
     return [];
   }
 
+  if (size < 1){
+    return [];
+  }
+
   const chunks = [];
   for (let index = 0; index < array.length; index += size) {
     chunks.push(array.slice(index, index + size));
