@@ -29,3 +29,15 @@ it('should return a single chunk when the array length is less than the chunk si
   const result = chunk(array, 3);
   expect(result).toEqual([[1, 2]]);
 });
+
+it('should return an empty array when the chunk size is zero', () => {
+  const array = [1, 2, 3];
+  const result = chunk(array, 0);
+  expect(result).toEqual([]);
+});
+
+it('should return an empty array when the chunk size is negative', () => {
+  const array = [1, 2, 3];
+  const result = chunk(array, -1);
+  expect(result).toEqual([]);
+});
