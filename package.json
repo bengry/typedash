@@ -65,24 +65,25 @@
     "util:function-count": "exa -1 | grep -v '^_' | wc -l"
   },
   "dependencies": {
-    "type-fest": "^5.6.0"
+    "type-fest": "^5.8.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.0.2",
-    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/cli": "^21.2.1",
+    "@commitlint/config-conventional": "^21.2.0",
     "@ls-lint/ls-lint": "^2.3.1",
-    "@types/node": "^24.12.4",
-    "@types/react": "^19.2.16",
-    "@vitest/coverage-v8": "^4.1.7",
-    "@vitest/ui": "^4.1.7",
-    "concurrently": "^10.0.0",
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.17",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "@vitest/coverage-v8": "^4.1.10",
+    "@vitest/ui": "^4.1.10",
+    "concurrently": "^10.0.3",
     "czg": "^1.13.1",
-    "lefthook": "^2.1.9",
-    "react": "^19.2.6",
-    "release-it": "^20.0.1",
+    "lefthook": "^2.1.10",
+    "react": "^19.2.7",
+    "release-it": "^20.2.1",
     "taze": "^19.14.1",
-    "typescript": "^6.0.3",
-    "vite-plus": "^0.2.0"
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "vite-plus": "^0.2.4"
   },
   "peerDependencies": {
     "react": ">=18 < 20"
@@ -95,5 +96,5 @@
   "engines": {
     "node": ">=22.0.0"
   },
-  "packageManager": "pnpm@11.10.0"
+  "packageManager": "pnpm@11.11.0"
 }
