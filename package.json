@@ -80,7 +80,7 @@
     "czg": "^1.13.1",
     "lefthook": "^2.1.10",
     "react": "^19.2.7",
-    "release-it": "^20.2.1",
+    "release-it": "^21.0.0",
     "taze": "^19.14.1",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vite-plus": "^0.2.4"
