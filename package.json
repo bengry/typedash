@@ -68,22 +68,22 @@
     "type-fest": "^5.8.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.1",
-    "@commitlint/config-conventional": "^21.2.0",
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
     "@ls-lint/ls-lint": "^2.3.1",
     "@types/node": "^24.13.3",
-    "@types/react": "^19.2.17",
+    "@types/react": "^19.2.18",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "@vitest/coverage-v8": "^4.1.10",
-    "@vitest/ui": "^4.1.10",
-    "concurrently": "^10.0.3",
-    "czg": "^1.13.1",
-    "lefthook": "^2.1.10",
-    "react": "^19.2.7",
-    "release-it": "^21.0.0",
-    "taze": "^21.0.0",
+    "@vitest/coverage-v8": "^4.1.11",
+    "@vitest/ui": "^4.1.11",
+    "concurrently": "^10.0.5",
+    "czg": "^1.14.0",
+    "lefthook": "^2.1.12",
+    "react": "^19.2.8",
+    "release-it": "^21.0.2",
+    "taze": "^21.1.0",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "vite-plus": "^0.2.4"
+    "vite-plus": "^0.3.0"
   },
   "peerDependencies": {
     "react": ">=18 < 20"
