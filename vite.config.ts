@@ -74,7 +74,7 @@ export default defineConfig({
       '**/.husky',
       '**/.gitignore',
       '**/.editorconfig',
-      '**/.nvmrc',
+      '**/.node-version',
       'docs/assets/**',
     ],
   },
