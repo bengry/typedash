@@ -1,4 +1,3 @@
-import { areReactElementsEqual, isReactElement } from '../react';
 import type { Context } from '../types/types';
 
 import type { Dictionary } from './Dictionary';
@@ -16,17 +15,6 @@ export function areObjectsEqual(
   value2: Dictionary,
   context: Context
 ): boolean {
-  // Delegate to specialized React element comparator if both are React elements
-  if (isReactElement(value1) && isReactElement(value2)) {
-    return areReactElementsEqual(value1, value2, context);
-  }
-
-  // If only one is a React element, they're not equal
-  if (isReactElement(value1) || isReactElement(value2)) {
-    return false;
-  }
-
-  // Standard object comparison for non-React elements
   const properties = getObjectProperties(value1);
 
   if (getObjectProperties(value2).length !== properties.length) {

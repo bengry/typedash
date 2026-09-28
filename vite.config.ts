@@ -27,7 +27,7 @@ export default defineConfig({
     platform: 'neutral',
     clean: true,
     dts: true,
-    format: ['cjs', 'esm'],
+    format: ['esm'],
     hash: false,
     tsconfig: 'tsconfig.build.json',
   },

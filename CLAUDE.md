@@ -47,7 +47,7 @@ typedash is a modern TypeScript utility library similar to lodash, focused on ty
 ### Build System
 
 - Uses tsup with automatic entry point generation for each function
-- Builds both CommonJS and ESM formats
+- Builds ESM only (no CommonJS)
 - Generates TypeScript declaration files
 - Tree-shakeable - each function can be imported individually
 
