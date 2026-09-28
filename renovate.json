@@ -30,6 +30,11 @@
       "automergeType": "pr"
     },
     {
+      "description": "Bump dev dependency ranges in package.json, not just the lockfile",
+      "matchDepTypes": ["devDependencies"],
+      "rangeStrategy": "bump"
+    },
+    {
       "description": "Major updates get individual PRs (no automerge)",
       "matchUpdateTypes": ["major"],
       "automerge": false,
