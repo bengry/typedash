@@ -182,9 +182,6 @@ importers:
       '@types/node':
         specifier: ^24.13.3
         version: 24.19.0
-      '@types/react':
-        specifier: ^19.2.18
-        version: 19.3.0
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
@@ -197,9 +194,6 @@ importers:
       lefthook:
         specifier: ^2.1.12
         version: 2.1.14
-      react:
-        specifier: ^19.2.8
-        version: 19.3.0
       release-it:
         specifier: ^21.0.2
         version: 21.1.0(@types/node@24.19.0)(magicast@0.5.5)(supports-color@10.2.2)
@@ -883,9 +877,6 @@ packages:
     resolution: {integrity: sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==}
     deprecated: This is a stub types definition. parse-path provides its own type definitions, so you do not need this installed.
 
-  '@types/react@19.3.0':
-    resolution: {integrity: sha512-N0rFCuH9YoxG9/m61l9MfpJKfmLOVU0em7ipIz6TRgSSkvReLB9vL85GB+yr8Bs5leqpvg96JSwF4ZS1s4viQg==}
-
   '@typescript/typescript-aix-ppc64@7.0.2':
     resolution: {integrity: sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==}
     engines: {node: '>=16.20.0'}
@@ -1463,9 +1454,6 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
-
-  csstype@3.2.3:
-    resolution: {integrity: sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==}
 
   czg@1.14.0:
     resolution: {integrity: sha512-pO0VNReAHu6TSArr655pYRyShn6n2MX2ohMIz/jIugbI2UkeqSGp46zIOsYKORi9l1WNcdkbCiLKc8lolCr2Tw==}
@@ -2118,10 +2106,6 @@ packages:
 
   react-is@17.0.2:
     resolution: {integrity: sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==}
-
-  react@19.3.0:
-    resolution: {integrity: sha512-E8LUcbtBWt20bbl2YoHfx4ZDBdxVTfOKtCZn9cDSJ4l6/nuoApcpIBcj47t2wZoVX8g2ZHuMHbiShgCR1T5Sog==}
-    engines: {node: '>=0.10.0'}
 
   readdirp@5.1.1:
     resolution: {integrity: sha512-Kko+Y5XQ6fM+Ce3dq3m9YGxnacYZYl9cA1wZjaF3Vbry2L3i1qVg8+CAgNPsXRArPMUMCaOR7oa9Nqntc43JKA==}
@@ -2987,10 +2971,6 @@ snapshots:
     dependencies:
       parse-path: 7.1.0
 
-  '@types/react@19.3.0':
-    dependencies:
-      csstype: 3.2.3
-
   '@typescript/typescript-aix-ppc64@7.0.2':
     optional: true
 
@@ -3417,8 +3397,6 @@ snapshots:
       parse-json: 5.2.0
     optionalDependencies:
       typescript: '@typescript/typescript6@6.0.2'
-
-  csstype@3.2.3: {}
 
   czg@1.14.0: {}
 
@@ -4018,8 +3996,6 @@ snapshots:
       destr: 2.0.5
 
   react-is@17.0.2: {}
-
-  react@19.3.0: {}
 
   readdirp@5.1.1: {}
 
