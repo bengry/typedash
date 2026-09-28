@@ -1,6 +1,6 @@
 {
   "name": "typedash",
-  "version": "3.3.3",
+  "version": "4.0.0",
   "description": "modern, type-safe collection of utility functions",
   "keywords": [
     "lodash",
