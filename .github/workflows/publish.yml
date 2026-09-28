@@ -43,7 +43,7 @@ jobs:
           subject-path: dist/**
 
       - name: Publish to npm with provenance
-        run: vp publish --access public --no-git-checks --provenance
+        run: vp pm publish --access public --no-git-checks --provenance
 
       - name: Publish to JSR
         run: vp dlx jsr publish
