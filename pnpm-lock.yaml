@@ -171,16 +171,16 @@ importers:
         version: 5.10.0
     devDependencies:
       '@commitlint/cli':
-        specifier: ^21.2.2
+        specifier: ^21.2.3
         version: 21.2.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)(conventional-commits-parser@7.1.2)
       '@commitlint/config-conventional':
-        specifier: ^21.2.2
+        specifier: ^21.2.3
         version: 21.2.3
       '@ls-lint/ls-lint':
         specifier: ^2.3.1
         version: 2.3.1
       '@types/node':
-        specifier: ^24.13.3
+        specifier: ^24.19.0
         version: 24.19.0
       '@typescript/native':
         specifier: npm:typescript@^7.0.2
@@ -192,10 +192,10 @@ importers:
         specifier: ^1.14.0
         version: 1.14.0
       lefthook:
-        specifier: ^2.1.12
+        specifier: ^2.1.14
         version: 2.1.14
       release-it:
-        specifier: ^21.0.2
+        specifier: ^21.1.0
         version: 21.1.0(@types/node@24.19.0)(magicast@0.5.5)(supports-color@10.2.2)
       taze:
         specifier: ^21.1.0
@@ -204,7 +204,7 @@ importers:
         specifier: npm:@typescript/typescript6@^6.0.2
         version: '@typescript/typescript6@6.0.2'
       vite-plus:
-        specifier: ^0.3.0
+        specifier: ^0.3.3
         version: 0.3.3(@types/node@24.19.0)(@typescript/typescript6@6.0.2)(@vitest/coverage-v8@4.1.11)(@vitest/ui@4.1.11)(jiti@2.7.0)(yaml@2.9.1)
 
 packages:
