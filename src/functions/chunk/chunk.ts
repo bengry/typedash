@@ -15,7 +15,7 @@ export function chunk<T>(array: Maybe<readonly T[]>, size: number): T[][] {
     return [];
   }
 
-  if (size < 1){
+  if (size < 1) {
     return [];
   }
 
