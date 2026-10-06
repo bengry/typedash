@@ -60,7 +60,8 @@
     "type-check": "vp check --no-fmt --no-lint",
     "update:interactive": "taze --interactive",
     "update:minor": "taze minor",
-    "util:function-count": "exa -1 | grep -v '^_' | wc -l"
+    "util:function-count": "exa -1 | grep -v '^_' | wc -l",
+    "check:dist": "tsc -p tsconfig.dist-check.json"
   },
   "dependencies": {
     "type-fest": "^5.8.0"

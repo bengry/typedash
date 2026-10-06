@@ -29,11 +29,19 @@ export default defineConfig({
     dts: true,
     format: ['esm'],
     hash: false,
+    // Shared chunks are all named "index" (src/functions/*/index.ts); without a separate dir one can claim dist/index.d.ts.
+    outputOptions: { chunkFileNames: '_chunks/[name].js' },
     tsconfig: 'tsconfig.build.json',
   },
 
   lint: {
-    ignorePatterns: ['dist/**', 'coverage/**', '.omc/**', '.claude/**'],
+    ignorePatterns: [
+      'dist/**',
+      'coverage/**',
+      '.omc/**',
+      '.claude/**',
+      'scripts/**',
+    ],
     options: {
       typeAware: true,
       typeCheck: true,

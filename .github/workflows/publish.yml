@@ -37,6 +37,9 @@ jobs:
       - name: Build package
         run: vp pack
 
+      - name: Check built typings
+        run: vp run check:dist
+
       - name: Generate build provenance attestation
         uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4
         with:
