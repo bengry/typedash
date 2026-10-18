@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@0977fd99725f1db4007ccb2928dbb4e90d06cc86 # v6
         with:
           run_install: false
 
@@ -26,7 +26,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Check compressed size changes
-        uses: preactjs/compressed-size-action@v2
+        uses: preactjs/compressed-size-action@f322c295dde06a1cb7ccaef105732dd8a726d1d9 # v2
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           build-script: build
