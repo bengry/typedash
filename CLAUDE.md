@@ -53,7 +53,7 @@ typedash is a modern TypeScript utility library similar to lodash, focused on ty
 
 ### Code Style & Standards
 
-- Uses Biome for linting and formatting
+- Uses oxlint and oxfmt (via vite-plus `vp check`) for linting and formatting
 - Strict TypeScript configuration with `noUncheckedIndexedAccess`
 - Function naming: camelCase for functions, PascalCase for types
 - File naming: camelCase or PascalCase
@@ -88,5 +88,5 @@ typedash is a modern TypeScript utility library similar to lodash, focused on ty
 ## Dependencies
 
 - Runtime: Only `type-fest` for advanced TypeScript utilities
-- Build: tsdown, TypeScript, vitest, Biome
+- Build: vite-plus (tsdown, vitest, oxlint, oxfmt), TypeScript
 - Uses pnpm 10.0.0 package manager
