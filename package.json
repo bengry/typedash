@@ -74,7 +74,7 @@
     "@typescript/native": "npm:typescript@^7.0.2",
     "concurrently": "^10.0.6",
     "czg": "^1.14.0",
-    "lefthook": "^2.2.1",
+    "lefthook": "^2.2.2",
     "release-it": "^21.1.1",
     "taze": "^21.3.0",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
