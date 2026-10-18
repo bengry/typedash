@@ -1,8 +1,13 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", ":semanticCommitTypeAll(chore)"],
+  "extends": [
+    "config:recommended",
+    ":semanticCommitTypeAll(chore)",
+    "helpers:pinGitHubActionDigests"
+  ],
   "timezone": "Asia/Jerusalem",
   "schedule": ["before 9am on monday"],
+  "minimumReleaseAge": "3 days",
   "postUpdateOptions": ["pnpmDedupe"],
   "rebaseWhen": "behind-base-branch",
   "separateMajorMinor": true,
@@ -18,8 +23,7 @@
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "production dependencies (non-major)",
       "automerge": true,
-      "automergeType": "pr",
-      "minimumReleaseAge": "3 days"
+      "automergeType": "pr"
     },
     {
       "description": "Group non-major dev dependency updates",
@@ -52,6 +56,11 @@
       "groupName": "commitlint packages",
       "matchPackageNames": ["/^@commitlint\\//"],
       "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "description": "Keep vite-plus and the @vitest plugins it needs in one PR, so their vitest versions match",
+      "groupName": "vite-plus",
+      "matchPackageNames": ["vite-plus", "@vitest/**"]
     }
   ]
 }
