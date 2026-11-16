@@ -73,7 +73,7 @@
     "@types/node": "^26.6.6",
     "@typescript/native": "npm:typescript@^7.0.2",
     "@vitest/coverage-v8": "5.1.0",
-    "concurrently": "^10.0.6",
+    "concurrently": "^10.0.7",
     "czg": "^1.14.0",
     "lefthook": "^2.2.2",
     "release-it": "^21.1.2",
