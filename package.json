@@ -79,7 +79,7 @@
     "release-it": "^21.1.2",
     "taze": "^21.3.0",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "vite-plus": "^1.5.0"
+    "vite-plus": "^1.6.0"
   },
   "engines": {
     "node": ">=22.0.0"
